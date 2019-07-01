@@ -1,0 +1,268 @@
+lib_name: adc_sar_templates
+cell_name: pulse_gen
+pins: [ "VSS", "VBB", "VDD", "A", "OA", "O" ]
+instances:
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  IBUFN0:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "Ab"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "A"
+        num_bits: 1
+  IDLN0:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "Ad"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "OA"
+        num_bits: 1
+  IBUFN1:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "OA"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "Ab"
+        num_bits: 1
+  NANDNAd:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "net011"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "nand"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "Ad"
+        num_bits: 1
+  NANDNA:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "net011"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "A"
+        num_bits: 1
+  OUTN:
+    lib_name: BAG_prim
+    cell_name: nmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "nand"
+        num_bits: 1
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  IDLP0:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "Ad"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "OA"
+        num_bits: 1
+  IBUFP1:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "OA"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "Ab"
+        num_bits: 1
+  IBUFP0:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "Ab"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "A"
+        num_bits: 1
+  NANDPAd:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "nand"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "Ad"
+        num_bits: 1
+  OUTP:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "nand"
+        num_bits: 1
+  NANDPA:
+    lib_name: BAG_prim
+    cell_name: pmos4_ulvt
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "nand"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "A"
+        num_bits: 1

@@ -1,0 +1,5 @@
+lib_name: adc_sar_templates
+cell_name: capdac_7b
+pins: [ "I<6:0>", "I_C0", "O" ]
+instances:
+  {}

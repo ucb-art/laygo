@@ -1,0 +1,212 @@
+lib_name: adc_sar_templates
+cell_name: sourceFollower
+pins: [ "in", "VSS", "VDD", "out", "VBIAS", "Voff", "bypass" ]
+instances:
+  PIN11:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  IBYP:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "in"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "bypass"
+        num_bits: 1
+  IBYP_BIAS:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "bypass"
+        num_bits: 1
+  IBIAS_off:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "Voff"
+        num_bits: 1
+  IMIR1:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+  IMIR0:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+  IBIASDUM:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+  IINDUM:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+  IBIAS:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+  IIN:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "in"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

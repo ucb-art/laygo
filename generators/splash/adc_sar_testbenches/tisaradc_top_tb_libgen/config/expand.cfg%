@@ -1,0 +1,20 @@
+//Revision 2
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config tisaradc_top_tb_libgen;
+design adc_sar_testbenches.tisaradc_top_tb_libgen:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl;
+stoplist spectre;
+
+
+cell adc_sar_scratch.adc_retimer binding :av_extracted;
+
+
+endconfig

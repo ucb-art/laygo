@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>adc_sar_templates:salatch_pmos_tb_tran:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>salatch_pmos_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_templates</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_templates:salatch_pmos_tb_tran:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>salatch_pmos_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_templates</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state1</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>vdd
+				<value>0.9</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vamp
+				<value>10m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vcm
+				<value>0.6</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vos
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>voscm
+				<value>600m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>cload
+				<value>20f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>csaload
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>cint
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>ctail
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>costail
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tper
+				<value>1n</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tr
+				<value>20p</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tsim
+				<value>2.5n</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tstep
+				<value>1p</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:salatch_pmos_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+	</active>
+	<history>History</history>
+</setupdb>

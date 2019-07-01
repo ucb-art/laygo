@@ -1,0 +1,144 @@
+lib_name: adc_sar_templates
+cell_name: r2r_dac
+pins: [ "SEL", "VDD", "VSS", "out" ]
+instances:
+  I2RVSS:
+    lib_name: adc_sar_templates
+    cell_name: r2r_dac_unit
+    instpins:
+      I:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "ENB"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "EN"
+        num_bits: 1
+  IR:
+    lib_name: adc_sar_templates
+    cell_name: r2r_dac_unit
+    instpins:
+      I:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "VDD"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "VSS"
+        num_bits: 1
+  I2RVDD:
+    lib_name: adc_sar_templates
+    cell_name: r2r_dac_unit
+    instpins:
+      I:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "ENB"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  IINV0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SEL"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ENB"
+        num_bits: 1
+  IINV1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "ENB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "EN"
+        num_bits: 1

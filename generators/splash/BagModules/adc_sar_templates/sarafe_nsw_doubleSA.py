@@ -1,0 +1,183 @@
+# -*- coding: utf-8 -*-
+########################################################################################################################
+#
+# Copyright (c) 2014, Regents of the University of California
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+# following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+#   disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+#    following disclaimer in the documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+########################################################################################################################
+
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
+# noinspection PyUnresolvedReferences,PyCompatibility
+from builtins import *
+
+import os
+import pkg_resources
+
+from bag.design import Module
+
+
+yaml_file = pkg_resources.resource_filename(__name__, os.path.join('netlist_info', 'sarafe_nsw_doubleSA.yaml'))
+
+
+# noinspection PyPep8Naming
+class adc_sar_templates__sarafe_nsw_doubleSA(Module):
+    """Module for library adc_sar_templates cell sarafe_nsw.
+
+    Fill in high level description here.
+    """
+
+    def __init__(self, bag_config, parent=None, prj=None, **kwargs):
+        Module.__init__(self, bag_config, yaml_file, parent=parent, prj=prj, **kwargs)
+
+    def design(self, lch, pw, nw, sa_m, sa_m_d, sa_m_rst, sa_m_rst_d, sa_m_rgnn, sa_m_rgnp_d, sa_m_buf, doubleSA,
+               drv_m_list, num_bits, c_m, rdx_array,
+               m_mirror, m_bias, m_off, m_in, m_bias_dum, m_in_dum, m_byp, m_byp_bias, bias_current, vref_sf, device_intent='fast'):
+        """To be overridden by subclasses to design this module.
+
+        This method should fill in values for all parameters in
+        self.parameters.  To design instances of this module, you can
+        call their design() method or any other ways you coded.
+
+        To modify schematic structure, call:
+
+        rename_pin()
+        delete_instance()
+        replace_instance_master()
+        reconnect_instance_terminal()
+        restore_instance()
+        array_instance()
+        """
+        self.parameters['lch'] = lch
+        self.parameters['pw'] = pw
+        self.parameters['nw'] = nw
+        self.parameters['sa_m'] = sa_m
+        self.parameters['sa_m_d'] = sa_m_d
+        self.parameters['sa_m_rst'] = sa_m_rst
+        self.parameters['sa_m_rst_d'] = sa_m_rst_d
+        self.parameters['sa_m_rgnn'] = sa_m_rgnn
+        self.parameters['sa_m_rgnp'] = sa_m_rgnp_d
+        self.parameters['sa_m_buf'] = sa_m_buf
+        self.parameters['doubleSA'] = doubleSA
+        self.parameters['drv_m_list'] = drv_m_list
+        self.parameters['num_bits'] = num_bits
+        self.parameters['c_m'] = c_m
+        self.parameters['rdx_array'] = rdx_array
+        self.parameters['m_mirror'] = m_mirror
+        self.parameters['m_bias'] = m_bias
+        self.parameters['m_in'] = m_in
+        self.parameters['m_off'] = m_off
+        self.parameters['m_bias_dum'] = m_bias_dum
+        self.parameters['m_in_dum'] = m_in_dum
+        self.parameters['m_byp'] = m_byp
+        self.parameters['m_byp_bias'] = m_byp_bias
+        self.parameters['bias_current'] = bias_current
+        self.parameters['vref_sf'] = vref_sf
+        self.parameters['device_intent'] = device_intent
+
+        #self.replace_instance_master('ISA0', 'adc_sar_templates', 'doubleSA_pmos')
+        if doubleSA==False:
+            self.instances['ISA0'].design(lch=lch, pw=pw, nw=nw, m=sa_m, m_rst=sa_m_rst, m_rgnn=sa_m_rgnn,
+                                          m_buf=sa_m_buf, device_intent=device_intent)
+        if doubleSA==True:
+            self.replace_instance_master('ISA0', 'adc_sar_templates', 'doubleSA_pmos')
+            self.instances['ISA0'].design(lch=lch, pw=pw, nw=nw, m=sa_m, m_rst=sa_m_rst, m_rgnn=sa_m_rgnn,
+                                          m_buf=sa_m_buf, m_d=sa_m_d, m_rst_d=sa_m_rst_d, m_rgnp_d=sa_m_rgnp_d,
+                                          device_intent=device_intent)
+        self.instances['ICDRVP0'].design(lch=lch, pw=pw, nw=nw, num_bits=num_bits, m_list=drv_m_list, device_intent=device_intent)
+        self.instances['ICDRVM0'].design(lch=lch, pw=pw, nw=nw, num_bits=num_bits, m_list=drv_m_list, device_intent=device_intent)
+        self.instances['ICAPP0'].design(num_bits=num_bits, c_m=c_m, rdx_array=rdx_array)
+        self.instances['ICAPM0'].design(num_bits=num_bits, c_m=c_m, rdx_array=rdx_array)
+        #VOL/VOR
+        self.reconnect_instance_terminal(inst_name='ICAPP0', term_name='I<%d:0>'%(num_bits-1), net_name='VOL<%d:0>'%(num_bits-1))
+        self.reconnect_instance_terminal(inst_name='ICAPM0', term_name='I<%d:0>'%(num_bits-1), net_name='VOR<%d:0>'%(num_bits-1))
+        self.reconnect_instance_terminal(inst_name='ICDRVP0', term_name='VO<%d:0>'%(num_bits-1), net_name='VOL<%d:0>'%(num_bits-1))
+        self.reconnect_instance_terminal(inst_name='ICDRVM0', term_name='VO<%d:0>'%(num_bits-1), net_name='VOR<%d:0>'%(num_bits-1))
+        self.rename_pin('VOL', 'VOL<%d:0>'%(num_bits-1))
+        self.rename_pin('VOR', 'VOR<%d:0>'%(num_bits-1))
+        #EN
+        pin_en=','.join(['EN%d<2:0>'%i for i in range(num_bits)])
+        pin_enl=','.join(['ENL%d<2:0>'%i for i in range(num_bits)])
+        pin_enr=','.join(['ENR%d<2:0>'%i for i in range(num_bits)])
+        '''
+        pin_enl=''
+        pin_enr=''
+        for i in range(num_bits):
+            pin_en=pin_en+'EN%d<2:0>'%i
+            pin_enl=pin_enl+'ENL%d<2:0>'%i
+            pin_enr=pin_enr+'ENR%d<2:0>'%i
+            if i<num_bits-1:
+                pin_enl=pin_enl+','
+                pin_enr=pin_enr+','
+        '''
+        self.reconnect_instance_terminal(inst_name='ICDRVP0', term_name=pin_en, net_name=pin_enl)
+        self.reconnect_instance_terminal(inst_name='ICDRVM0', term_name=pin_en, net_name=pin_enr)
+        self.rename_pin('ENL0<2:0>', pin_enl)
+        self.rename_pin('ENR0<2:0>', pin_enr)
+
+        if vref_sf == False:
+            self.delete_instance('ISF')
+            self.remove_pin('SF_bypass')
+            self.remove_pin('SF_VBIAS')
+        else:
+            self.instances['ISF'].design(lch=lch, nw=nw, m_mirror=m_mirror, m_bias=m_bias, m_off=m_off, m_in=m_in,
+                                        m_bias_dum=m_bias_dum, m_in_dum=m_in_dum, m_byp=m_byp, m_byp_bias=m_byp_bias,
+                                        bias_current=bias_current, device_intent=device_intent)
+            self.reconnect_instance_terminal(inst_name='ICDRVM0', term_name='VREF<2:0>',
+                                             net_name='SF_VREF<2:0>')
+            self.reconnect_instance_terminal(inst_name='ICDRVP0', term_name='VREF<2:0>',
+                                             net_name='SF_VREF<2:0>')
+            self.reconnect_instance_terminal(inst_name='ICAPM0', term_name='I_C0',
+                                             net_name='SF_VREF<1>')
+            self.reconnect_instance_terminal(inst_name='ICAPP0', term_name='I_C0',
+                                             net_name='SF_VREF<1>')
+
+    def get_layout_params(self, **kwargs):
+        """Returns a dictionary with layout parameters.
+
+        This method computes the layout parameters used to generate implementation's
+        layout.  Subclasses should override this method if you need to run post-extraction
+        layout.
+
+        Parameters
+        ----------
+        kwargs :
+            any extra parameters you need to generate the layout parameters dictionary.
+            Usually you specify layout-specific parameters here, like metal layers of
+            input/output, customizable wire sizes, and so on.
+
+        Returns
+        -------
+        params : dict[str, any]
+            the layout parameters dictionary.
+        """
+        return {}
+
+    def get_layout_pin_mapping(self):
+        """Returns the layout pin mapping dictionary.
+
+        This method returns a dictionary used to rename the layout pins, in case they are different
+        than the schematic pins.
+
+        Returns
+        -------
+        pin_mapping : dict[str, str]
+            a dictionary from layout pin names to schematic pin names.
+        """
+        return {}

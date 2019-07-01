@@ -1,0 +1,96 @@
+lib_name: clk_dis_templates
+cell_name: clk_dis_cell_s2
+pins: [ "I", "VDD", "VSS", "ST", "RST", "CAL", "CLKI", "CLKO", "O", "CAPSW" ]
+instances:
+  I0:
+    lib_name: logic_templates_zk
+    cell_name: dff_strsth_ckb
+    instpins:
+      ST:
+        direction: input
+        net_name: "ST"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "CLKI"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  I4:
+    lib_name: clk_dis_templates
+    cell_name: cap_sw_array
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VO:
+        direction: inputOutput
+        net_name: "CAPSW"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "CAL"
+        num_bits: 1
+  I2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "ENB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+  I1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "CLKO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ENB"
+        num_bits: 1

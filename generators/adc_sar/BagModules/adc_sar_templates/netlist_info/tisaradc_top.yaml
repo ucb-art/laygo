@@ -1,0 +1,572 @@
+lib_name: adc_sar_templates
+cell_name: tisaradc_top
+pins: [ "clkgbias<7:0>", "osm7<7:0>", "osm6<7:0>", "osm5<7:0>", "osm4<7:0>", "osm3<7:0>", "osm2<7:0>", "osm1<7:0>", "osm0<7:0>", "osp7<7:0>", "osp6<7:0>", "osp5<7:0>", "osp4<7:0>", "osp3<7:0>", "osp2<7:0>", "osp1<7:0>", "osp0<7:0>", "vref1<7:0>", "ADCINM", "ADCINP", "VDDADC", "VSS", "clkout_des", "extsel_clk", "vref0<7:0>", "vref2<7:0>", "asclkd<3:0>", "adcout", "VDDHADC", "ADCBIAS<2:0>", "clkgcal2<4:0>", "clkgcal3<4:0>", "clkgcal4<4:0>", "clkgcal5<4:0>", "clkgcal6<4:0>", "clkgcal7<4:0>", "CLKIP", "CLKIN", "RSTP", "RSTN", "VREF<2:0>", "clkgcal0<4:0>", "clkgcal1<4:0>" ]
+instances:
+  IBIAS0:
+    lib_name: adc_sar_templates
+    cell_name: sarbias_top
+    instpins:
+      ADCBIAS<2:0>:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "VDDADC"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VOSM0:
+        direction: output
+        net_name: "VOSM0"
+        num_bits: 1
+      VOSM1:
+        direction: output
+        net_name: "VOSM1"
+        num_bits: 1
+      VOSM2:
+        direction: output
+        net_name: "VOSM2"
+        num_bits: 1
+      VOSM3:
+        direction: output
+        net_name: "VOSM3"
+        num_bits: 1
+      VOSM4:
+        direction: output
+        net_name: "VOSM4"
+        num_bits: 1
+      VOSM5:
+        direction: output
+        net_name: "VOSM5"
+        num_bits: 1
+      VOSM6:
+        direction: output
+        net_name: "VOSM6"
+        num_bits: 1
+      VOSM7:
+        direction: output
+        net_name: "VOSM7"
+        num_bits: 1
+      VOSP0:
+        direction: output
+        net_name: "VOSP0"
+        num_bits: 1
+      VOSP1:
+        direction: output
+        net_name: "VOSP1"
+        num_bits: 1
+      VOSP2:
+        direction: output
+        net_name: "VOSP2"
+        num_bits: 1
+      VOSP3:
+        direction: output
+        net_name: "VOSP3"
+        num_bits: 1
+      VOSP4:
+        direction: output
+        net_name: "VOSP4"
+        num_bits: 1
+      VOSP5:
+        direction: output
+        net_name: "VOSP5"
+        num_bits: 1
+      VOSP6:
+        direction: output
+        net_name: "VOSP6"
+        num_bits: 1
+      VOSP7:
+        direction: output
+        net_name: "VOSP7"
+        num_bits: 1
+      VREF<2:0>:
+        direction: output
+        net_name: "VREF<2:0>"
+        num_bits: 3
+      DUM0<7:0>:
+        direction: input
+        net_name: "clkgbias<7:0>"
+        num_bits: 8
+      OSM0<7:0>:
+        direction: input
+        net_name: "osm0<7:0>"
+        num_bits: 8
+      OSM1<7:0>:
+        direction: input
+        net_name: "osm1<7:0>"
+        num_bits: 8
+      OSM2<7:0>:
+        direction: input
+        net_name: "osm2<7:0>"
+        num_bits: 8
+      OSM3<7:0>:
+        direction: input
+        net_name: "osm3<7:0>"
+        num_bits: 8
+      OSM4<7:0>:
+        direction: input
+        net_name: "osm4<7:0>"
+        num_bits: 8
+      OSM5<7:0>:
+        direction: input
+        net_name: "osm5<7:0>"
+        num_bits: 8
+      OSM6<7:0>:
+        direction: input
+        net_name: "osm6<7:0>"
+        num_bits: 8
+      OSM7<7:0>:
+        direction: input
+        net_name: "osm7<7:0>"
+        num_bits: 8
+      OSP0<7:0>:
+        direction: input
+        net_name: "osp0<7:0>"
+        num_bits: 8
+      OSP1<7:0>:
+        direction: input
+        net_name: "osp1<7:0>"
+        num_bits: 8
+      OSP2<7:0>:
+        direction: input
+        net_name: "osp2<7:0>"
+        num_bits: 8
+      OSP3<7:0>:
+        direction: input
+        net_name: "osp3<7:0>"
+        num_bits: 8
+      OSP4<7:0>:
+        direction: input
+        net_name: "osp4<7:0>"
+        num_bits: 8
+      OSP5<7:0>:
+        direction: input
+        net_name: "osp5<7:0>"
+        num_bits: 8
+      OSP6<7:0>:
+        direction: input
+        net_name: "osp6<7:0>"
+        num_bits: 8
+      OSP7<7:0>:
+        direction: input
+        net_name: "osp7<7:0>"
+        num_bits: 8
+      REF0<7:0>:
+        direction: input
+        net_name: "vref0<7:0>"
+        num_bits: 8
+      REF1<7:0>:
+        direction: input
+        net_name: "vref1<7:0>"
+        num_bits: 8
+      REF2<7:0>:
+        direction: input
+        net_name: "vref2<7:0>"
+        num_bits: 8
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN20:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN44:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN45:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN46:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN47:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN48:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN49:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN50:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN51:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN29:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN52:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN53:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN54:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN32:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN31:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN36:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN35:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN34:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN33:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN30:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN38:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN37:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN21:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN42:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN43:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN41:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN40:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN62:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN39:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN99:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN55:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN19:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN18:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  I3<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal1<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL1<4:0>"
+        num_bits: 5
+  I2<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal0<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL0<4:0>"
+        num_bits: 5
+  I4<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal2<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL2<4:0>"
+        num_bits: 5
+  I5<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal3<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL3<4:0>"
+        num_bits: 5
+  I6<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal4<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL4<4:0>"
+        num_bits: 5
+  I7<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal5<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL5<4:0>"
+        num_bits: 5
+  I8<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal6<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL6<4:0>"
+        num_bits: 5
+  I9<4:0>:
+    lib_name: ge_tech_logic_templates
+    cell_name: inv_2x
+    instpins:
+      I:
+        direction: input
+        net_name: "clkgcal7<4:0>"
+        num_bits: 5
+      VSS:
+        direction: inputOutput
+        net_name: "<*5>VSS"
+        num_bits: 5
+      VDD:
+        direction: inputOutput
+        net_name: "<*5>VDDADC"
+        num_bits: 5
+      O:
+        direction: output
+        net_name: "CLKCAL7<4:0>"
+        num_bits: 5
+  IBODY0:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_body
+    instpins:
+      ADCOUT:
+        direction: output
+        net_name: "adcout"
+        num_bits: 1
+      ASCLKD<3:0>:
+        direction: input
+        net_name: "asclkd<3:0>"
+        num_bits: 4
+      CLKCAL:
+        direction: input
+        net_name: "CLKCAL"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "extsel_clk"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      RSTN:
+        direction: input
+        net_name: "RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "RSTP"
+        num_bits: 1
+      CLKIN:
+        direction: input
+        net_name: "CLKIN"
+        num_bits: 1
+      CLKIP:
+        direction: input
+        net_name: "CLKIP"
+        num_bits: 1
+      VDDSAMP:
+        direction: inputOutput
+        net_name: "VDDHADC"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDDSAR:
+        direction: inputOutput
+        net_name: "VDDADC"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "ADCINM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "ADCINP"
+        num_bits: 1
+      CLKOUT_DES:
+        direction: output
+        net_name: "clkout_des"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3

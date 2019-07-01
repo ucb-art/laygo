@@ -1,0 +1,584 @@
+lib_name: adc_sar_templates
+cell_name: salatch_pmos_tb_tran
+pins: [  ]
+instances:
+  XDUT0:
+    lib_name: adc_sar_templates
+    cell_name: salatch_pmos
+    instpins:
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      INTM:
+        direction: output
+        net_name: "INTM"
+        num_bits: 1
+      INTP:
+        direction: output
+        net_name: "INTP"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      OUTM:
+        direction: output
+        net_name: "OUTM"
+        num_bits: 1
+      OUTP:
+        direction: output
+        net_name: "OUTP"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+  I41:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I40:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I39:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I47:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I46:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I45:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I43:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I49:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I32:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I50:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I31:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I26:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I25:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I19:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I18:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I17:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I16:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I34:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I35:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I6:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I42:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I2:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I1:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V10:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "INCM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V6:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "OSM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V5:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "OSP"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VSS0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VDD0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V8:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "INDM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VCLK:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "CLKB"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  C6:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS_CUR"
+        num_bits: 1
+  C3:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INTM"
+        num_bits: 1
+  C2:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INTP"
+        num_bits: 1
+  C8:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "OUTM"
+        num_bits: 1
+  C7:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "OUTP"
+        num_bits: 1
+  I44:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "OUTCM"
+        num_bits: 1
+  I30:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "OUTDM"
+        num_bits: 1
+  I29:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "INTDM"
+        num_bits: 1
+  I27:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "INTCM"
+        num_bits: 1
+  F0:
+    lib_name: analogLib
+    cell_name: cccs
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS_CUR"
+        num_bits: 1
+  E4:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "INTP"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "INTM"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INTDM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  E9:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "OUTP"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "OUTM"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "OUTDM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  E5:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "INTP"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "net4"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "INTM"
+        num_bits: 1
+  E10:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "INDM"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "INCM"
+        num_bits: 1
+  E11:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "INDM"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INP"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "INCM"
+        num_bits: 1
+  E6:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "net4"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "INTCM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  E8:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "net3"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "OUTCM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  E7:
+    lib_name: analogLib
+    cell_name: vcvs
+    instpins:
+      NC+:
+        direction: inputOutput
+        net_name: "OUTP"
+        num_bits: 1
+      NC-:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "net3"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "OUTM"
+        num_bits: 1

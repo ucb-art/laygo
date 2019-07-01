@@ -1,0 +1,412 @@
+lib_name: adc_sar_templates_fdsoi
+cell_name: capdac_tester
+pins: [ "O" ]
+instances:
+  ICDAC0:
+    lib_name: adc_sar_templates
+    cell_name: capdac
+    instpins:
+      I:
+        direction: input
+        net_name: "I<0>"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      I_C0:
+        direction: input
+        net_name: "gnd!"
+        num_bits: 1
+  I13:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I12:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I1:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I11:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I10:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I9:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I8:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I7:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I6:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I5:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I4:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I3:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VCM0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V9:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net2"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V2:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net3"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V8:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net6"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V7:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net11"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V6:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net10"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V5:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net9"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V4:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net8"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V3:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net7"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V1:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net5"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V0:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "net4"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  S9:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<9>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net2"
+        num_bits: 1
+  S8:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<8>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net3"
+        num_bits: 1
+  S7:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<2>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net6"
+        num_bits: 1
+  S6:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<7>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net11"
+        num_bits: 1
+  S5:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<6>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net10"
+        num_bits: 1
+  S4:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<5>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net9"
+        num_bits: 1
+  S3:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<4>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net8"
+        num_bits: 1
+  S2:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<3>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net7"
+        num_bits: 1
+  S1:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<1>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net5"
+        num_bits: 1
+  S0:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<0>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "net4"
+        num_bits: 1
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

@@ -1,0 +1,3 @@
+projectDir = '"/tools/scratch/jdhan/simulation"
+designInfo = '("adc_sar_testbenches" "capdac_8b_tb_noise" "schematic" "spectre")
+descriptionText = "None"

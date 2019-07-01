@@ -1,0 +1,19 @@
+#General parameters
+device_intent: fast
+lch: 1.6e-08
+nw: 4
+pw: 4
+#SUBSER size
+m_dff: 1 
+m_cbuf1: 2
+m_cbuf2: 8
+m_pbuf1: 2
+m_pbuf2: 8
+m_mux: 2 
+m_out: 2
+#SER_2to1_halfrate size
+m_ser: 2
+#DES dff size
+m_des_dff: 2
+des_clkbuf_list: [1, 2, 8, 32]
+des_divbuf_list: [1, 2, 8, 32]

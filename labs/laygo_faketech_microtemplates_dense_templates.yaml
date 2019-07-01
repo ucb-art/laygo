@@ -1,0 +1,335 @@
+laygo_faketech_microtemplates_dense:
+  nmos4_fast_boundary:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  nmos4_fast_center_2stack:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [-0.075, 0.625]
+        xy1: [0.075, 0.775]
+      G1:
+        layer: [M1, pin]
+        netname: G1
+        xy0: [0.325, 0.625]
+        xy1: [0.475, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  nmos4_fast_center_nf1_left:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [-0.075, 0.625]
+        xy1: [0.075, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  nmos4_fast_center_nf1_right:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [0.125, 0.625]
+        xy1: [0.275, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  nmos4_fast_center_nf2:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [0.125, 0.625]
+        xy1: [0.275, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+      S1:
+        layer: [M1, pin]
+        netname: S1
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  nmos4_fast_dmy_nf2:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+      S1:
+        layer: [M1, pin]
+        netname: S1
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  nmos4_fast_left:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [1.2, 0.9]
+  nmos4_fast_right:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [1.2, 0.9]
+  nmos4_fast_space:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  nmos4_fast_space_1x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  nmos4_fast_space_2x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  nmos4_fast_space_4x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.8, 0.9]
+  nmos4_fast_space_nf2:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  nmos4_fast_space_nf4:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.8, 0.9]
+  nmos4_fast_tap:
+    pins:
+      TAP0:
+        layer: [M1, pin]
+        netname: VSS
+        xy0: [0.55, 0.2]
+        xy1: [0.65, 0.5]
+      VSS:
+        layer: [M1, pin]
+        netname: VSS
+        xy0: [0.75, 0.2]
+        xy1: [0.85, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [1.4, 0.9]
+  pmos4_fast_boundary:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  pmos4_fast_center_2stack:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [-0.075, 0.625]
+        xy1: [0.075, 0.775]
+      G1:
+        layer: [M1, pin]
+        netname: G1
+        xy0: [0.325, 0.625]
+        xy1: [0.475, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  pmos4_fast_center_nf1_left:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [-0.075, 0.625]
+        xy1: [0.075, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  pmos4_fast_center_nf1_right:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [0.125, 0.625]
+        xy1: [0.275, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  pmos4_fast_center_nf2:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      G0:
+        layer: [M1, pin]
+        netname: G0
+        xy0: [0.125, 0.625]
+        xy1: [0.275, 0.775]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+      S1:
+        layer: [M1, pin]
+        netname: S1
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  pmos4_fast_dmy_nf2:
+    pins:
+      D0:
+        layer: [M1, pin]
+        netname: D0
+        xy0: [0.15, 0.2]
+        xy1: [0.25, 0.5]
+      S0:
+        layer: [M1, pin]
+        netname: S0
+        xy0: [-0.05, 0.2]
+        xy1: [0.05, 0.5]
+      S1:
+        layer: [M1, pin]
+        netname: S1
+        xy0: [0.35, 0.2]
+        xy1: [0.45, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  pmos4_fast_left:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [1.2, 0.9]
+  pmos4_fast_right:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [1.2, 0.9]
+  pmos4_fast_space:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  pmos4_fast_space_1x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 0.9]
+  pmos4_fast_space_2x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  pmos4_fast_space_4x:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.8, 0.9]
+  pmos4_fast_space_nf2:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.4, 0.9]
+  pmos4_fast_space_nf4:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.8, 0.9]
+  pmos4_fast_tap:
+    pins:
+      TAP0:
+        layer: [M1, pin]
+        netname: VSS
+        xy0: [0.55, 0.2]
+        xy1: [0.65, 0.5]
+      VSS:
+        layer: [M1, pin]
+        netname: VSS
+        xy0: [0.75, 0.2]
+        xy1: [0.85, 0.5]
+    xy0: [0.0, 0.0]
+    xy1: [1.4, 0.9]
+  via_M1_M2_0:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]
+  via_M1_M2_1:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]
+  via_M2_M3_0:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]
+  via_M2_M3_1:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]
+  via_M3_M4_0:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]
+  via_M3_M4_1:
+    pins: {}
+    xy0: [0.0, 0.0]
+    xy1: [0.0, 0.0]

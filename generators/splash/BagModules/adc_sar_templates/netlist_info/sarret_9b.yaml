@@ -1,0 +1,220 @@
+lib_name: adc_sar_templates
+cell_name: sarret_9b
+pins: [ "VDD", "VSS", "OUT<8:0>", "IN<8:0>", "CLK" ]
+instances:
+  I6:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<6>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<6>"
+        num_bits: 1
+  I7:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<7>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<7>"
+        num_bits: 1
+  I3:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<3>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<3>"
+        num_bits: 1
+  I8:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<8>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<8>"
+        num_bits: 1
+  I0:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<0>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<0>"
+        num_bits: 1
+  I4:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<4>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<4>"
+        num_bits: 1
+  I5:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<5>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<5>"
+        num_bits: 1
+  I1:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<1>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<1>"
+        num_bits: 1
+  I2:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT<2>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN<2>"
+        num_bits: 1

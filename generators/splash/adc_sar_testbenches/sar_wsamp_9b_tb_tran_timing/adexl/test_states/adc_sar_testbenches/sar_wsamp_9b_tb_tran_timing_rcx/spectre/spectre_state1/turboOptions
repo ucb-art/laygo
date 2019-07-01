@@ -1,0 +1,17 @@
+(turboOpts apsplus) t
+(turboOpts cktpreset) "None"
+(turboOpts digitalinstvalue) nil
+(turboOpts digitalspeed) "2"
+(turboOpts digitalsubcktvalue) nil
+(turboOpts errorLevel) "Do not override"
+(turboOpts mtOption) "Auto"
+(turboOpts numThreads) ""
+(turboOpts preserveInst) nil
+(turboOpts preserveOption) "None"
+(turboOpts proc_affinity) ""
+(turboOpts psrFmax) ""
+(turboOpts psrOption) "Default"
+(turboOpts psrSwitch) t
+(turboOpts uniMode) "APS"
+(turboOpts virtualgroundnodesblocks) nil
+(turboOpts virtualpowernodes) nil

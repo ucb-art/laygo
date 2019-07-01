@@ -1,0 +1,108 @@
+lib_name: adc_sar_templates
+cell_name: sourceFollower_diff
+pins: [ "VDD", "VSS", "bypass", "inp", "inn", "Voffp", "Voffn", "outp", "outn", "VBIAS" ]
+instances:
+  PIN9:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  I1:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower
+    instpins:
+      bypass:
+        direction: input
+        net_name: "bypass"
+        num_bits: 1
+      Voff:
+        direction: inputOutput
+        net_name: "Voffp"
+        num_bits: 1
+      VBIAS:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "outp"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "inp"
+        num_bits: 1
+  I0:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower
+    instpins:
+      bypass:
+        direction: input
+        net_name: "bypass"
+        num_bits: 1
+      Voff:
+        direction: inputOutput
+        net_name: "Voffn"
+        num_bits: 1
+      VBIAS:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "outn"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "inn"
+        num_bits: 1

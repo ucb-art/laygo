@@ -1,0 +1,232 @@
+lib_name: adc_sar_templates
+cell_name: sarlogic
+pins: [ "SAOPB", "SAOMB", "RST", "SB", "ZP", "ZM", "ZMID", "VDD", "VSS" ]
+instances:
+  IND0:
+    lib_name: logic_templates
+    cell_name: nand
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDNDO"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDNO"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "LDPO"
+        num_bits: 1
+  IBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDPO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZP"
+        num_bits: 1
+  IBUF2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDNDO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZMID"
+        num_bits: 1
+  IBUF1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDNO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZM"
+        num_bits: 1
+  IINV3:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net03"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDNO"
+        num_bits: 1
+  IINV2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net5"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDPO"
+        num_bits: 1
+  IINV1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "VMINUS"
+        num_bits: 1
+  IINV0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "VPLUS"
+        num_bits: 1
+  IOAI1:
+    lib_name: logic_templates
+    cell_name: oai22
+    instpins:
+      D:
+        direction: input
+        net_name: "SB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net03"
+        num_bits: 1
+      C:
+        direction: input
+        net_name: "VMINUS"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDNO"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  IOAI0:
+    lib_name: logic_templates
+    cell_name: oai22
+    instpins:
+      D:
+        direction: input
+        net_name: "SB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net5"
+        num_bits: 1
+      C:
+        direction: input
+        net_name: "VPLUS"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDPO"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "RST"
+        num_bits: 1

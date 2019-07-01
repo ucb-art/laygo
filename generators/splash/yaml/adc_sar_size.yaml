@@ -1,0 +1,45 @@
+adc_retimer: {m: 2}
+capdac: {c_m: 1, num_bits_horizontal: 2, num_bits_vertical: 6}
+capdrv:
+  m_list: [2, 2, 2, 2, 2, 2, 2, 2]
+  space_offset: 0
+dcap2_m: 19
+device_intent: ulvt
+lch: 3.0e-08
+m_dcap2: 18
+num_space_samp: 38
+num_space_sar: 52
+nw: 4
+pw: 4
+salatch: {m: 12, m_buf: 12, m_d: 12, m_rgnn: 12, m_rgnp_d: 12, m_rst: 6, m_rst_d: 6}
+salatch_preset:
+  m: [4, 8, 12, 16]
+  m_buf: [4, 8, 12, 16]
+  m_rgnn: [4, 8, 12, 16]
+  m_rst: [2, 4, 6, 8]
+sarabe_m_space_left_4x: 0
+sarclkgen: {fast: true, fo: 4, m: 2, ndelay: 1}
+sarfsm: {m: 2}
+sarlogic: {m: 4, m_dl: 2, m_xor: 4, m_buf: 8, num_inv_bb: 4, num_inv_dl: 5}
+sarret: {fo: 2, m: 1}
+sarsamp:
+  m_inbuf_list: [16, 24]
+  m_outbuf_list: [8, 32]
+  m_sw: 4
+  m_sw_arr: 4
+sarsamp_preset:
+  m_inbuf_list:
+  - [4, 6]
+  - [8, 12]
+  - [16, 24]
+  - [24, 36]
+  - [32, 48]
+  m_outbuf_list:
+  - [2, 8]
+  - [4, 16]
+  - [8, 32]
+  - [12, 48]
+  - [16, 64]
+  m_sw: [4, 4, 4, 4, 4]
+  m_sw_arr: [2, 4, 8, 12, 16]
+slice_order: [0, 2, 4, 6, 1, 3, 5, 7]

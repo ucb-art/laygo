@@ -1,0 +1,64 @@
+lib_name: adc_sar_templates
+cell_name: sarclkgen_core2
+pins: [ "VDD", "VSS", "CLKB", "DONE", "B", "A" ]
+instances:
+  IN0:
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "DONE"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "CLKB"
+        num_bits: 1
+  IP2:
+    lib_name: BAG_prim
+    cell_name: pmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "DONE"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "B"
+        num_bits: 1
+  IP1:
+    lib_name: BAG_prim
+    cell_name: pmos4_fast
+    instpins:
+      S:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      D:
+        direction: inputOutput
+        net_name: "DONE"
+        num_bits: 1
+      B:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      G:
+        direction: inputOutput
+        net_name: "A"
+        num_bits: 1

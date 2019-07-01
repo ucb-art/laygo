@@ -1,0 +1,366 @@
+1d0
+< #!/usr/bin/env python3
+4,5c3,4
+< # laygo_documentation documentation build configuration file, created by
+< # sphinx-quickstart on Mon May 22 22:22:10 2017.
+---
+> # BAG documentation build configuration file, created by
+> # sphinx-quickstart on Fri May 27 15:45:44 2016.
+15a15,17
+> import sys
+> import os
+> 
+19,22c21
+< #
+< # import os
+< # import sys
+< # sys.path.insert(0, os.path.abspath('.'))
+---
+> sys.path.insert(0, os.path.abspath('../..'))
+27,28c26
+< #
+< # needs_sphinx = '1.0'
+---
+> #needs_sphinx = '1.0'
+33a32
+>     'sphinx.ext.autosummary',
+35c34,45
+<     'sphinxcontrib.napoleon',
+---
+>     'sphinx.ext.imgmath',
+>     'sphinx.ext.doctest',
+>     'sphinx.ext.intersphinx',
+>     'sphinx.ext.todo',
+>     'sphinx.ext.coverage',
+>     'sphinx.ext.viewcode',
+>     'sphinx.ext.githubpages',
+>     # napoleon has better support for class instance attribute than numpydoc.
+>     'sphinx.ext.napoleon',
+>     # 'numpydoc',
+>     'IPython.sphinxext.ipython_console_highlighting',
+>     # 'IPython.sphinxext.ipython_directive',
+38,43c48,49
+< #markdown support
+< from recommonmark.parser import CommonMarkParser
+< 
+< source_parsers = {
+<    '.md': 'recommonmark.parser.CommonMarkParser',
+< }
+---
+> # make numpydoc work with autosummary
+> numpydoc_show_class_members = False
+50,52c56,57
+< #
+< source_suffix = ['.rst', '.md']
+< #source_suffix = '.rst'
+---
+> # source_suffix = ['.rst', '.md']
+> source_suffix = '.rst'
+55,56c60
+< #
+< # source_encoding = 'utf-8-sig'
+---
+> #source_encoding = 'utf-8-sig'
+62,65c66,68
+< project = 'laygo_documentation'
+< #project = 'laygo'
+< copyright = '2017, Jaeduk Han'
+< author = 'Jaeduk Han'
+---
+> project = u'BAG'
+> copyright = u'2016, Eric Chang'
+> author = u'Eric Chang'
+72c75
+< version = '1.0'
+---
+> version = u'2.0'
+74c77
+< release = '1.0'
+---
+> release = u'2.0'
+85,87c88
+< #
+< # today = ''
+< #
+---
+> #today = ''
+89,90c90
+< #
+< # today_fmt = '%B %d, %Y'
+---
+> #today_fmt = '%B %d, %Y'
+95,96c95
+< #exclude_patterns = ['**/*lab*']
+< exclude_patterns = ['api/laygo.labs.rst']
+---
+> exclude_patterns = []
+100,101c99
+< #
+< # default_role = None
+---
+> default_role = 'any'
+104,105c102
+< #
+< # add_function_parentheses = True
+---
+> #add_function_parentheses = True
+109,110c106
+< #
+< # add_module_names = True
+---
+> #add_module_names = True
+114,115c110
+< #
+< # show_authors = False
+---
+> #show_authors = False
+121c116
+< # modindex_common_prefix = []
+---
+> #modindex_common_prefix = []
+124c119
+< # keep_warnings = False
+---
+> #keep_warnings = False
+127c122
+< todo_include_todos = False
+---
+> todo_include_todos = True
+134d128
+< #
+136d129
+< #html_theme = 'classic'
+141,142c134
+< #
+< # html_theme_options = {}
+---
+> #html_theme_options = {}
+145c137
+< # html_theme_path = []
+---
+> #html_theme_path = []
+149,150c141
+< #
+< # html_title = 'laygo_documentation v1.0'
+---
+> #html_title = u'BAG v2.0'
+153,154c144
+< #
+< # html_short_title = None
+---
+> #html_short_title = None
+158,159c148
+< #
+< # html_logo = None
+---
+> #html_logo = None
+164,165c153
+< #
+< # html_favicon = None
+---
+> #html_favicon = None
+170c158
+< html_static_path = ['_static']
+---
+> html_static_path = []
+175,176c163
+< #
+< # html_extra_path = []
+---
+> #html_extra_path = []
+181,182c168
+< #
+< # html_last_updated_fmt = None
+---
+> #html_last_updated_fmt = None
+186,187c172
+< #
+< # html_use_smartypants = True
+---
+> #html_use_smartypants = True
+190,191c175
+< #
+< # html_sidebars = {}
+---
+> #html_sidebars = {}
+195,196c179
+< #
+< # html_additional_pages = {}
+---
+> #html_additional_pages = {}
+199,200c182
+< #
+< # html_domain_indices = True
+---
+> #html_domain_indices = True
+203,204c185
+< #
+< # html_use_index = True
+---
+> #html_use_index = True
+207,208c188
+< #
+< # html_split_index = False
+---
+> #html_split_index = False
+211,212c191
+< #
+< # html_show_sourcelink = True
+---
+> #html_show_sourcelink = True
+215,216c194
+< #
+< # html_show_sphinx = True
+---
+> #html_show_sphinx = True
+219,220c197
+< #
+< # html_show_copyright = True
+---
+> #html_show_copyright = True
+225,226c202
+< #
+< # html_use_opensearch = ''
+---
+> #html_use_opensearch = ''
+229c205
+< # html_file_suffix = None
+---
+> #html_file_suffix = None
+233,236c209,211
+< #   'da', 'de', 'en', 'es', 'fi', 'fr', 'h', 'it', 'ja'
+< #   'nl', 'no', 'pt', 'ro', 'r', 'sv', 'tr', 'zh'
+< #
+< # html_search_language = 'en'
+---
+> #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
+> #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'
+> #html_search_language = 'en'
+241,242c216
+< #
+< # html_search_options = {'type': 'default'}
+---
+> #html_search_options = {'type': 'default'}
+246,247c220
+< #
+< # html_search_scorer = 'scorer.js'
+---
+> #html_search_scorer = 'scorer.js'
+250c223
+< htmlhelp_basename = 'laygo_documentationdoc'
+---
+> htmlhelp_basename = 'BAGdoc'
+255,269c228,238
+<      # The paper size ('letterpaper' or 'a4paper').
+<      #
+<      # 'papersize': 'letterpaper',
+< 
+<      # The font size ('10pt', '11pt' or '12pt').
+<      #
+<      # 'pointsize': '10pt',
+< 
+<      # Additional stuff for the LaTeX preamble.
+<      #
+<      # 'preamble': '',
+< 
+<      # Latex figure (float) alignment
+<      #
+<      # 'figure_align': 'htbp',
+---
+> # The paper size ('letterpaper' or 'a4paper').
+> #'papersize': 'letterpaper',
+> 
+> # The font size ('10pt', '11pt' or '12pt').
+> #'pointsize': '10pt',
+> 
+> # Additional stuff for the LaTeX preamble.
+> #'preamble': '',
+> 
+> # Latex figure (float) alignment
+> #'figure_align': 'htbp',
+276,277c245,246
+<     (master_doc, 'laygo_documentation.tex', 'laygo Documentation',
+<      'Jaeduk Han', 'manual'),
+---
+>     (master_doc, 'BAG.tex', u'BAG Documentation',
+>      u'Eric Chang', 'manual'),
+282,283c251
+< #
+< # latex_logo = None
+---
+> #latex_logo = None
+287,288c255
+< #
+< # latex_use_parts = False
+---
+> #latex_use_parts = False
+291,292c258
+< #
+< # latex_show_pagerefs = False
+---
+> #latex_show_pagerefs = False
+295,296c261
+< #
+< # latex_show_urls = False
+---
+> #latex_show_urls = False
+299,306c264
+< #
+< # latex_appendices = []
+< 
+< # It false, will not define \strong, \code, 	itleref, \crossref ... but only
+< # \sphinxstrong, ..., \sphinxtitleref, ... To help avoid clash with user added
+< # packages.
+< #
+< # latex_keep_old_macro_names = True
+---
+> #latex_appendices = []
+309,310c267
+< #
+< # latex_domain_indices = True
+---
+> #latex_domain_indices = True
+318c275
+<     (master_doc, 'laygo_documentation', 'laygo Documentation',
+---
+>     (master_doc, 'bag', u'BAG Documentation',
+323,324c280
+< #
+< # man_show_urls = False
+---
+> #man_show_urls = False
+333,334c289,290
+<     (master_doc, 'laygo_documentation', 'laygo Documentation',
+<      author, 'laygo_documentation', 'One line description of project.',
+---
+>     (master_doc, 'BAG', u'BAG Documentation',
+>      author, 'BAG', 'One line description of project.',
+339,340c295
+< #
+< # texinfo_appendices = []
+---
+> #texinfo_appendices = []
+343,344c298
+< #
+< # texinfo_domain_indices = True
+---
+> #texinfo_domain_indices = True
+347,348c301
+< #
+< # texinfo_show_urls = 'footnote'
+---
+> #texinfo_show_urls = 'footnote'
+351,352c304,313
+< #
+< # texinfo_no_detailmenu = False
+---
+> #texinfo_no_detailmenu = False
+> 
+> 
+> # Example configuration for intersphinx: refer to the Python standard library.
+> intersphinx_mapping = {
+>     'python': ('https://docs.python.org/3.5', None),
+>     'python3': ('https://docs.python.org/3.5', None),
+>     'python2': ('https://docs.python.org/2.7', None),
+>     'numpy': ('http://docs.scipy.org/doc/numpy/', None),
+>     }

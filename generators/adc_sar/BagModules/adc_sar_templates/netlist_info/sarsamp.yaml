@@ -1,0 +1,120 @@
+lib_name: adc_sar_templates
+cell_name: sarsamp
+pins: [ "inp", "inn", "outp", "outn", "VSS", "VDD", "ckin", "ckout", "ckpg" ]
+instances:
+  ISWP0:
+    lib_name: logic_templates
+    cell_name: nsw_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "outp"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "inp"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "ckpg"
+        num_bits: 1
+  ISWN0:
+    lib_name: logic_templates
+    cell_name: nsw_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "outn"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "inn"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "ckpg"
+        num_bits: 1
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  IBUFA0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "ckin"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ckpg"
+        num_bits: 1
+  IBUFB0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "ckpg"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ckout"
+        num_bits: 1
+  PIN7:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

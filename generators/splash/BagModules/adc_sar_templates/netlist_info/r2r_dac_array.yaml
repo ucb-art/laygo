@@ -1,0 +1,56 @@
+lib_name: adc_sar_templates
+cell_name: r2r_dac_array
+pins: [ "VSS", "VDD", "SEL", "out" ]
+instances:
+  IR2R:
+    lib_name: adc_sar_templates
+    cell_name: r2r_dac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "out"
+        num_bits: 1
+      SEL:
+        direction: input
+        net_name: "SEL"
+        num_bits: 1
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  IBCAP:
+    lib_name: adc_sar_templates
+    cell_name: r2r_dac_bcap_array
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "out"
+        num_bits: 1

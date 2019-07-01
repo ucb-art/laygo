@@ -1,0 +1,196 @@
+lib_name: adc_sar_templates
+cell_name: sarabe_dualdelay_tb_tran
+pins: [  ]
+instances:
+  C0:
+    lib_name: analogLib
+    cell_name: cap
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "ZP<0>"
+        num_bits: 1
+  I5:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I4:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I3:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I2:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I1:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V1:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "SAOP"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VSS0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VDD0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V2:
+    lib_name: analogLib
+    cell_name: vpwl
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "RST"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V0:
+    lib_name: analogLib
+    cell_name: vpwl
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "SAOM"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  XDUT0:
+    lib_name: adc_sar_templates
+    cell_name: sarabe_dualdelay
+    instpins:
+      ADCOUT<0>:
+        direction: output
+        net_name: "ADCOUT<0>"
+        num_bits: 1
+      SB<0>:
+        direction: output
+        net_name: "SB<0>"
+        num_bits: 1
+      ZM<0>:
+        direction: output
+        net_name: "ZM<0>"
+        num_bits: 1
+      ZMID<0>:
+        direction: output
+        net_name: "ZMID<0>"
+        num_bits: 1
+      ZP<0>:
+        direction: output
+        net_name: "ZP<0>"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      DONE:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      RSTOUT:
+        direction: output
+        net_name: "RSTOUT"
+        num_bits: 1
+      SARCLK:
+        direction: output
+        net_name: "SARCLK"
+        num_bits: 1
+      SARCLKB:
+        direction: output
+        net_name: "SARCLKB"
+        num_bits: 1
+      UP:
+        direction: output
+        net_name: "UP"
+        num_bits: 1
+      CKDSEL0<1:0>:
+        direction: input
+        net_name: "<*2>VSS"
+        num_bits: 2
+      CKDSEL1<1:0>:
+        direction: input
+        net_name: "<*2>VSS"
+        num_bits: 2
+      EXTSEL_CLK:
+        direction: input
+        net_name: "VSS"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOM:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      SAOP:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1

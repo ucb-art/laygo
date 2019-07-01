@@ -1,0 +1,68 @@
+lib_name: adc_sar_templates
+cell_name: capdac_tb_noise
+pins: [  ]
+instances:
+  VSS0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I12:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I3:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I2:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  XDUT0:
+    lib_name: adc_sar_templates
+    cell_name: capdac
+    instpins:
+      I:
+        direction: input
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      I_C0:
+        direction: input
+        net_name: "VSS"
+        num_bits: 1
+  R0:
+    lib_name: analogLib
+    cell_name: res
+    instpins:
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+      PLUS:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1

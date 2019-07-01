@@ -1,0 +1,72 @@
+lib_name: adc_sar_templates
+cell_name: capdrv_nsw_bak170326_vdd
+pins: [ "EN<2:0>", "VREF<2:0>", "VO", "VSS", "VDD" ]
+instances:
+  ITIE0:
+    lib_name: logic_templates
+    cell_name: tie_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+  ISW0:
+    lib_name: logic_templates
+    cell_name: nsw_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "VO"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "VREF<2>"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN<2>"
+        num_bits: 1
+  ISW1:
+    lib_name: logic_templates
+    cell_name: nsw_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "VO"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "VREF<1>"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN<1>"
+        num_bits: 1
+  ISW2:
+    lib_name: logic_templates
+    cell_name: nsw_wovdd
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "VO"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "VREF<0>"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN<0>"
+        num_bits: 1

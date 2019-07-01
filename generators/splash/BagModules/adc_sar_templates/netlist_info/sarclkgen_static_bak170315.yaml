@@ -1,0 +1,300 @@
+lib_name: adc_sar_templates
+cell_name: sarclkgen_static_bak170315
+pins: [ "SAOPB", "SAOMB", "RST", "UP", "DONE", "CLKO", "EXTSEL_CLK", "VDD", "EXTCLK", "VSS", "COMPOUT", "CLKOB" ]
+instances:
+  IOBUF1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "CLKOB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+  IOBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net028"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKOB"
+        num_bits: 1
+  IINV8:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "PRECLK"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net028"
+        num_bits: 1
+  IINV7:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "EXTSELB_CLK"
+        num_bits: 1
+  IINV4:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "RSTB"
+        num_bits: 1
+  IINV5:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "UP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "UPB"
+        num_bits: 1
+  IINV1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "SAOM"
+        num_bits: 1
+  IINV0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "SAOP"
+        num_bits: 1
+  IND1:
+    lib_name: logic_templates
+    cell_name: nand
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "PHIB0"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "PHI0"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "RSTB"
+        num_bits: 1
+  IND0:
+    lib_name: logic_templates
+    cell_name: nand
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+  IMUX0:
+    lib_name: logic_templates
+    cell_name: mux2to1
+    instpins:
+      EN0:
+        direction: input
+        net_name: "EXTSELB_CLK"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "PRECLK"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      I0:
+        direction: input
+        net_name: "PHIB0"
+        num_bits: 1
+      I1:
+        direction: input
+        net_name: "EXTCLK"
+        num_bits: 1
+      EN1:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+  ISR0:
+    lib_name: logic_templates
+    cell_name: ndsr
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      Q:
+        direction: output
+        net_name: "COMPOUT"
+        num_bits: 1
+      QB:
+        direction: output
+        net_name: "QB"
+        num_bits: 1
+      R:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      S:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+  ICORE0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkgen_core_static
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      DONE:
+        direction: input
+        net_name: "DONE"
+        num_bits: 1
+      RSTB:
+        direction: input
+        net_name: "RSTB"
+        num_bits: 1
+      UPB:
+        direction: input
+        net_name: "UPB"
+        num_bits: 1

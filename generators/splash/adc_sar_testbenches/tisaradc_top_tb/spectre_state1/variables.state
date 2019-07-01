@@ -1,0 +1,49 @@
+savedComponent = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5)
+(unless tmp1
+tmp1 = make_sevVariableStruct()
+)
+(unless tmp1
+tmp1 = (ncons nil)
+)
+tmp1->name = "pper"
+tmp1->expression = "250p"
+tmp1->index = 1
+(unless tmp2
+tmp2 = make_sevVariableStruct()
+)
+(unless tmp2
+tmp2 = (ncons nil)
+)
+tmp2->name = "pskew_rst"
+tmp2->expression = "0"
+tmp2->index = 2
+(unless tmp3
+tmp3 = make_sevVariableStruct()
+)
+(unless tmp3
+tmp3 = (ncons nil)
+)
+tmp3->name = "pvicm"
+tmp3->expression = "150m"
+tmp3->index = 3
+(unless tmp4
+tmp4 = make_sevVariableStruct()
+)
+(unless tmp4
+tmp4 = (ncons nil)
+)
+tmp4->name = "pvidm"
+tmp4->expression = "0.75"
+tmp4->index = 4
+(unless tmp5
+tmp5 = make_sevVariableStruct()
+)
+(unless tmp5
+tmp5 = (ncons nil)
+)
+tmp5->name = "vdd"
+tmp5->expression = "900m"
+tmp5->index = 5
+list(tmp1 tmp2 tmp3 tmp4 tmp5)
+)

@@ -1,0 +1,484 @@
+lib_name: adc_sar_templates
+cell_name: tisaradc_splash_iq
+pins: [ "I_INP", "Q_RSTP", "I_RSTN", "CLKIN", "CLKIP", "I_CLKCAL", "I_bottom_body", "VSS", "VDD", "I_ADCO_CAL0", "I_CLKO", "I_ADCO", "I_CLKOUT_DES", "Q_CLKCAL", "I_ADCOUT_RET", "Q_INP", "Q_INM", "Q_OSP", "Q_OSM", "I_CLKO_CAL1", "I_ASCLKD_CAL1<3:0>", "I_ASCLKD_CAL0<3:0>", "I_CLKO_CAL0", "I_EXTSEL_CLK_CAL1", "I_ADCO_CAL1", "I_EXTSEL_CLK_CAL0", "I_EXTSEL_CLK", "VREF<2:0>", "I_ASCLKD<3:0>", "I_OSM", "I_INM", "I_samp_body", "I_OSP", "Q_ASCLKD<3:0>", "Q_EXTSEL_CLK", "Q_EXTSEL_CLK_CAL0", "Q_EXTSEL_CLK_CAL1", "Q_ASCLKD_CAL0<3:0>", "Q_ASCLKD_CAL1<3:0>", "Q_bottom_body", "Q_samp_body", "Q_CLKO", "Q_ADCO_CAL0", "Q_ADCO_CAL1", "Q_CLKO_CAL0", "Q_CLKO_CAL1", "Q_ADCOUT_RET", "Q_CLKOUT_DES", "Q_ADCO", "Q_RDAC_SEL", "I_RDAC_SEL", "I_SF_bypass", "Q_SF_bypass", "VREF_SF_bypass", "I_RSTP", "Q_RSTN" ]
+instances:
+  ADCQ:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_splash
+    instpins:
+      VREF_SF_bypass:
+        direction: input
+        net_name: "VREF_SF_bypass"
+        num_bits: 1
+      RDAC_SEL:
+        direction: input
+        net_name: "Q_RDAC_SEL"
+        num_bits: 1
+      SF_bypass:
+        direction: input
+        net_name: "Q_SF_bypass"
+        num_bits: 1
+      EXTSEL_CLK_CAL1:
+        direction: input
+        net_name: "Q_EXTSEL_CLK_CAL1"
+        num_bits: 1
+      CLKO_CAL1:
+        direction: output
+        net_name: "Q_CLKO_CAL1"
+        num_bits: 1
+      ADCO_CAL1:
+        direction: output
+        net_name: "Q_ADCO_CAL1"
+        num_bits: 1
+      CLKO_CAL0:
+        direction: output
+        net_name: "Q_CLKO_CAL0"
+        num_bits: 1
+      ADCO_CAL0:
+        direction: output
+        net_name: "Q_ADCO_CAL0"
+        num_bits: 1
+      ADCOUT_RET:
+        direction: output
+        net_name: "Q_ADCOUT_RET"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "Q_CLKO"
+        num_bits: 1
+      ASCLKD_CAL1<3:0>:
+        direction: input
+        net_name: "Q_ASCLKD_CAL1<3:0>"
+        num_bits: 4
+      ASCLKD_CAL0<3:0>:
+        direction: input
+        net_name: "Q_ASCLKD_CAL0<3:0>"
+        num_bits: 4
+      bottom_body:
+        direction: inputOutput
+        net_name: "Q_bottom_body"
+        num_bits: 1
+      samp_body:
+        direction: inputOutput
+        net_name: "Q_samp_body"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      EXTSEL_CLK_CAL0:
+        direction: input
+        net_name: "Q_EXTSEL_CLK_CAL0"
+        num_bits: 1
+      ADCO:
+        direction: output
+        net_name: "Q_ADCO"
+        num_bits: 1
+      CLKOUT_DES:
+        direction: output
+        net_name: "Q_CLKOUT_DES"
+        num_bits: 1
+      ASCLKD<3:0>:
+        direction: input
+        net_name: "Q_ASCLKD<3:0>"
+        num_bits: 4
+      CLKCAL:
+        direction: input
+        net_name: "Q_CLKCAL"
+        num_bits: 1
+      CLKIN:
+        direction: input
+        net_name: "CLKIN"
+        num_bits: 1
+      CLKIP:
+        direction: input
+        net_name: "CLKIP"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "Q_EXTSEL_CLK"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "Q_INM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "Q_INP"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "Q_OSM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "Q_OSP"
+        num_bits: 1
+      RSTN:
+        direction: input
+        net_name: "Q_RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "Q_RSTP"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ADCI:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_splash
+    instpins:
+      VREF_SF_bypass:
+        direction: input
+        net_name: "VREF_SF_bypass"
+        num_bits: 1
+      RDAC_SEL:
+        direction: input
+        net_name: "I_RDAC_SEL"
+        num_bits: 1
+      SF_bypass:
+        direction: input
+        net_name: "I_SF_bypass"
+        num_bits: 1
+      EXTSEL_CLK_CAL1:
+        direction: input
+        net_name: "I_EXTSEL_CLK_CAL1"
+        num_bits: 1
+      CLKO_CAL1:
+        direction: output
+        net_name: "I_CLKO_CAL1"
+        num_bits: 1
+      ADCO_CAL1:
+        direction: output
+        net_name: "I_ADCO_CAL1"
+        num_bits: 1
+      CLKO_CAL0:
+        direction: output
+        net_name: "I_CLKO_CAL0"
+        num_bits: 1
+      ADCO_CAL0:
+        direction: output
+        net_name: "I_ADCO_CAL0"
+        num_bits: 1
+      ADCOUT_RET:
+        direction: output
+        net_name: "I_ADCOUT_RET"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "I_CLKO"
+        num_bits: 1
+      ASCLKD_CAL1<3:0>:
+        direction: input
+        net_name: "I_ASCLKD_CAL1<3:0>"
+        num_bits: 4
+      ASCLKD_CAL0<3:0>:
+        direction: input
+        net_name: "I_ASCLKD_CAL0<3:0>"
+        num_bits: 4
+      bottom_body:
+        direction: inputOutput
+        net_name: "I_bottom_body"
+        num_bits: 1
+      samp_body:
+        direction: inputOutput
+        net_name: "I_samp_body"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      EXTSEL_CLK_CAL0:
+        direction: input
+        net_name: "I_EXTSEL_CLK_CAL0"
+        num_bits: 1
+      ADCO:
+        direction: output
+        net_name: "I_ADCO"
+        num_bits: 1
+      CLKOUT_DES:
+        direction: output
+        net_name: "I_CLKOUT_DES"
+        num_bits: 1
+      ASCLKD<3:0>:
+        direction: input
+        net_name: "I_ASCLKD<3:0>"
+        num_bits: 4
+      CLKCAL:
+        direction: input
+        net_name: "I_CLKCAL"
+        num_bits: 1
+      CLKIN:
+        direction: input
+        net_name: "CLKIN"
+        num_bits: 1
+      CLKIP:
+        direction: input
+        net_name: "CLKIP"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "I_EXTSEL_CLK"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "I_INM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "I_INP"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "I_OSM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "I_OSP"
+        num_bits: 1
+      RSTN:
+        direction: input
+        net_name: "I_RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "I_RSTP"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  PIN63:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN62:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN60:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN59:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN58:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN57:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN56:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN55:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN54:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN53:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN52:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN50:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN49:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN47:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN45:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN44:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN42:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN28:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN27:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN19:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN20:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN34:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN33:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN18:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN48:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN46:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN43:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN41:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN40:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN39:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN38:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN37:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN23:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN24:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN25:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN26:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN22:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN21:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

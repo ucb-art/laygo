@@ -1,0 +1,23 @@
+//Revision 9
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config tisaradc_body_9b_array_8slice_core_tb_tran_rcx;
+design adc_sar_testbenches.tisaradc_body_9b_array_8slice_core_tb_tran_rcx:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl;
+stoplist spectre;
+
+
+cell adc_sar_manual.clk_dis_viadel_htree_manual binding :av_extracted;
+cell adc_sar_manual.adc_retimer_manual binding :av_extracted;
+
+cell adc_sar_generated.sar_wsamp_9b_array_8slice_ISLICE0 binding :av_extracted;
+
+
+endconfig

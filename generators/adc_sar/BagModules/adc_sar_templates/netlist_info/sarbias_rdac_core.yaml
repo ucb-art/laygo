@@ -1,0 +1,124 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_rdac_core
+pins: [ "VDD", "VSS", "out0<4:0>", "code0<39:0>", "out1<4:0>", "code1<39:0>", "out2<4:0>", "code2<39:0>", "out3<4:0>", "code3<39:0>" ]
+instances:
+  IRDACREF0:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "out0<4:0>"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "code0<39:0>"
+        num_bits: 40
+  IRDACREF1:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "out1<4:0>"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "code1<39:0>"
+        num_bits: 40
+  IRDACREF2:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "out2<4:0>"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "code2<39:0>"
+        num_bits: 40
+  IRDACREF3:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "out3<4:0>"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "code3<39:0>"
+        num_bits: 40
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}

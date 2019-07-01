@@ -1,0 +1,37 @@
+#default_laygo_config file
+metal_layers: #metal layers
+- [M0, donotuse]
+- [M1, drawing]
+- [M2, drawing]
+- [M3, drawing]
+- [M4, drawing]
+- [M5, drawing]
+- [M6, drawing]
+- [M7, drawing]
+- [M8, drawing]
+- [M9, drawing]
+via_layers: #via layers
+- [VIA0, donotuse]
+- [VIA1, drawing]
+- [VIA2, drawing]
+- [VIA3, drawing]
+- [VIA4, drawing]
+- [VIA5, drawing]
+- [VIA6, drawing]
+- [VIA7, drawing]
+- [VIA8, drawing]
+pin_layers: #pin layers
+- [text, drawing]
+- [M1, pin]
+- [M2, pin]
+- [M3, pin]
+- [M4, pin]
+- [M5, pin]
+- [M6, pin]
+- [M7, pin]
+- [M8, pin]
+- [M9, pin]
+prboundary_layer: [prBoundary, drawing] #boundary layer
+tech_lib: laygo_faketech
+text_layer: [text, drawing]
+physical_resolution: 0.001

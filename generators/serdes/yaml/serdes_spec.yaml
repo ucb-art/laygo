@@ -1,0 +1,14 @@
+#temperature
+temp: 300                 
+temp_min: 273
+temp_max: 400
+#Deserialization factor
+num_des: 4 
+#Des parallelization parameter for reducing height, No. flops in single column
+num_flop: 1
+ext_clk: False
+#2Nto1 Serialization factor, 2N=num_ser (even number only)
+num_ser: 4
+#3rd stage serialization factor for 3-stage SER
+num_ser_3rd: 4
+

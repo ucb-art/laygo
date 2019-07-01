@@ -1,0 +1,261 @@
+commit 4eedf31c1401ab8d649aa41f46d7155f5a07eb11
+Author: wrbae2 <wrbae@isdl.snu.ac.kr>
+Date:   Wed Aug 23 22:44:01 2017 -0700
+
+    hotfix_for_cds_ff_mpt
+
+diff --git a/generators/adc_sar/adc_sar_capdac_layout_generator.py b/generators/adc_sar/adc_sar_capdac_layout_generator.py
+index 634f9af..279cb36 100644
+--- a/generators/adc_sar/adc_sar_capdac_layout_generator.py
++++ b/generators/adc_sar/adc_sar_capdac_layout_generator.py
+@@ -302,6 +302,10 @@ if __name__ == '__main__':
+         m_horizontal=specdict['rdx_array'][int(-1*(num_bits_horizontal)):]
+         for i, m in enumerate(m_horizontal):
+             m_horizontal[i]=int(m_horizontal[i]/(2**i))
++        if 'num_space_left' in sizedict['capdac']:
++            num_space_left=sizedict['capdac']['num_space_left']
++        if 'num_space_right' in sizedict['capdac']:
++            num_space_right=sizedict['capdac']['num_space_right']
+         #print(m_vertical, m_horizontal)
+ 
+     yres=laygen.get_template_size(name='nmos4_fast_center_nf2')[1]*2
+diff --git a/generators/adc_sar/adc_sar_capdrv_nsw_array_layout_generator.py b/generators/adc_sar/adc_sar_capdrv_nsw_array_layout_generator.py
+index 467f880..a710b1e 100644
+--- a/generators/adc_sar/adc_sar_capdrv_nsw_array_layout_generator.py
++++ b/generators/adc_sar/adc_sar_capdrv_nsw_array_layout_generator.py
+@@ -354,8 +354,8 @@ def generate_capdrv_array(laygen, objectname_pfix, templib_logic, cdrv_name_list
+     # power pin
+     pwr_dim_left=laygen.get_template_size(name=itapl[-1].cellname, gridname=rg_m2m3, libname=itapl[-1].libname)[0]
+     pwr_dim_right=pwr_dim_left
+-    if not m_space_4x==0:
+-        pwr_dim_right+=laygen.get_template_size(name=isp4x[0].cellname, gridname=rg_m2m3, libname=isp4x[0].libname)[0]*m_space_4x
++    if m_space_4x>1:
++        pwr_dim_right+=laygen.get_template_size(name=isp4x[0].cellname, gridname=rg_m2m3, libname=isp4x[0].libname)[0]*(m_space_4x-1)
+     pwr_dim_delta=pwr_dim_right-pwr_dim_left
+     rvdd = []
+     rvss = []
+diff --git a/generators/adc_sar/adc_sar_salatch_pmos_layout_generator.py b/generators/adc_sar/adc_sar_salatch_pmos_layout_generator.py
+index 36bcccb..583f1f4 100644
+--- a/generators/adc_sar/adc_sar_salatch_pmos_layout_generator.py
++++ b/generators/adc_sar/adc_sar_salatch_pmos_layout_generator.py
+@@ -272,10 +272,11 @@ def generate_clkdiffpair_ofst(laygen, objectname_pfix, placement_grid, routing_g
+     m_clk=m_clkh*2
+ 
+     #placement
++    tap_origin=origin
+     [itapbl0, itap0, itapbr0] = generate_tap(laygen, objectname_pfix=objectname_pfix+'NTAP0', placement_grid=pg,
+                                              routing_grid_m1m2_thick=rg12t,
+                                              devname_tap_boundary=devname_tap_boundary, devname_tap_body=devname_tap_body,
+-                                             m=m_tap, extend_rail=True, origin=origin)
++                                             m=m_tap, extend_rail=True, origin=tap_origin)
+     diffpair_origin = laygen.get_inst_xy(itapbl0.name, pg) + laygen.get_template_size(itapbl0.cellname, pg) * np.array([0, 1])
+     [ickbl0, ickdmyl0, ick0, ickdmyr0, ickbr0]=generate_mos(laygen, objectname_pfix +'CK0', placement_grid=pg, routing_grid_m1m2=rg12,
+                                         devname_mos_boundary=devname_mos_boundary, devname_mos_body=devname_mos_body,
+@@ -331,7 +332,7 @@ def generate_salatch_regen(laygen, objectname_pfix, placement_grid, routing_grid
+                    devname_nmos_boundary, devname_nmos_body, devname_nmos_dmy,
+                    devname_pmos_boundary, devname_pmos_body, devname_pmos_dmy,
+                    devname_ptap_boundary, devname_ptap_body, devname_ntap_boundary, devname_ntap_body,
+-                   m_rgnp=2, m_rgnp_dmy=1, m_rstp=1, m_tap=12, m_buf=1, origin=np.array([0, 0])):
++                   m_rgnp=2, m_rgnp_dmy=1, m_rstp=1, m_tap=12, m_buf=1, num_row_ptap=1, origin=np.array([0, 0])):
+     """generate regenerative stage of SAlatch. N/P flipped for pmos type"""
+     pg = placement_grid
+     rg12 = routing_grid_m1m2
+@@ -393,10 +394,11 @@ def generate_salatch_regen(laygen, objectname_pfix, placement_grid, routing_grid
+     imbufrp0 = laygen.relplace(name="I" + pfix + 'BUFRP0', templatename=devname_pmos_body, gridname=pg, refobj=imdmyrp0, shape=[m_buf, 1], transform='R180')
+     imbrp0 = laygen.relplace(name="I" + pfix + 'BRP0', templatename=devname_pmos_boundary, gridname=pg, refobj=imbufrp0, transform='R180')
+     #tap
+-    tap_origin = laygen.get_inst_xy(imblp0.name, pg) + laygen.get_template_size(devname_ntap_boundary, pg) * np.array([0, 1])
+-    [itapbl0, itap0, itapbr0] = generate_tap(laygen, objectname_pfix=pfix+'PTAP0', placement_grid=pg, routing_grid_m1m2_thick=rg12t,
+-                                             devname_tap_boundary=devname_ntap_boundary, devname_tap_body=devname_ntap_body,
+-                                             m=m_tap, extend_rail=True, origin=tap_origin, transform='MX')
++    for i in range(num_row_ptap):
++        tap_origin = laygen.get_inst_xy(imblp0.name, pg) + laygen.get_template_size(devname_ntap_boundary, pg) * np.array([0, 1])*(i+1)
++        [itapbl0, itap0, itapbr0] = generate_tap(laygen, objectname_pfix=pfix+'PTAP0', placement_grid=pg, routing_grid_m1m2_thick=rg12t,
++                                                 devname_tap_boundary=devname_ntap_boundary, devname_tap_body=devname_ntap_body,
++                                                 m=m_tap, extend_rail=True, origin=tap_origin, transform='MX')
+ 
+     #route
+     #tap to pmos
+@@ -630,7 +632,7 @@ def generate_salatch_pmos(laygen, objectname_pfix, placement_grid,
+                           devname_pmos_boundary, devname_pmos_body, devname_pmos_dmy,
+                           devname_nmos_boundary, devname_nmos_body, devname_nmos_dmy,
+                           devname_ptap_boundary, devname_ptap_body,
+-                          m_in=4, m_ofst=2, m_clkh=2, m_rgnn=2, m_rstn=1, m_buf=1, num_vert_pwr=20, origin=np.array([0, 0])):
++                          m_in=4, m_ofst=2, m_clkh=2, m_rgnn=2, m_rstn=1, m_buf=1, num_vert_pwr=20, num_row_ptap=1, origin=np.array([0, 0])):
+     """generate strongarm latch"""
+     #internal parameters
+     #m_tot= max(m_in, m_clkh, m_rgnn + 2*m_rstn + m_buf*(1+4)) + 1 #at least one dummy
+@@ -671,7 +673,8 @@ def generate_salatch_pmos(laygen, objectname_pfix, placement_grid,
+                          routing_grid_m1m2=rg_m1m2, routing_grid_m1m2_thick=rg_m1m2_thick, routing_grid_m2m3=rg_m2m3,
+                          devname_mos_boundary=devname_pmos_boundary, devname_mos_body=devname_pmos_body, devname_mos_dmy=devname_pmos_dmy,
+                          devname_tap_boundary=devname_ntap_boundary, devname_tap_body=devname_ntap_body,
+-                         m_in=m_in, m_ofst=m_ofst, m_in_dmy=m_in_dmy-m_ofst, m_clkh=m_clkh, m_clkh_dmy=m_clkh_dmy, m_tap=m_tap, origin=mainpair_origin)
++                         m_in=m_in, m_ofst=m_ofst, m_in_dmy=m_in_dmy-m_ofst, m_clkh=m_clkh, m_clkh_dmy=m_clkh_dmy, m_tap=m_tap, 
++                         origin=mainpair_origin)
+     #regen
+     regen_origin = laygen.get_inst_xy(imaininbl0.name, pg) + laygen.get_template_size(imaininbl0.cellname, pg) * np.array([0, 1])
+ 
+@@ -685,7 +688,7 @@ def generate_salatch_pmos(laygen, objectname_pfix, placement_grid,
+                            devname_pmos_boundary=devname_nmos_boundary, devname_pmos_body=devname_nmos_body, devname_pmos_dmy=devname_nmos_dmy,
+                            devname_ptap_boundary=devname_ntap_boundary, devname_ptap_body=devname_ntap_body,
+                            devname_ntap_boundary=devname_ptap_boundary, devname_ntap_body=devname_ptap_body,
+-                           m_rgnp=m_rgnn, m_rgnp_dmy=m_rgnn_dmy, m_rstp=m_rstn, m_tap=m_tap, m_buf=m_buf, origin=regen_origin)
++                           m_rgnp=m_rgnn, m_rgnp_dmy=m_rgnn_dmy, m_rstp=m_rstn, m_tap=m_tap, m_buf=m_buf, num_row_ptap=num_row_ptap, origin=regen_origin)
+     #irgnbuflp1
+     #regen-diff pair connections
+     for i in range(m_rstn):
+@@ -880,7 +883,7 @@ def generate_salatch_pmos_wbnd(laygen, objectname_pfix, placement_grid, routing_
+                                  devname_pmos_boundary, devname_pmos_body, devname_pmos_dmy,
+                                  devname_ntap_boundary, devname_ntap_body,
+                                  m_in=4, m_ofst=2, m_clkh=2, m_rgnn=2, m_rstn=1, m_buf=1,
+-                                 m_space_4x=0, m_space_2x=0, m_space_1x=0, origin=np.array([0, 0])):
++                                 m_space_4x=0, m_space_2x=0, m_space_1x=0, num_row_ptap=1, origin=np.array([0, 0])):
+     """generate a salatch & fit to CDAC dim"""
+ 
+     cdac_name = 'capdac'
+@@ -897,14 +900,14 @@ def generate_salatch_pmos_wbnd(laygen, objectname_pfix, placement_grid, routing_
+     rg_m3m4 = routing_grid_m3m4
+     rg_m4m5 = routing_grid_m4m5
+ 
+-    #spacing calculation
++    #spacing cells
+     devname_space_1x = ['ntap_fast_space', 'pmos4_fast_space', 'pmos4_fast_space',
+-                        'ntap_fast_space', 'pmos4_fast_space', 'nmos4_fast_space', 'ptap_fast_space']
++                        'ntap_fast_space', 'pmos4_fast_space', 'nmos4_fast_space'] + ['ptap_fast_space']*num_row_ptap
+     devname_space_2x = ['ntap_fast_space_nf2', 'pmos4_fast_space_nf2', 'pmos4_fast_space_nf2',
+-                        'ntap_fast_space_nf2', 'pmos4_fast_space_nf2', 'nmos4_fast_space_nf2', 'ptap_fast_space_nf2']
++                        'ntap_fast_space_nf2', 'pmos4_fast_space_nf2', 'nmos4_fast_space_nf2'] + ['ptap_fast_space_nf2']*num_row_ptap
+     devname_space_4x = ['ntap_fast_space_nf4', 'pmos4_fast_space_nf4', 'pmos4_fast_space_nf4',
+-                        'ntap_fast_space_nf4', 'pmos4_fast_space_nf4', 'nmos4_fast_space_nf4', 'ptap_fast_space_nf4']
+-    transform_space = ['R0', 'R0', 'R0', 'R0', 'R0', 'MX', 'MX']
++                        'ntap_fast_space_nf4', 'pmos4_fast_space_nf4', 'nmos4_fast_space_nf4'] + ['ptap_fast_space_nf4']*num_row_ptap
++    transform_space = ['R0', 'R0', 'R0', 'R0', 'R0', 'MX'] + ['MX']*num_row_ptap
+     m_space=m_space_4x*4+m_space_2x*2+m_space_1x*1
+     #boundary generation
+     m_bnd=m_tot*2*2+m_space*2+2 #2 for diff, 2 for nf, 2 for mos boundary
+@@ -915,11 +918,11 @@ def generate_salatch_pmos_wbnd(laygen, objectname_pfix, placement_grid, routing_
+         devname_top = ['boundary_topleft', 'boundary_top', 'boundary_topright'],
+         shape_top = [np.array([1, 1]), np.array([m_bnd, 1]), np.array([1, 1])],
+         devname_left = ['ntap_fast_left', 'pmos4_fast_left', 'pmos4_fast_left',
+-                        'ntap_fast_left', 'pmos4_fast_left', 'nmos4_fast_left', 'ptap_fast_left'],
+-        transform_left=['R0', 'R0', 'R0', 'R0', 'R0', 'MX', 'MX'],
++                        'ntap_fast_left', 'pmos4_fast_left', 'nmos4_fast_left'] + ['ptap_fast_left']*num_row_ptap,
++        transform_left=['R0', 'R0', 'R0', 'R0', 'R0', 'MX'] + ['MX']*num_row_ptap,
+         devname_right=['ntap_fast_right', 'pmos4_fast_right', 'pmos4_fast_right',
+-                       'ntap_fast_right','pmos4_fast_right','nmos4_fast_right','ptap_fast_right'],
+-        transform_right = ['R0', 'R0', 'R0', 'R0', 'R0', 'MX', 'MX'],
++                       'ntap_fast_right','pmos4_fast_right','nmos4_fast_right']+['ptap_fast_right']*num_row_ptap,
++        transform_right = ['R0', 'R0', 'R0', 'R0', 'R0', 'MX']+['MX']*num_row_ptap,
+         origin=np.array([0, 0]))
+     #space generation
+     spl_origin = laygen.get_inst_xy(bnd_bottom[0].name, pg) + laygen.get_template_size(bnd_bottom[0].cellname, pg)
+@@ -1003,7 +1006,7 @@ def generate_salatch_pmos_wbnd(laygen, objectname_pfix, placement_grid, routing_
+                      devname_pmos_dmy=devname_pmos_dmy,
+                      devname_ntap_boundary=devname_ntap_boundary, devname_ntap_body=devname_ntap_body,
+                      m_in=m_in, m_ofst=m_ofst, m_clkh=m_clkh, m_rgnn=m_rgnn, m_rstn=m_rstn, m_buf=m_buf, 
+-                     num_vert_pwr = m_space_4x * 2, origin=sa_origin)
++                     num_vert_pwr = m_space_4x * 2, num_row_ptap=num_row_ptap, origin=sa_origin)
+ 
+ 
+ if __name__ == '__main__':
+@@ -1073,16 +1076,15 @@ if __name__ == '__main__':
+         m_rst_sa=sizedict['salatch']['m_rst']
+         m_rgnn_sa=sizedict['salatch']['m_rgnn']
+         m_buf_sa=sizedict['salatch']['m_buf']
+-        #m_sa=sizedict['salatch_m']
+-        #m_rst_sa=sizedict['salatch_m_rst']
+-        #m_rgnn_sa=sizedict['salatch_m_rgnn']
+-        #m_buf_sa=sizedict['salatch_m_buf']
++        if 'num_row_ptap' in sizedict['salatch']:
++            num_row_ptap=sizedict['salatch']['num_row_ptap']
+     m_in=int(m_sa/2)            #4
+     m_clkh=m_in #max(1, m_in)                 #4
+     m_rstn=int(m_rst_sa/2)                    #1
+     m_buf=int(m_buf_sa/2)
+     m_rgnn=int(m_rgnn_sa/2) 
+     m_ofst=1
++    num_rot_ptap=1 #increase if you need to insert additional taps for grid alignment
+ 
+     laygen.add_cell(cellname)
+     laygen.sel_cell(cellname)
+@@ -1101,7 +1103,7 @@ if __name__ == '__main__':
+                                 devname_pmos_dmy='pmos4_fast_dmy_nf2',
+                                 devname_ntap_boundary='ntap_fast_boundary', devname_ntap_body='ntap_fast_center_nf1',
+                                 m_in=m_in, m_ofst=m_ofst, m_clkh=m_clkh, m_rgnn=m_rgnn, m_rstn=m_rstn, m_buf=m_buf,
+-                                m_space_4x=10, m_space_2x=0, m_space_1x=0, origin=sa_origin)
++                                m_space_4x=10, m_space_2x=0, m_space_1x=0, num_row_ptap=num_row_ptap, origin=sa_origin)
+     laygen.add_template_from_cell()
+     # 2. calculate spacing param and regenerate
+     x0 = 2*laygen.templates.get_template('capdac', libname=workinglib).xy[1][0] \
+@@ -1126,7 +1128,7 @@ if __name__ == '__main__':
+                                 devname_pmos_dmy='pmos4_fast_dmy_nf2',
+                                 devname_ntap_boundary='ntap_fast_boundary', devname_ntap_body='ntap_fast_center_nf1',
+                                 m_in=m_in, m_ofst=m_ofst, m_clkh=m_clkh, m_rgnn=m_rgnn, m_rstn=m_rstn, m_buf=m_buf,
+-                                m_space_4x=m_space_4x, m_space_2x=m_space_2x, m_space_1x=m_space_1x, origin=sa_origin)
++                                m_space_4x=m_space_4x, m_space_2x=m_space_2x, m_space_1x=m_space_1x, num_row_ptap=num_row_ptap, origin=sa_origin)
+     laygen.add_template_from_cell()
+     
+ 
+diff --git a/generators/adc_sar/adc_sar_sarafe_nsw_layout_generator.py b/generators/adc_sar/adc_sar_sarafe_nsw_layout_generator.py
+index c549ebe..d8d122b 100644
+--- a/generators/adc_sar/adc_sar_sarafe_nsw_layout_generator.py
++++ b/generators/adc_sar/adc_sar_sarafe_nsw_layout_generator.py
+@@ -292,7 +292,7 @@ def generate_sarafe_nsw(laygen, objectname_pfix, workinglib, placement_grid,
+     rvdd_sal_m5, rvss_sal_m5 = laygenhelper.generate_power_rails_from_rails_rect(laygen, routename_tag='_SAL_M5_', 
+                 layer=laygen.layers['metal'][5], gridname=rg_m4m5_thick, netnames=['VDD', 'VSS'], direction='y', 
+                 input_rails_rect=input_rails_rect, generate_pin=False, overwrite_start_coord=0, overwrite_end_coord=None,
+-                offset_start_index=1, offset_end_index=-2+2)
++                offset_start_index=1, offset_end_index=-2)
+     #sa_right_m4_m5
+     x1 = laygen.get_inst_xy(name=isa.name, gridname=rg_m3m4_thick)[0]\
+          +laygen.get_template_size(name=isa.cellname, gridname=rg_m3m4_thick, libname=workinglib)[0]
+@@ -313,7 +313,7 @@ def generate_sarafe_nsw(laygen, objectname_pfix, workinglib, placement_grid,
+     rvdd_sar_m5, rvss_sar_m5 = laygenhelper.generate_power_rails_from_rails_rect(laygen, routename_tag='_SAR_M5_', 
+                 layer=laygen.layers['metal'][5], gridname=rg_m4m5_thick, netnames=['VDD', 'VSS'], direction='y', 
+                 input_rails_rect=input_rails_rect, generate_pin=False, overwrite_start_coord=0, overwrite_end_coord=None,
+-                offset_start_index=2-2, offset_end_index=0)
++                offset_start_index=2, offset_end_index=-1)
+     #sa_m6
+     num_vref_routes_m6=4
+     x1 = laygen.get_inst_xy(name=isa.name, gridname=rg_m5m6_thick)[0]\
+diff --git a/generators/adc_sar/adc_sar_sarfsm_layout_generator.py b/generators/adc_sar/adc_sar_sarfsm_layout_generator.py
+index 0e553c9..2855baa 100644
+--- a/generators/adc_sar/adc_sar_sarfsm_layout_generator.py
++++ b/generators/adc_sar/adc_sar_sarfsm_layout_generator.py
+@@ -393,6 +393,7 @@ if __name__ == '__main__':
+     laygen.sel_cell(cellname)
+     #num_bits_row=3
+     x0 = laygen.templates.get_template('sarafe_nsw', libname=workinglib).xy[1][0] \
++         - laygen.templates.get_template('tap', libname=logictemplib).xy[1][0] * 2 \
+          - laygen.templates.get_template('nmos4_fast_left').xy[1][0] * 2
+     dff_name='dff_rsth_'+str(m)+'x'
+     x1 = laygen.templates.get_template(dff_name, libname=logictemplib).xy[1][0] 
+
+commit 98aae5482953f8f1d5f8f9bc376e68ca70331d33
+Author: wrbae@eecs.berkeley.edu <jdhan@eecs.berkeley.edu>
+Date:   Mon Aug 21 18:20:44 2017 -0700
+
+    test
+
+diff --git a/GridLayoutGenerator.py b/GridLayoutGenerator.py
+index 6be9f02..1fb106d 100644
+--- a/GridLayoutGenerator.py
++++ b/GridLayoutGenerator.py
+@@ -1107,7 +1107,7 @@ class GridLayoutGenerator(BaseLayoutGenerator):
+         laygo.LayoutObject.Pin
+             generated Pin object
+         """
+-        if netname == None: netname = pinname
++        if netname == None: netname = name
+         xy=self.get_rect_xy(rect.name, gridname, sort=True)
+         if direction=="left":
+             xy[1][0] = xy[0][0] + size
+@@ -1118,7 +1118,7 @@ class GridLayoutGenerator(BaseLayoutGenerator):
+         elif direction=="top":
+             xy[0][1] = xy[1][1] - size
+ 
+-        return self.pin(name=pinname, layer=layer, xy=xy, gridname=gridname, netname=netname)
++        return self.pin(name=name, layer=layer, xy=xy, gridname=gridname, netname=netname)
+ 
+     #db access function
+     def sel_template_library(self, libname):

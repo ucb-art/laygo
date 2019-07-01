@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>adc_sar_testbenches:sampler_nmos_tb_ac:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>sampler_nmos_tb_ac</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:sampler_nmos_tb_ac:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>sampler_nmos_tb_ac</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state1</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>vidm_ac
+				<value>1</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sampler_nmos_tb_ac:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vidm_dc
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sampler_nmos_tb_ac:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vdd
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sampler_nmos_tb_ac:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vicm
+				<value>0.4</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sampler_nmos_tb_ac:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+	</active>
+	<history>History</history>
+</setupdb>

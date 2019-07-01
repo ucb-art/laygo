@@ -1,0 +1,196 @@
+lib_name: adc_sar_templates
+cell_name: tisaradc_body_core
+pins: [ "VDDSAMP", "VDDSAR", "VSS", "CLKIP", "CLKIN", "RSTP", "RSTN", "CLKCAL", "INP", "INM", "OSP", "OSM", "VREF<2:0>", "ASCLKD<3:0>", "EXTSEL_CLK", "ADCOUT", "CLKOUT_DES" ]
+instances:
+  ISAR0:
+    lib_name: adc_sar_templates
+    cell_name: sar_wsamp_array
+    instpins:
+      VDDSAMP:
+        direction: inputOutput
+        net_name: "VDDSAMP"
+        num_bits: 1
+      CLKO0:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDDSAR:
+        direction: inputOutput
+        net_name: "VDDSAR"
+        num_bits: 1
+      ADCOUT0<0>:
+        direction: output
+        net_name: "ADCO"
+        num_bits: 1
+      ASCLKD0<3:0>:
+        direction: input
+        net_name: "ASCLKD<3:0>"
+        num_bits: 4
+      CLK0:
+        direction: input
+        net_name: "ICLK"
+        num_bits: 1
+      EXTSEL_CLK0:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      INM0:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      INP0:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+      OSM0:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      OSP0:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  IRET0:
+    lib_name: adc_sar_templates
+    cell_name: adc_retimer
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDDSAR"
+        num_bits: 1
+      ck_out:
+        direction: output
+        net_name: "CLKOUT_DES"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "ADCOUT"
+        num_bits: 1
+      clk:
+        direction: input
+        net_name: "CLKO"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "ADCO"
+        num_bits: 1
+  ICLKDIS0:
+    lib_name: clk_dis_templates
+    cell_name: clk_dis_viadel_htree
+    instpins:
+      RSTN:
+        direction: input
+        net_name: "RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "RSTP"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDDSAMP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "ICLK"
+        num_bits: 1
+      CAL0:
+        direction: input
+        net_name: "CLKCAL"
+        num_bits: 1
+      CLKIP:
+        direction: input
+        net_name: "CLKIP"
+        num_bits: 1
+      CLKIN:
+        direction: input
+        net_name: "CLKIN"
+        num_bits: 1
+      DATAO:
+        direction: inputOutput
+        net_name: "DATAO"
+        num_bits: 1
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

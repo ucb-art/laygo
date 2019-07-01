@@ -1,0 +1,136 @@
+lib_name: serdes_templates
+cell_name: ser_2Nto1
+pins: [ "out", "VSS", "VDD", "CLK", "CLKB", "divclk", "in<1:0>", "RST" ]
+instances:
+  INto1_0:
+    lib_name: serdes_templates
+    cell_name: ser
+    instpins:
+      div:
+        direction: output
+        net_name: "divclk"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "ser0"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      clk_in:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      in<0>:
+        direction: input
+        net_name: "in<0>"
+        num_bits: 1
+  INto1_1:
+    lib_name: serdes_templates
+    cell_name: ser
+    instpins:
+      div:
+        direction: output
+        net_name: "net2"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "ser1"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      clk_in:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      in<0>:
+        direction: input
+        net_name: "in<1>"
+        num_bits: 1
+  I3:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "net2"
+        num_bits: 1
+  PIN5:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  I2to1:
+    lib_name: serdes_templates
+    cell_name: ser_2to1_halfrate
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "out"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      I<1:0>:
+        direction: input
+        net_name: "ser1,ser0"
+        num_bits: 2

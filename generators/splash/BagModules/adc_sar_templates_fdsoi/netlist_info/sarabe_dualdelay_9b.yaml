@@ -1,0 +1,160 @@
+lib_name: adc_sar_templates
+cell_name: sarabe_dualdelay_9b
+pins: [ "SAOM", "PHI0", "RST", "EXTSEL_CLK", "CKDSEL1<1:0>", "ZP<8:0>", "CKDSEL0<1:0>", "SARCLKB", "SAOP", "RSTOUT", "UP", "DONE", "SARCLK", "ADCOUT<8:0>", "ZM<8:0>", "ZMID<8:0>", "SB<8:0>", "VDD", "VSS" ]
+instances:
+  ISARFSM0:
+    lib_name: adc_sar_templates
+    cell_name: sarfsm
+    instpins:
+      SB<0>:
+        direction: output
+        net_name: "net3"
+        num_bits: 1
+      RST_DLY:
+        direction: output
+        net_name: "RST_DLY"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "SARCLK"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  ICKGEN0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkgen_static
+    instpins:
+      SHORTB:
+        direction: input
+        net_name: "ZMID<6>"
+        num_bits: 1
+      SEL<2:0>:
+        direction: input
+        net_name: "CKDSEL1<0>,CKDSEL0<1:0>"
+        num_bits: 3
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      UP:
+        direction: output
+        net_name: "UP"
+        num_bits: 1
+      DONE:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      SAOM:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      SAOP:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      CLKOB:
+        direction: output
+        net_name: "SARCLKB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "SARCLK"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  IRET0:
+    lib_name: adc_sar_templates
+    cell_name: sarret_wckbuf
+    instpins:
+      OUT<0>:
+        direction: output
+        net_name: "net10"
+        num_bits: 1
+      IN<0>:
+        direction: input
+        net_name: "net9"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "RSTOUT"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  ISARLOGIC0:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic_wret_v2_array
+    instpins:
+      RETO<0>:
+        direction: output
+        net_name: "net5"
+        num_bits: 1
+      ZM<0>:
+        direction: output
+        net_name: "net8"
+        num_bits: 1
+      ZMID<0>:
+        direction: output
+        net_name: "net7"
+        num_bits: 1
+      ZP<0>:
+        direction: output
+        net_name: "net6"
+        num_bits: 1
+      SB<0>:
+        direction: input
+        net_name: "net4"
+        num_bits: 1
+      SAOP:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      SAOM:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1

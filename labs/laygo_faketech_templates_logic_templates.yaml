@@ -1,0 +1,73 @@
+laygo_faketech_templates_logic:
+  inv_4x:
+    pins:
+      I:
+        layer: [M3, pin]
+        netname: I
+        xy0: [0.15, 0.6]
+        xy1: [0.25, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [0.75, 0.6]
+        xy1: [0.85, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [1.2, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [1.2, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [1.2, 1.8]
+  space_1x:
+    pins:
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [0.2, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [0.2, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [0.2, 1.8]
+  tinv_4x:
+    pins:
+      EN:
+        layer: [M3, pin]
+        netname: EN
+        xy0: [1.75, 0.6]
+        xy1: [1.85, 1.2]
+      ENB:
+        layer: [M3, pin]
+        netname: ENB
+        xy0: [1.35, 0.6]
+        xy1: [1.45, 1.2]
+      I:
+        layer: [M3, pin]
+        netname: I
+        xy0: [0.15, 0.6]
+        xy1: [0.25, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [1.95, 0.6]
+        xy1: [2.05, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [2.4, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [2.4, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [2.4, 1.8]

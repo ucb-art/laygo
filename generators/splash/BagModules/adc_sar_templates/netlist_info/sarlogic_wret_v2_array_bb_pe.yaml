@@ -1,0 +1,332 @@
+lib_name: adc_sar_templates
+cell_name: sarlogic_wret_v2_array_bb_pe
+pins: [ "SAOM", "SB<0>", "RST", "SAOP", "RETO<0>", "VDD", "VSS", "ZP<0>", "ZMID<0>", "VBB", "ZM<0>" ]
+instances:
+  ISL0:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic_wret_v2
+    instpins:
+      SAOP:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      SAOM:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      RETO:
+        direction: output
+        net_name: "RETO<0>"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP0<0>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID0<0>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM0<0>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<0>"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  IPG2:
+    lib_name: adc_sar_templates
+    cell_name: pulse_gen
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "p_ZMID0<0>"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "ZMID0<0>"
+        num_bits: 1
+      VBB:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      OA:
+        direction: output
+        net_name: "d_ZMID0<0>"
+        num_bits: 1
+  IPG1:
+    lib_name: adc_sar_templates
+    cell_name: pulse_gen
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "p_ZP0<0>"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "ZP0<0>"
+        num_bits: 1
+      VBB:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      OA:
+        direction: output
+        net_name: "d_ZP0<0>"
+        num_bits: 1
+  IPG0:
+    lib_name: adc_sar_templates
+    cell_name: pulse_gen
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "p_ZM0<0>"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "ZM0<0>"
+        num_bits: 1
+      VBB:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      OA:
+        direction: output
+        net_name: "d_ZM0<0>"
+        num_bits: 1
+  IBUF2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net04"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZMID<0>"
+        num_bits: 1
+  IBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net06"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZM<0>"
+        num_bits: 1
+  IBUF1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net05"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZP<0>"
+        num_bits: 1
+  I16:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "p_ZMID0<0>"
+        num_bits: 1
+  I9:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "p_ZP0<0>"
+        num_bits: 1
+  I23:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "p_ZM0<0>"
+        num_bits: 1
+  INOR0:
+    lib_name: logic_templates
+    cell_name: nor
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net06"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "d_ZM0<0>"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "p_ZM0<0>"
+        num_bits: 1
+  INOR2:
+    lib_name: logic_templates
+    cell_name: nor
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net04"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "d_ZMID0<0>"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "p_ZMID0<0>"
+        num_bits: 1
+  INOR1:
+    lib_name: logic_templates
+    cell_name: nor
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net05"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "d_ZP0<0>"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "p_ZP0<0>"
+        num_bits: 1

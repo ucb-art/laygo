@@ -1,0 +1,112 @@
+lib_name: adc_sar_templates
+cell_name: capdac_8b
+pins: [ "I_C0", "O", "I<7:0>" ]
+instances:
+  CDAC7:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<7>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC6:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<6>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC5:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<5>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC4:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<4>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC0:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<0>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC3:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<3>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC2:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<2>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  CDAC1:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I<1>"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1
+  C0:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: 
+        net_name: "I_C0"
+        num_bits: 1
+      TOP:
+        direction: 
+        net_name: "O"
+        num_bits: 1

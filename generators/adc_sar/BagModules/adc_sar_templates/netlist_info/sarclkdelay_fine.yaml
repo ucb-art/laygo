@@ -1,0 +1,64 @@
+lib_name: adc_sar_templates
+cell_name: sarclkdelay_fine
+pins: [ "SEL<1:0>", "I", "O", "VSS", "VDD" ]
+instances:
+  IINV11:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+  I4:
+    lib_name: logic_templates
+    cell_name: nsw
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "net10"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+  I3:
+    lib_name: logic_templates
+    cell_name: nsw
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "net10"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "SEL<1>"
+        num_bits: 1

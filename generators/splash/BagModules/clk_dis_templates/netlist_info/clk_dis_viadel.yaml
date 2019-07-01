@@ -1,0 +1,76 @@
+lib_name: clk_dis_templates
+cell_name: clk_dis_viadel
+pins: [ "CAL0", "RSTN", "DATAO", "VDD", "VSS", "CLKI", "CLKO", "RSTP" ]
+instances:
+  I0:
+    lib_name: clk_dis_templates
+    cell_name: clk_dis_viadel_cell
+    instpins:
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+      DATAO:
+        direction: output
+        net_name: "DATAO"
+        num_bits: 1
+      CAL:
+        direction: input
+        net_name: "CAL0"
+        num_bits: 1
+      CLKI:
+        direction: input
+        net_name: "CLKI"
+        num_bits: 1
+      DATAI:
+        direction: input
+        net_name: "DATAO"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      ST:
+        direction: input
+        net_name: "ST"
+        num_bits: 1
+  PIN18:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

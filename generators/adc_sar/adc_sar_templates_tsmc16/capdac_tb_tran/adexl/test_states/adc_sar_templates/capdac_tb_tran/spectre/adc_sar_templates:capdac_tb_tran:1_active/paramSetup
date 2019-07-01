@@ -1,0 +1,2 @@
+"_DEXPR_1" (tran_stop fields "VAR(\"tsim\")")
+"_EXPR_1" (tran_strobeperiod options "VAR(\"pper\")*0.01")

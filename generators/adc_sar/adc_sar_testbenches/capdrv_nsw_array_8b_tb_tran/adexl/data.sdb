@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test enabled="1">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>capdrv_nsw_array_8b_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>capdrv_nsw_array_8b_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state1</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>pc0
+				<value>200a</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc1
+				<value>400a</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc2
+				<value>800a</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc3
+				<value>1.6f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc4
+				<value>3.2f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc5
+				<value>6.4f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc6
+				<value>12.8f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pc7
+				<value>25.6f</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>ptrf
+				<value>10p</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvdd
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvh
+				<value>0.2</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvcm
+				<value>0.1</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvl
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tstep
+				<value>1p</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<disabledtests></disabledtests>
+	</active>
+	<history>History
+		<historyentry>Interactive.0
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>capdrv_nsw_array_8b_tb_tran</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1_spectre_state1_Interactive.0</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>capdrv_nsw_array_8b_tb_tran</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pc0
+						<value>200a</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc1
+						<value>400a</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc2
+						<value>800a</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc3
+						<value>1.6f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc4
+						<value>3.2f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc5
+						<value>6.4f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc6
+						<value>12.8f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pc7
+						<value>25.6f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ptrf
+						<value>10p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvh
+						<value>0.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvcm
+						<value>0.1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvl
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:capdrv_nsw_array_8b_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sun Feb 12 23:21:26 2017</timestamp>
+			<resultsname>/tools/projects/jdhan/BAG/laygo/generators/adc_sar_testbenches/capdrv_nsw_array_8b_tb_tran/adexl/results/data/Interactive.0.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.0.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-14.EECS.Berkeley.EDU_jdhan_232127023</localpsfdir>
+			<psfdir>/tools/scratch/jdhan/simulation/adc_sar_testbenches/capdrv_nsw_array_8b_tb_tran/adexl/results/data/Interactive.0</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/capdrv_nsw_array_8b_tb_tran/adexl/results/data/Interactive.0</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/jdhan/BAG/laygo/generators/adc_sar_testbenches/capdrv_nsw_array_8b_tb_tran/adexl/results/data/Interactive.0.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.0.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

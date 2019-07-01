@@ -1,0 +1,188 @@
+lib_name: adc_sar_templates
+cell_name: sarclkgen_static_bak170405_dual
+pins: [ "SAOM", "PHI0", "RST", "DONE", "SHORTB", "UP", "CLKO", "EXTSEL_CLK", "VDD", "VSS", "SAOP", "CLKOB", "SEL<2:0>" ]
+instances:
+  IINV8:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net09"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net010"
+        num_bits: 1
+  IINV8D:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "PHI0"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net09"
+        num_bits: 1
+  IINV8C:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "CLKOB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+  IINV8B:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net010"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKOB"
+        num_bits: 1
+  IINV5:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "UP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "UPB"
+        num_bits: 1
+  IND0:
+    lib_name: logic_templates
+    cell_name: nand
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+  IDLY0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelay_compact_dual
+    instpins:
+      ENB:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      SHORTB:
+        direction: input
+        net_name: "SHORTB"
+        num_bits: 1
+      SEL<2:0>:
+        direction: input
+        net_name: "SEL<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "UP"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "DONE"
+        num_bits: 1
+  ICORE0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkgen_core_static2
+    instpins:
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      DONE:
+        direction: input
+        net_name: "DONE"
+        num_bits: 1
+      UPB:
+        direction: input
+        net_name: "UPB"
+        num_bits: 1

@@ -1,0 +1,4263 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>tisar_static_test</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>sar_wsamp_9b_tb_tran_static</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state1</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>/ckin&lt;3&gt;
+						<evalType>point</evalType>
+					</output>
+					<output>/SARCLK
+						<evalType>point</evalType>
+					</output>
+					<output>/SARCLKB
+						<evalType>point</evalType>
+					</output>
+					<output>/inp&lt;3&gt;
+						<evalType>point</evalType>
+					</output>
+					<output>/inn&lt;3&gt;
+						<evalType>point</evalType>
+					</output>
+					<output>vout
+						<evalType>point</evalType>
+					</output>
+					<output>adccode
+						<evalType>point</evalType>
+					</output>
+					<output>/IDEALDACOUT
+						<evalType>point</evalType>
+					</output>
+					<output>/ADCCODE
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+			<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>tisar_sf_dynamic_test</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:tisar_dynamic_test:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>tisar_dynamic_test</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+			<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>tisar_sf_dynamic_test</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:tisar_dynamic_test:2_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>tisar_dynamic_test</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic_sf</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>tisar_dynamic_test_woSF</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+						<evalType>point</evalType>
+					</output>
+					<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+						<evalType>point</evalType>
+					</output>
+					<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+						<evalType>point</evalType>
+					</output>
+					<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+						<evalType>point</evalType>
+					</output>
+					<output>/inp&lt;3&gt;
+						<evalType>point</evalType>
+					</output>
+					<output>/inn&lt;3&gt;
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>vdd
+				<value>1200m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pdelay
+				<value>800p/8</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pper
+				<value>2n</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pskew_rst
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvicm
+				<value>150m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvidm
+				<value>250m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref0
+				<value>0.0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref1
+				<value>150m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref2
+				<value>300m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>duty
+				<value>15</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>fin
+				<value>22.94921875Meg</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vamplitude
+				<value>500m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vb_bot_sw
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vb_top_sw
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>voffset
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+					<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+			<plottingoption>allplottingtemplates
+				<value></value>
+			</plottingoption>
+			<plottingoption>defaultplottingtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<distributeoptions>
+			<genusjoblimits>
+				<genusjoblimit>ICRP
+					<value>0</value>
+				</genusjoblimit>
+			</genusjoblimits>
+			<specifyjoblimit>0</specifyjoblimit>
+			<parallelrun>1</parallelrun>
+		</distributeoptions>
+		<incrementalsimulationoptions>
+			<incrementalSimulation>0</incrementalSimulation>
+		</incrementalsimulationoptions>
+		<disabledtests>
+			<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+			<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+		</disabledtests>
+		<sortVariableValues>0</sortVariableValues>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.76
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.76</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.76</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1000m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>120m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>3</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Mar 16 10:43:21 2018</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.76.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-1_wrbae_104321488</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.76.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+			<locked>1</locked>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.136
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.136</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.136</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.136</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 00:29:24 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.136.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.136.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_002924297</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.136</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.136</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.136.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.136.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.137
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.137</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.137</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.137</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:09:16 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.137.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.137.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_070917007</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.137</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.137</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.137.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.137.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.138
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.138</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.138</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.138</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:13:37 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.138.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.138.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_071337124</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.138</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.138</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.138.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.138.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.139
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.139</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.139</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.139</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:15:38 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.139.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.139.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_071538556</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.139</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.139</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.139.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.139.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.140
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.140</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.140</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.140</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:18:29 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.140.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.140.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_071829589</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.140</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.140</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.140.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.140.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.141
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.141</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.141</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.141</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:30:13 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.141.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.141.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_073013882</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.141</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.141</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.141.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.141.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.142
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.142</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.142</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.142</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 07:54:03 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.142.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.142.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_075403450</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.142</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.142</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.142.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.142.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.143
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.143</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.143</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.143</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 14:07:48 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.143.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.143.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_140748478</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.143</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.143</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.143.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.143.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.144
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.144</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.144</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.144</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 13 15:15:46 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.144.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.144.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_151546888</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.144</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.144</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.144.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.144.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.145
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_static_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1_spectre_state1_Interactive.145</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_static</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>/ckin&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLK
+								<evalType>point</evalType>
+							</output>
+							<output>/SARCLKB
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>vout
+								<evalType>point</evalType>
+							</output>
+							<output>adccode
+								<evalType>point</evalType>
+							</output>
+							<output>/IDEALDACOUT
+								<evalType>point</evalType>
+							</output>
+							<output>/ADCCODE
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:1_none_Interactive.145</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 9e-09 2.062e-06 "linear" 2e-09)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+					<test enabled="1">adc_sar_testbenches:tisar_dynamic_test:2
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>tisar_sf_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:tisar_dynamic_test:2_tisar_dynamic_test_woSF_Interactive.145</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>tisar_dynamic_test</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_sf</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>tisar_dynamic_test_woSF</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>sample(VT("/IDEALDACOUT") 3e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 5.5e-09 5.126e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.131e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>sample(VT("/IDEALDACOUT") 1.05e-08 5.136e-06 "linear" 2.5e-09)
+								<evalType>point</evalType>
+							</output>
+							<output>/inp&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+							<output>/inn&lt;3&gt;
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1200m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pdelay
+						<value>800p/8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>250m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0.0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>duty
+						<value>15</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:2</dependentTest>
+							<dependentTest enabled="1">adc_sar_testbenches:tisar_dynamic_test:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<incrementalsimulationoptions>
+					<incrementalSimulation>0</incrementalSimulation>
+				</incrementalsimulationoptions>
+				<disabledtests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_static:1</test>
+					<test>adc_sar_testbenches:tisar_dynamic_test:2</test>
+				</disabledtests>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 14 16:05:30 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.145.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.145.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_160530838</localpsfdir>
+			<psfdir>/users/wrbae/simulation/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.145</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.145</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI/laygo/generators/splash/adc_sar_testbenches/tisar_sf_dynamic_test/adexl/results/data/Interactive.145.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.145.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

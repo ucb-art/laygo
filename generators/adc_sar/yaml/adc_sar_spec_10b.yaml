@@ -1,0 +1,42 @@
+#temperature
+temp: 300                 
+temp_min: 273
+temp_max: 400
+#input range
+v_in: 0.3               
+v_in_max: 0.5
+v_in_cm: 0.21
+#number of bits
+n_bit: 10 
+#number of bits after cal
+n_bit_cal: 9
+#effective sampling rate
+fsamp: 4.0e+9
+#interleaving ratio
+n_interleave: 4 
+#minimum cap size (set by process and template)
+c_unit: 0.205e-15       
+#ground cap size (for noise calculations)
+c_ground: 0.250e-15       
+#Max. cap mismatch ratio for c_unit
+c_delta: 0.5   
+#stardard deviation of sampling noise in bits
+n_bit_samp_noise: 0.5 
+#max. sampling settling error in bits
+n_bit_samp_settle: 0.5 
+#sigma of comparator noise in bits
+n_bit_comp_noise: 1
+#capdac radix array
+rdx_array: [1, 2, 4, 8, 16, 28, 53, 100, 190] 
+#enob from redundancy
+rdx_enob: 9             
+#timing budget
+cycle_comp: 0.25
+cycle_logic: 0.4
+cycle_dac: 0.25
+#voltage - vdd
+vdd: 0.8
+vdd_min: 0.72
+vdd_max: 0.88
+#True if laygo is used for sampler generation. If false, AnalogBase is used
+samp_use_laygo: True

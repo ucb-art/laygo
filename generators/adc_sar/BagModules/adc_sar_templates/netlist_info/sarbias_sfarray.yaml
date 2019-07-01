@@ -1,0 +1,120 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_sfarray
+pins: [ "VDD", "VSS", "VIN<2:0>", "ADCBIAS<2:0>", "VREF<2:0>" ]
+instances:
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  IBC1<1:168>:
+    lib_name: ge_tech_logic_templates
+    cell_name: bcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*168>VSS"
+        num_bits: 168
+      VDD:
+        direction: inputOutput
+        net_name: "<*168>VDD"
+        num_bits: 168
+      I:
+        direction: inputOutput
+        net_name: "<*168>VREF<1>"
+        num_bits: 168
+  IBC2<1:168>:
+    lib_name: ge_tech_logic_templates
+    cell_name: bcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*168>VSS"
+        num_bits: 168
+      VDD:
+        direction: inputOutput
+        net_name: "<*168>VDD"
+        num_bits: 168
+      I:
+        direction: inputOutput
+        net_name: "<*168>VREF<2>"
+        num_bits: 168
+  IBC0<1:168>:
+    lib_name: ge_tech_logic_templates
+    cell_name: bcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*168>VSS"
+        num_bits: 168
+      VDD:
+        direction: inputOutput
+        net_name: "<*168>VDD"
+        num_bits: 168
+      I:
+        direction: inputOutput
+        net_name: "<*168>VREF<0>"
+        num_bits: 168
+  ISF0:
+    lib_name: adc_sar_templates
+    cell_name: sarbias_sfarray_wopcm_core
+    instpins:
+      ADCBIAS<2:0>:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VIN<2:0>:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VOUT<2:0>:
+        direction: output
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICLO0<1:112>:
+    lib_name: ge_tech_logic_templates
+    cell_name: dcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*112>VSS"
+        num_bits: 112
+      VDD:
+        direction: inputOutput
+        net_name: "<*112>VDD"
+        num_bits: 112
+  ICUP0<1:924>:
+    lib_name: ge_tech_logic_templates
+    cell_name: dcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*924>VSS"
+        num_bits: 924
+      VDD:
+        direction: inputOutput
+        net_name: "<*924>VDD"
+        num_bits: 924

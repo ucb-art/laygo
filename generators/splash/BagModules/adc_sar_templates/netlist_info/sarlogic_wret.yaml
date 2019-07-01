@@ -1,0 +1,196 @@
+lib_name: adc_sar_templates
+cell_name: sarlogic_wret
+pins: [ "SAOM", "SAOP", "RST", "SB", "RETO", "ZP", "ZM", "ZMID", "VDD", "VSS" ]
+instances:
+  IDFF0:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "RETO"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "SB"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP"
+        num_bits: 1
+  INR0:
+    lib_name: logic_templates
+    cell_name: nor
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZMID"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDNOB"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "LDPOB"
+        num_bits: 1
+  IBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDPO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZM"
+        num_bits: 1
+  IBUF1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDNO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ZP"
+        num_bits: 1
+  IINV3:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDNOB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDNO"
+        num_bits: 1
+  IINV2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "LDPOB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDPO"
+        num_bits: 1
+  IOAI1:
+    lib_name: logic_templates
+    cell_name: oai22
+    instpins:
+      D:
+        direction: input
+        net_name: "SB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDNOB"
+        num_bits: 1
+      C:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDNO"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+  IOAI0:
+    lib_name: logic_templates
+    cell_name: oai22
+    instpins:
+      D:
+        direction: input
+        net_name: "SB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "LDPOB"
+        num_bits: 1
+      C:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "LDPO"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "RST"
+        num_bits: 1

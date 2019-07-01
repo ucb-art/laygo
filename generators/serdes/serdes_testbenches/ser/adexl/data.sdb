@@ -1,0 +1,2814 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+			<corner enabled="1">FF
+				<vars>
+					<var>temperature
+						<value>0</value>
+					</var>
+					<var>vdd
+						<value>1.0</value>
+					</var>
+					<var>dvdd
+						<value>0.88</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">toplevel.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+						<modelsection>"top_ff"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="1">SS
+				<vars>
+					<var>temperature
+						<value>125</value>
+					</var>
+					<var>vdd
+						<value>0.8</value>
+					</var>
+					<var>dvdd
+						<value>0.72</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">toplevel.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+						<modelsection>"top_ss"</modelsection>
+					</model>
+				</models>
+			</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test enabled="1">serdes_testbenches:serdes:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>ser</value>
+					</option>
+					<option>lib
+						<value>serdes_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>serdes_testbenches:serdes:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>serdes</value>
+					</option>
+					<option>lib
+						<value>serdes_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>nil
+						<evalType>point</evalType>
+					</output>
+					<output>tset
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+						<evalType>point</evalType>
+					</output>
+					<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+						<evalType>point</evalType>
+					</output>
+					<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+						<evalType>point</evalType>
+					</output>
+					<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+						<evalType>point</evalType>
+					</output>
+					<output>ck2q_set
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>pper
+				<value>400p</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pskew
+				<value>30p</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vdd
+				<value>0.9</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tsim
+				<value>10n</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>dvdd
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>cslew
+				<value>{Inclusion List}200p{Inclusion List}</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>dslew
+				<value>{Inclusion List}10p,50p{Inclusion List}</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>delay
+				<value>{From/To}Linear:1950p:2p:2050p{From/To}</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<checksasserts netlist="0">
+			<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+		</checksasserts>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+			<plottingoption>allplottingtemplates
+				<value></value>
+			</plottingoption>
+			<plottingoption>defaultplottingtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<distributeoptions>
+			<genusjoblimits>
+				<genusjoblimit>ICRP
+					<value>0</value>
+				</genusjoblimit>
+			</genusjoblimits>
+			<specifyjoblimit>0</specifyjoblimit>
+			<parallelrun>1</parallelrun>
+		</distributeoptions>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.52
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.52</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}10p,50p,200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1800p:2p:1900p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 09:44:44 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.52.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.52.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_094444172</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.52</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.52</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.52.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.52.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>cslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.53
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.53</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}10p,50p,200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1750p:2p:1900p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 10:18:18 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.53.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.53.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_101818138</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.53</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.53</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.53.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.53.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>cslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.54
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.54</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}10p,50p,200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1700p:2p:1900p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 10:30:17 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.54.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.54.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_103017516</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.54</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.54</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.54.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.54.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>cslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.55
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.55</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1850p:2p:1950p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 14:57:04 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.55.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.55.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_145704139</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.55</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.55</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.55.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.55.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.56
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.56</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1850p:2p:1950p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 15:15:52 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.56.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.56.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_151552309</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.56</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.56</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.56.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.56.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.57
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.57</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1820p:2p:1950p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 15:49:27 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.57.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.57.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_154927237</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.57</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.57</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.57.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.57.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.58
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.58</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}50p,200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}10p,50p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1800p:2p:1900p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 16:23:17 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.58.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.58.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_162318023</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.58</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.58</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.58.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.58.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>cslew
+						<value>5p</value>
+					</var>
+					<var>dslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.59
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.59</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}50p,200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}10p,50p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1820p:2p:1950p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 17:16:45 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.59.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.59.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_171645365</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.59</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.59</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.59.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.59.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>cslew
+						<value>5p</value>
+					</var>
+					<var>dslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.60
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.60</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}10p,50p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1820p:2p:1950p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 19:16:45 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.60.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.60.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_191645120</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.60</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.60</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.60.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.60.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>dslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.61
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>ser</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.61</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>tset
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 3 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(- (cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 1 "rising" nil nil nil) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "either" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>(((- cross(VT("/XDUT/INto1_0/p0buf") (VAR("vdd") / 2) 2 "rising" nil nil nil)) + cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil)))
+								<evalType>point</evalType>
+							</output>
+							<output>ck2q_set
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>400p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cslew
+						<value>{Inclusion List}200p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dslew
+						<value>{Inclusion List}10p,50p{Inclusion List}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:1950p:2p:2050p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 3 22:30:10 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.61.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.61.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_223010160</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/ser/adexl/results/data/Interactive.61</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/ser/adexl/results/data/Interactive.61</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/ser/adexl/results/data/Interactive.61.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.61.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>dslew
+						<value>5p</value>
+					</var>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

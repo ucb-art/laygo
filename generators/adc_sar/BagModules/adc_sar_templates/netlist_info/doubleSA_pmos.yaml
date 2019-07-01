@@ -1,0 +1,132 @@
+lib_name: adc_sar_templates
+cell_name: doubleSA_pmos
+pins: [ "VSS", "INP", "INM", "OSM", "INTM", "OUTP", "OUTM", "VDD", "OSP", "INTP", "CLKB" ]
+instances:
+  PIN8:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  I1st:
+    lib_name: adc_sar_templates
+    cell_name: doubleSA_pmos_1st
+    instpins:
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      INTM:
+        direction: output
+        net_name: "INTM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      OP:
+        direction: output
+        net_name: "net031"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      INTP:
+        direction: output
+        net_name: "INTP"
+        num_bits: 1
+      OM:
+        direction: output
+        net_name: "net030"
+        num_bits: 1
+  I2nd:
+    lib_name: adc_sar_templates
+    cell_name: doubleSA_pmos_2nd
+    instpins:
+      INTP:
+        direction: input
+        net_name: "INTP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      OUTP:
+        direction: output
+        net_name: "OUTP"
+        num_bits: 1
+      OUTM:
+        direction: output
+        net_name: "OUTM"
+        num_bits: 1
+      OP:
+        direction: input
+        net_name: "net031"
+        num_bits: 1
+      INTM:
+        direction: input
+        net_name: "INTM"
+        num_bits: 1
+      OM:
+        direction: input
+        net_name: "net030"
+        num_bits: 1

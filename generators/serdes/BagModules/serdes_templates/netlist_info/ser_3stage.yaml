@@ -1,0 +1,100 @@
+lib_name: serdes_templates
+cell_name: ser_3stage
+pins: [ "RST", "in", "CLKB", "CLK", "out", "VSS", "VDD" ]
+instances:
+  I0:
+    lib_name: serdes_templates
+    cell_name: ser_2Nto1
+    instpins:
+      divclk:
+        direction: output
+        net_name: "divclk"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "out"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      in<1:0>:
+        direction: input
+        net_name: "ser<1:0>"
+        num_bits: 2
+  I1:
+    lib_name: serdes_templates
+    cell_name: ser
+    instpins:
+      div:
+        direction: output
+        net_name: "p1buf"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "ser_out"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      clk_in:
+        direction: input
+        net_name: "divclk"
+        num_bits: 1
+      in<0>:
+        direction: input
+        net_name: "in"
+        num_bits: 1
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

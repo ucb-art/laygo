@@ -1,0 +1,76 @@
+adc_width: 224
+capdac: {c_m: 1, num_bits_horizontal: 2, num_bits_vertical: 6}
+capdrv:
+  m_list: [2, 2, 2, 2, 2, 2, 4, 8]
+  space_offset: 0
+clk_dis_capsw: {m: 2}
+clk_dis_cdac: {m: 1, num_bits: 5}
+clk_dis_cell: {m_dff: 4, m_inv1: 6, m_inv2: 16, m_tgate: 16}
+clk_dis_htree: {m_clko: 1, m_track: 8}
+clkcal_order: [0, 32, 1, 31, 2, 30, 3, 29, 4, 28, 5, 27, 6, 26, 7, 25, 8, 24, 9, 23,
+  10, 22, 11, 21, 12, 20, 13, 19, 14, 18, 15, 17, 16]
+dcap2_m: 19
+device_intent: fast
+input_htree: {metal_h: 8, metal_v: 9, trackm: 1}
+lch: 1.6e-08
+m_dcap2: 19
+num_space_samp: 33
+num_space_sar: 59
+nw: 4
+pw: 4
+r2rdac: {m: 2, m_bcap: 5, num_bits: 5, num_series: 12}
+r2rdac_array: {num_hori: 5, num_vert: 4}
+reserve_tracks: [1.28, 2.32, 2.48, 4.72, 4.88, 5.04, 7.2, 7.36, 9.76, 9.92, 12.24,
+  12.4, 18.56, 18.64, 18.8, 18.88]
+retimer: {ret_m_ibuf: 8, ret_m_latch: 2, ret_m_obuf: 2, ret_m_sr: 2, ret_m_srbuf: 4}
+salatch: {doubleSA: false, m: 14, m_buf: 12, m_d: 12, m_rgnn: 12, m_rgnp_d: 12, m_rst: 6,
+  m_rst_d: 6, num_row_ptap: 2, smallrgnp: false}
+salatch_preset:
+  m: [4, 8, 12, 16]
+  m_buf: [4, 8, 12, 16]
+  m_rgnn: [4, 8, 12, 16]
+  m_rst: [2, 4, 6, 8]
+sampler_nmos:
+  fg_inbuf_list:
+  - [8, 8]
+  - [14, 14]
+  fg_outbuf_list:
+  - [4, 4]
+  - [24, 24]
+  fgn: 12
+  nduml: 10
+  ndumr: 4
+  nsep: 2
+  wn: 8
+  wp: 8
+sarabe_m_space_left_4x: 0
+sarabe_supply_rail_mode: 0
+sarclkgen: {fast: true, fo: 4, m: 2, mux_fast: false, ndelay: 1}
+sarfsm: {m: 2}
+sarlogic: {m: 4, num_inv_bb: 0}
+sarret: {fo: 2, m: 1}
+sarsamp:
+  m_inbuf_list: [16, 24]
+  m_outbuf_list: [8, 32]
+  m_sw: 4
+  m_sw_arr: 8
+sarsamp_preset:
+  m_inbuf_list:
+  - [4, 6]
+  - [8, 12]
+  - [16, 24]
+  - [24, 36]
+  - [32, 48]
+  m_outbuf_list:
+  - [2, 8]
+  - [4, 16]
+  - [8, 32]
+  - [12, 48]
+  - [16, 64]
+  m_sw: [4, 4, 4, 4, 4]
+  m_sw_arr: [2, 4, 8, 12, 16]
+slice_order: [0, 6, 2, 4, 1, 7, 3, 5]
+sourceFollower: {bias_current: false, m_bias: 12, m_bias_dum: 2, m_byp: 12, m_byp_bias: 4,
+  m_in: 20, m_in_dum: 2, m_mirror: 2, m_off: 1}
+sourceFollower_vref: {bias_current: false, m_bias: 12, m_bias_dum: 2, m_byp: 12, m_byp_bias: 4,
+  m_in: 20, m_in_dum: 2, m_mirror: 2, m_off: 1}

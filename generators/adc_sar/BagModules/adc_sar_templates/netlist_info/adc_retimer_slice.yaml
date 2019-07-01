@@ -1,0 +1,104 @@
+lib_name: adc_sar_templates
+cell_name: adc_retimer_slice
+pins: [ "clkb1", "clkb2", "in", "VDD", "clkb0", "VSS", "out" ]
+instances:
+  ILATCH2:
+    lib_name: adc_sar_templates
+    cell_name: latch_ckb
+    instpins:
+      I:
+        direction: input
+        net_name: "int1"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "out"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "clkb2"
+        num_bits: 1
+  ILATCH1:
+    lib_name: adc_sar_templates
+    cell_name: latch_ckb
+    instpins:
+      I:
+        direction: input
+        net_name: "int0"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "int1"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "clkb1"
+        num_bits: 1
+  ILATCH0:
+    lib_name: adc_sar_templates
+    cell_name: latch_ckb
+    instpins:
+      I:
+        direction: input
+        net_name: "in"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "int0"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "clkb0"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}

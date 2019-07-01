@@ -1,0 +1,3 @@
+projectDir = '"/tools/scratch/jdhan/simulation"
+designInfo = '("adc_sar_testbenches" "clkout_tb_driving" "config" "spectre")
+descriptionText = "None"

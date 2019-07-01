@@ -1,0 +1,104 @@
+lib_name: logic_templates
+cell_name: latch
+pins: [ "I", "CLK", "O", "VDD", "VSS", "CLKB" ]
+instances:
+  I1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "MEM"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+  I0:
+    lib_name: logic_templates
+    cell_name: tinv
+    instpins:
+      O:
+        direction: inputOutput
+        net_name: "MEM"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  I2:
+    lib_name: logic_templates
+    cell_name: tinv_small
+    instpins:
+      O:
+        direction: inputOutput
+        net_name: "MEM"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "O"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

@@ -1,0 +1,40 @@
+lib_name: adc_sar_templates
+cell_name: capdac
+pins: [ "I_C0", "O", "I" ]
+instances:
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  CDAC0:
+    lib_name: intel22tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  C0:
+    lib_name: intel22tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I_C0"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

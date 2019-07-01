@@ -1,0 +1,132 @@
+lib_name: clk_dis_templates
+cell_name: clk_dis_viadel_htree_bk
+pins: [ "CAL7", "CAL6", "CAL5", "CAL4", "CAL3", "CAL2", "CAL1", "CAL0", "CLKO", "DATAO", "RSTN", "VSS", "VDD", "CLKIN", "CLKIP", "RSTP" ]
+instances:
+  I0:
+    lib_name: clk_dis_templates
+    cell_name: clk_dis_viadel
+    instpins:
+      DATAO:
+        direction: inputOutput
+        net_name: "DATAO"
+        num_bits: 1
+      RSTN:
+        direction: input
+        net_name: "RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "RSTP"
+        num_bits: 1
+      CAL0:
+        direction: input
+        net_name: "CAL0"
+        num_bits: 1
+      CAL1:
+        direction: 
+        net_name: "CAL1"
+        num_bits: 1
+      CAL2:
+        direction: 
+        net_name: "CAL2"
+        num_bits: 1
+      CAL3:
+        direction: 
+        net_name: "CAL3"
+        num_bits: 1
+      CAL4:
+        direction: 
+        net_name: "CAL4"
+        num_bits: 1
+      CAL5:
+        direction: 
+        net_name: "CAL5"
+        num_bits: 1
+      CAL7:
+        direction: 
+        net_name: "CAL7"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      CLKO:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+      CAL6:
+        direction: 
+        net_name: "CAL6"
+        num_bits: 1
+      CLKI:
+        direction: input
+        net_name: "net2"
+        num_bits: 1
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

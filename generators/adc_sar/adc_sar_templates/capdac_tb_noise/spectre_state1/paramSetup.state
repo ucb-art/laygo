@@ -1,0 +1,3 @@
+"_EXPR_1" (tran_strobeperiod options "VAR(\"pper\")*0.01")
+"_EXPR_10" (noise_stop fields "VAR(\"fsamp\")*100")
+"_EXPR_9" (noise_start fields "VAR(\"fsamp\")*0.01")

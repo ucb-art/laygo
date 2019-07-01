@@ -1,0 +1,100 @@
+lib_name: adc_sar_templates
+cell_name: sarclkdelay
+pins: [ "SEL<0:3>", "I", "O", "VSS", "VDD" ]
+instances:
+  I1:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelayslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "n1"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "n0"
+        num_bits: 1
+      SEL:
+        direction: input
+        net_name: "SEL<1>"
+        num_bits: 1
+  I2:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelayslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "n2"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "n1"
+        num_bits: 1
+      SEL:
+        direction: input
+        net_name: "SEL<2>"
+        num_bits: 1
+  I3:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelayslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "n2"
+        num_bits: 1
+      SEL:
+        direction: input
+        net_name: "SEL<3>"
+        num_bits: 1
+  I0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelayslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "n0"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+      SEL:
+        direction: input
+        net_name: "SEL<0>"
+        num_bits: 1

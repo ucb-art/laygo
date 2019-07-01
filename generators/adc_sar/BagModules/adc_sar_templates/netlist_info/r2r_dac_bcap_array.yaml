@@ -1,0 +1,32 @@
+lib_name: adc_sar_templates
+cell_name: r2r_dac_bcap_array
+pins: [ "VDD", "VSS", "I" ]
+instances:
+  IBCAP0:
+    lib_name: logic_templates
+    cell_name: bcap2
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      I:
+        direction: inputOutput
+        net_name: "I"
+        num_bits: 1
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

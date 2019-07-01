@@ -1,0 +1,28 @@
+lib_name: adc_sar_templates
+cell_name: sarret
+pins: [ "VDD", "VSS", "OUT", "IN", "CLK" ]
+instances:
+  I0:
+    lib_name: adc_sar_templates
+    cell_name: sarretslice
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "OUT"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "IN"
+        num_bits: 1

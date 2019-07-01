@@ -1,0 +1,62 @@
+***Setup***
+1) Copy some files to your working directory if you don't have them
+	cp /tools/projects/wrbae/serdes_test/craft_adc/serdes_spec.yaml .
+	cp /tools/projects/wrbae/serdes_test/craft_adc/serdes_size.yaml .
+	ln -s /tools/projects/jdhan/BAG/TISARADC_init_tech/ge_tech_microtemplates_dense .
+	cp /tools/projects/wrbae/serdes_test/craft_adc/laygo_config.yaml .
+2) Open cds.lib and add
+	DEFINE serdes_templates ./laygo/generators/serdes/serdes_templates
+3) Open bag_libs.def and add
+	serdes_templates $BAG_WORK_DIR/laygo/generators/serdes/BagModules
+	and modify 'logic_templates' path to
+	$BAG_WORK_DIR/laygo/generators/logic/BagModules
+4) Open .cshrc_bag and comment out
+	setenv BAG_PYTHON "/tools/projects/erichang/programs/anaconda3/bin/python"
+	and add
+	setenv BAG_PYTHON "/tools/projects/eeis/BAG_2.0/anaconda2/bin/python"	
+5) Open start bag.sh and comment out "set = cmd~~" and "exec $cmd~~" and add this
+	exec ${BAG_PYTHON} -m IPython
+6) In virtuoso, create a new library called serdes_generated
+
+***Serializer Generation***
+1) Set your SER parameters in serdes_spec.yaml and serdes_size.yaml
+2) Generate N:1 SER
+	a) Please note that num_ser in serdes_spec.yaml equals 2N
+	b) Generate layout
+		In BAG window, run laygo/generators/serdes/ser_layout_generator.py
+	c) Generate schematic
+        run laygo/generators/serdes/ser_schematic_generator.py
+3) Generate 2:1 SER with a half-rate clock
+	a) Generate layout
+		run laygo/generators/serdes/ser_2to1_halfrate_layout_generator.py
+	b) Generate schematic
+        run laygo/generators/serdes/ser_2to1_halfrate_schematic_generator.py
+4) Generate 2N:1 SER
+	a) Generate layout
+        run laygo/generators/serdes/ser_2Nto1_layout_generator.py
+    b) Generate schematic
+        run laygo/generators/serdes/ser_2Nto1_schematic_generator.py
+
+***(Optional) Generate 3stage SER for higher serialization ratio of M x 2N***
+1) Generate M:1 SER
+	a) Open serdes_spec.yaml and set num_ser to 2M
+	b) run laygo/generators/serdes/ser_layout_generator.py 
+2) Generate (M x 2N):1 SER
+	a) Open serdes_spec.yaml 
+		Return num_ser to 2N
+		Set num_ser_3rd to M
+	b) Generate layout
+        run laygo/generators/serdes/ser_3stage_layout_generator.py
+    c) Generate schematic
+        run laygo/generators/serdes/ser_3stage_schematic_generator.py
+
+***Deserializer Generation***
+1) Set your DES parameters in serdes_spec.yaml and serdes_size.yaml
+2) Generate 1:N DES
+	a) Open serdes_spec.yaml and set num_des and num_flop
+		num_des = N, num_flop can be 1 or 2, num_flop adjusts the aspect ratio of the layout
+	b) Generate layout
+		run laygo/generators/serdes/des_layout_generator.py
+	c) Generate schematic
+        run laygo/generators/serdes/des_schematic_generator.py
+

@@ -1,0 +1,24 @@
+lib_name: clk_dis_templates
+cell_name: capdac
+pins: [ "O", "I" ]
+instances:
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  CDAC:
+    lib_name: intel22tech_microtemplates_dense
+    cell_name: momcap_m4_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1

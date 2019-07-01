@@ -1,0 +1,132 @@
+_outputList = nil
+ _envSaveOptions = nil
+_envSaveOptions = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21)
+tmp1 = (let
+(tmp1 tmp2)
+tmp1 = 'fastViewOption
+list(tmp1 tmp2)
+)
+tmp2 = (let
+(tmp1 tmp2)
+tmp1 = 'simOutputFormat
+tmp2 = "psf"
+list(tmp1 tmp2)
+)
+tmp3 = (let
+(tmp1 tmp2)
+tmp1 = 'separator4
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp4 = (let
+(tmp1 tmp2)
+tmp1 = 'extremesInfo
+list(tmp1 tmp2)
+)
+tmp5 = (let
+(tmp1 tmp2)
+tmp1 = 'assertsInfo
+list(tmp1 tmp2)
+)
+tmp6 = (let
+(tmp1 tmp2)
+tmp1 = 'designParamValInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp7 = (let
+(tmp1 tmp2)
+tmp1 = 'subcktsInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp8 = (let
+(tmp1 tmp2)
+tmp1 = 'primitivesInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp9 = (let
+(tmp1 tmp2)
+tmp1 = 'outputParamInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp10 = (let
+(tmp1 tmp2)
+tmp1 = 'elementInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp11 = (let
+(tmp1 tmp2)
+tmp1 = 'modelParamInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp12 = (let
+(tmp1 tmp2)
+tmp1 = 'separator3
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp13 = (let
+(tmp1 tmp2)
+tmp1 = 'saveahdlvars
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp14 = (let
+(tmp1 tmp2)
+tmp1 = 'separator2
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp15 = (let
+(tmp1 tmp2)
+tmp1 = 'useprobes
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp16 = (let
+(tmp1 tmp2)
+tmp1 = 'subcktprobelvl
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp17 = (let
+(tmp1 tmp2)
+tmp1 = 'currents
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp18 = (let
+(tmp1 tmp2)
+tmp1 = 'separator1
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp19 = (let
+(tmp1 tmp2)
+tmp1 = 'nestlvl
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp20 = (let
+(tmp1 tmp2)
+tmp1 = 'pwr
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp21 = (let
+(tmp1 tmp2)
+tmp1 = 'save
+tmp2 = "selected"
+list(tmp1 tmp2)
+)
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21)
+)
+savedComponent = list( _outputList _envSaveOptions ) 
+_outputList = 'unbound
+ _envSaveOptions = 'unbound

@@ -1,0 +1,3 @@
+"_DEXPR_3" (tran_stop fields "VAR(\"tsim\")")
+"_DEXPR_5" (tran_strobeperiod options "VAR(\"tstep\")")
+"_EXPR_3" (tran_outputstart options "VAR(\"tper\")*1.25")

@@ -1,0 +1,2022 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<distributeoptions>
+			<parallelrun>1</parallelrun>
+		</distributeoptions>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>sar_wsamp_9b_tb_tran_dynamic</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>sar_wsamp_9b_tb_tran_dynamic</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>temp</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>vdd
+				<value>1.2</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>fin
+				<value>22.94921875Meg</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pper
+				<value>2n</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pskew_rst
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvicm
+				<value>150m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvidm
+				<value>270m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref0
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref1
+				<value>150m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvref2
+				<value>300m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var enabled="1">duty
+				<value>1</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vamplitude
+				<value>500m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vb_bot_sw
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vb_top_sw
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>voffset
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.42</overwritehistoryname>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+			<plottingoption>allplottingtemplates
+				<value></value>
+			</plottingoption>
+			<plottingoption>defaultplottingtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.63
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.63</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 8 11:32:03 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.63.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.63.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_113203084</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.63</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.63</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.63.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.63.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.64
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.64</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 8 11:35:17 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.64.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.64.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_113517410</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.64</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.64</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.64.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.64.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.65
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.65</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 8 13:30:00 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.65.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.65.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_133000064</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.65</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.65</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.65.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.65.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.66
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.66</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 8 20:17:02 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.66.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.66.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_201702962</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.66</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.66</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.66.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.66.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.67
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.67</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 8 21:26:59 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.67.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.67.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_212659500</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.67</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.67</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.67.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.67.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.68
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.68</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 10 13:08:43 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.68.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.68.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_130843430</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.68</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.68</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.68.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.68.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.69
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.69</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 12 09:30:54 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.69.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.69.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_093054228</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.69</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.69</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.69.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.69.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.70
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.70</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 12 10:08:10 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.70.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.70.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_100810275</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.70</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.70</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.70.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.70.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.71
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.71</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 15 13:51:19 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.71.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.71.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_135119974</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.71</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.71</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.71.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.71.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.72
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<distributeoptions>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1_temp_Interactive.72</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>sar_wsamp_9b_tb_tran_dynamic</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>temp</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fin
+						<value>22.94921875Meg</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pper
+						<value>2n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew_rst
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvicm
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvidm
+						<value>270m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref0
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref1
+						<value>150m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pvref2
+						<value>300m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">duty
+						<value>1</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamplitude
+						<value>500m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_bot_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vb_top_sw
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voffset
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:sar_wsamp_9b_tb_tran_dynamic:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.42</overwritehistoryname>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Oct 15 17:25:52 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.72.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.72.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_172552791</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.72</psfdir>
+			<simdir>/tools/scratch/wrbae/simulation/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.72</simdir>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/28FDSOI_29/adc_sar_testbenches/sar_wsamp_9b_tb_tran_dynamic/adexl/results/data/Interactive.72.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.72.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

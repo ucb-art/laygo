@@ -1,0 +1,28 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_8slices
+pins: [ "VDD", "VSS" ]
+instances:
+  I0<2:0>:
+    lib_name: sourceFollower_templates
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "SFBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "<*3>out"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3

@@ -1,0 +1,1738 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+			<corner enabled="1">FF
+				<vars>
+					<var>temperature
+						<value>0</value>
+					</var>
+					<var>vdd
+						<value>1.0</value>
+					</var>
+					<var>dvdd
+						<value>0.88</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">toplevel.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+						<modelsection>"top_ff"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="1">SS
+				<vars>
+					<var>temperature
+						<value>125</value>
+					</var>
+					<var>vdd
+						<value>0.8</value>
+					</var>
+					<var>dvdd
+						<value>0.72</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">toplevel.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+						<modelsection>"top_ss"</modelsection>
+					</model>
+				</models>
+			</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test enabled="1">serdes_testbenches:serdes:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>serdes</value>
+					</option>
+					<option>lib
+						<value>serdes_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>serdes_testbenches:serdes:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>serdes</value>
+					</option>
+					<option>lib
+						<value>serdes_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>nil
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+					<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>pper
+				<value>70p</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pskew
+				<value>30p</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vdd
+				<value>0.9</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tsim
+				<value>10n</value>
+				<dependentTests>
+					<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>delay
+				<value>{From/To}Linear:0:3.5p:35p{From/To}</value>
+				<dependentTests>
+					<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>dvdd
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<checksasserts netlist="0">
+			<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+		</checksasserts>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+			<plottingoption>allplottingtemplates
+				<value></value>
+			</plottingoption>
+			<plottingoption>defaultplottingtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<distributeoptions>
+			<genusjoblimits>
+				<genusjoblimit>ICRP
+					<value>0</value>
+				</genusjoblimit>
+			</genusjoblimits>
+			<specifyjoblimit>0</specifyjoblimit>
+			<parallelrun>1</parallelrun>
+		</distributeoptions>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.26
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.26</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 15:40:54 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.26.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.26.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_154055002</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.26</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.26</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.26.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.26.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.27
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.27</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 15:51:04 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.27.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.27.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_155104401</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.27</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.27</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.27.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.27.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.28
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_rst_test</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.28</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>15n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 21:52:48 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.28.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.28.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_215248141</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.28</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.28</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.28.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.28.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.29
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_rst_test</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.29</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>15n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 21:57:43 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.29.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.29.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_215743802</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.29</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.29</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.29.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.29.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.30
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_rst_test</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.30</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>15n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 22:02:05 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.30.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.30.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_220205241</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.30</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.30</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.30.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.30.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.31
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_rst_test</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.31</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>15n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 22:02:12 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.31.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.31.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_220212363</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.31</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.31</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.31.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.31.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.32
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic_rst_test</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.32</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>15n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Apr 26 22:07:51 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.32.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.32.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-3.eecs.berkeley.edu_wrbae_220751691</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.32</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.32</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.32.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.32.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.33
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.33</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>{From/To}Linear:0:3.5p:35p{From/To}</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>4n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 2 17:24:06 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.33.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.33.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_172406779</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.33</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.33</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.33.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.33.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>pskew
+						<value>30p</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.34
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.34</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:0:3.5p:35p{From/To}</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 2 17:41:58 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.34.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.34.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_174158556</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.34</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.34</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.34.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.34.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.35
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="1">FF
+						<vars>
+							<var>temperature
+								<value>0</value>
+							</var>
+							<var>vdd
+								<value>1.0</value>
+							</var>
+							<var>dvdd
+								<value>0.88</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="1">SS
+						<vars>
+							<var>temperature
+								<value>125</value>
+							</var>
+							<var>vdd
+								<value>0.8</value>
+							</var>
+							<var>dvdd
+								<value>0.72</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">toplevel.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/tools/tstech16/CLN16FFC/PDK/ge_tech/../models/toplevel.scs</modelfile>
+								<modelsection>"top_ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">serdes_testbenches:serdes:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>serdes_testbenches:serdes:1_none_Interactive.35</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>serdes</value>
+							</option>
+							<option>lib
+								<value>serdes_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(cross(VT("/clk_div") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/dout&lt;0&gt;") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil) - cross(VT("/XDUT/INto1_0/temp_p0") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 1 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 1 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+							<output>(cross(VT("/d&lt;0&gt;") (VAR("dvdd") / 2) 2 "either" nil nil nil) - cross(VT("/divclk") (VAR("vdd") / 2) 3 "rising" nil nil nil))
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>pper
+						<value>70p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pskew
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>10n</value>
+						<dependentTests>
+							<dependentTest enabled="1">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>delay
+						<value>{From/To}Linear:0:3.5p:35p{From/To}</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>dvdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest omitted="0">serdes_testbenches:serdes:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<checksasserts netlist="0">
+					<test netlist="1" netlistscope="all">serdes_testbenches:serdes:1</test>
+				</checksasserts>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<distributeoptions>
+					<genusjoblimits>
+						<genusjoblimit>ICRP
+							<value>0</value>
+						</genusjoblimit>
+					</genusjoblimits>
+					<specifyjoblimit>0</specifyjoblimit>
+					<parallelrun>1</parallelrun>
+				</distributeoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>May 2 18:02:53 2018</timestamp>
+			<resultsname>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.35.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.35.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr820-2.eecs.berkeley.edu_wrbae_180253121</localpsfdir>
+			<psfdir>/tools/scratch/wrbae/simulation/serdes_testbenches/serdes/adexl/results/data/Interactive.35</psfdir>
+			<simdir>$AXL_PROJECT_DIR/serdes_testbenches/serdes/adexl/results/data/Interactive.35</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/laygo/generators/serdes/serdes_testbenches/serdes/adexl/results/data/Interactive.35.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.35.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>delay
+						<value>0</value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

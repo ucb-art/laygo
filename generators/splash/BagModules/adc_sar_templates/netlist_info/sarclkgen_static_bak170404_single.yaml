@@ -1,0 +1,220 @@
+lib_name: adc_sar_templates
+cell_name: sarclkgen_static_bak170404_single
+pins: [ "SAOM", "PHI0", "RST", "DONE", "UP", "CLKO", "EXTSEL_CLK", "VDD", "VSS", "SAOP", "CLKOB", "SEL<1:0>" ]
+instances:
+  IINV1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SEL<1>"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "SELINV<1>"
+        num_bits: 1
+  IINV8:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "PHI0"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "net010"
+        num_bits: 1
+  IINV7:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "EXTSELB_CLK"
+        num_bits: 1
+  IINV0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "SEL<0>"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "SELINV<0>"
+        num_bits: 1
+  IINV8C:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "CLKO"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKOB"
+        num_bits: 1
+  IINV8B:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net010"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLKO"
+        num_bits: 1
+  IINV5:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "UP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "UPB"
+        num_bits: 1
+  IND0:
+    lib_name: logic_templates
+    cell_name: nand
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      A:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      B:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+  ICORE0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkgen_core_static2
+    instpins:
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      DONE:
+        direction: input
+        net_name: "DONE"
+        num_bits: 1
+      UPB:
+        direction: input
+        net_name: "UPB"
+        num_bits: 1
+  IDLY0:
+    lib_name: adc_sar_templates
+    cell_name: sarclkdelay_compact
+    instpins:
+      SEL<1:0>:
+        direction: input
+        net_name: "SELINV<1:0>"
+        num_bits: 2
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "UP"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "DONE"
+        num_bits: 1

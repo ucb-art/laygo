@@ -1,0 +1,120 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_sfarray_wopcm_core
+pins: [ "VDD", "VSS", "VIN<2:0>", "VOUT<2:0>", "ADCBIAS<2:0>" ]
+instances:
+  PIN19:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  ISF2<2:0>:
+    lib_name: sourceFollower_generated
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "VOUT<2:0>"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3
+  ISF1<2:0>:
+    lib_name: sourceFollower_generated
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "VOUT<2:0>"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3
+  ISF3<2:0>:
+    lib_name: sourceFollower_generated
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "VOUT<2:0>"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3
+  ISF0<2:0>:
+    lib_name: sourceFollower_generated
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "VOUT<2:0>"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VIN<2:0>"
+        num_bits: 3

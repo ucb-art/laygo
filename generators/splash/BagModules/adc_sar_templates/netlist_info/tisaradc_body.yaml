@@ -1,0 +1,176 @@
+lib_name: adc_sar_templates
+cell_name: tisaradc_body
+pins: [ "CLKCAL", "RSTN", "CLKOUT_DES", "RSTP", "ADCOUT", "CLKIN", "CLKIP", "EXTSEL_CLK", "ASCLKD<3:0>", "VREF<2:0>", "OSM", "VSS", "OSP", "VDDSAR", "INM", "VDDSAMP", "INP" ]
+instances:
+  ICORE0:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_body_core
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDDSAMP:
+        direction: inputOutput
+        net_name: "VDDSAMP"
+        num_bits: 1
+      VDDSAR:
+        direction: inputOutput
+        net_name: "VDDSAR"
+        num_bits: 1
+      ADCOUT:
+        direction: output
+        net_name: "ADCOUT"
+        num_bits: 1
+      CLKOUT_DES:
+        direction: output
+        net_name: "CLKOUT_DES"
+        num_bits: 1
+      ASCLKD<3:0>:
+        direction: input
+        net_name: "ASCLKD<3:0>"
+        num_bits: 4
+      CLKCAL:
+        direction: input
+        net_name: "CLKCAL"
+        num_bits: 1
+      CLKIN:
+        direction: input
+        net_name: "CLKIN"
+        num_bits: 1
+      CLKIP:
+        direction: input
+        net_name: "CLKIP"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      RSTN:
+        direction: input
+        net_name: "RSTN"
+        num_bits: 1
+      RSTP:
+        direction: input
+        net_name: "RSTP"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  IDCAP1:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_body_space2
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDDSAMP:
+        direction: inputOutput
+        net_name: "VDDSAMP"
+        num_bits: 1
+      VDDSAR:
+        direction: inputOutput
+        net_name: "VDDSAR"
+        num_bits: 1
+  IDCAP0:
+    lib_name: adc_sar_templates
+    cell_name: tisaradc_body_space2
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDDSAMP:
+        direction: inputOutput
+        net_name: "VDDSAMP"
+        num_bits: 1
+      VDDSAR:
+        direction: inputOutput
+        net_name: "VDDSAR"
+        num_bits: 1
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

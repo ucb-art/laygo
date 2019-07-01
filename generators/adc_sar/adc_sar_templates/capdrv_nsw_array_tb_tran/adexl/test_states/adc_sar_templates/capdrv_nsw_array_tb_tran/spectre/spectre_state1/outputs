@@ -1,0 +1,348 @@
+_outputList = nil
+ _envSaveOptions = nil
+savedComponent = (let
+(tmp1)
+(unless tmp1
+tmp1 = make_sevOutputStruct()
+)
+(unless tmp1
+tmp1 = (ncons nil)
+)
+tmp1->definedIn = ""
+tmp1->name = "tdelay"
+tmp1->expression = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21 tmp22 tmp23 tmp24 tmp25 tmp26 tmp27 tmp28 tmp29)
+tmp1 = 'delay
+tmp2 = '?wf1
+tmp3 = (let
+(tmp1 tmp2)
+tmp1 = 'VT
+tmp2 = "/EN<2>"
+list(tmp1 tmp2)
+)
+tmp4 = '?value1
+tmp5 = (let
+(tmp1 tmp2 tmp3)
+tmp1 = 'quotient
+tmp2 = 'vdd
+tmp3 = 2
+list(tmp1 tmp2 tmp3)
+)
+tmp6 = '?edge1
+tmp7 = "either"
+tmp8 = '?nth1
+tmp9 = 1
+tmp10 = '?td1
+tmp11 = 0.0000000000000000e+00
+tmp12 = '?tol1
+tmp14 = '?wf2
+tmp15 = (let
+(tmp1 tmp2)
+tmp1 = 'VT
+tmp2 = "/VO"
+list(tmp1 tmp2)
+)
+tmp16 = '?value2
+tmp17 = (let
+(tmp1 tmp2 tmp3)
+tmp1 = 'times
+tmp2 = 5.0000000000000000e-01
+tmp3 = (let
+(tmp1 tmp2 tmp3)
+tmp1 = 'plus
+tmp2 = 'vref2
+tmp3 = 'vref1
+list(tmp1 tmp2 tmp3)
+)
+list(tmp1 tmp2 tmp3)
+)
+tmp18 = '?edge2
+tmp19 = "either"
+tmp20 = '?nth2
+tmp21 = 1
+tmp22 = '?tol2
+tmp24 = '?td2
+tmp26 = '?stop
+tmp28 = '?multiple
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21 tmp22 tmp23 tmp24 tmp25 tmp26 tmp27 tmp28 tmp29)
+)
+tmp1->signal = nil
+tmp1->scriptFile = ""
+tmp1->type2 = nil
+tmp1->evalType = nil
+tmp1->displayIt = nil
+tmp1->internalName = nil
+tmp1->masterName = nil
+tmp1->masterScriptFile = nil
+tmp1->saveScriptFile = nil
+tmp1->saveMasterScriptFile = nil
+tmp1->isReferenced = nil
+tmp1->lastEvalTime = nil
+tmp1->origin = nil
+tmp1->sweepSet = nil
+tmp1->depList = nil
+tmp1->type = nil
+tmp1->areaTable = nil
+tmp1->selectionDetail = nil
+tmp1->value = nil
+tmp1->plot = 't
+tmp1->save = nil
+tmp1->march = nil
+tmp1->index = 1
+tmp1->timeStamp = nil
+tmp1->graphType = nil
+tmp1->yaxisLabel = nil
+tmp1->label = nil
+tmp1->yaxisUnit = nil
+tmp1->waveSpec = nil
+list(tmp1)
+)
+_outputList = nconc( _outputList savedComponent) 
+savedComponent = nil 
+_envSaveOptions = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21 tmp22 tmp23 tmp24)
+tmp1 = (let
+(tmp1 tmp2)
+tmp1 = 'extremesInfo
+list(tmp1 tmp2)
+)
+tmp2 = (let
+(tmp1 tmp2)
+tmp1 = 'assertsInfo
+list(tmp1 tmp2)
+)
+tmp3 = (let
+(tmp1 tmp2)
+tmp1 = 'designParamValInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp4 = (let
+(tmp1 tmp2)
+tmp1 = 'subcktsInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp5 = (let
+(tmp1 tmp2)
+tmp1 = 'primitivesInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp6 = (let
+(tmp1 tmp2)
+tmp1 = 'outputParamInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp7 = (let
+(tmp1 tmp2)
+tmp1 = 'elementInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp8 = (let
+(tmp1 tmp2)
+tmp1 = 'modelParamInfo
+tmp2 = 't
+list(tmp1 tmp2)
+)
+tmp9 = (let
+(tmp1 tmp2)
+tmp1 = 'fastViewOption
+list(tmp1 tmp2)
+)
+tmp10 = (let
+(tmp1 tmp2)
+tmp1 = 'simOutputFormat
+tmp2 = "psfxl"
+list(tmp1 tmp2)
+)
+tmp11 = (let
+(tmp1 tmp2)
+tmp1 = 'outputFrame
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp12 = (let
+(tmp1 tmp2)
+tmp1 = 'captab_threshold
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp13 = (let
+(tmp1 tmp2)
+tmp1 = 'captab_sort
+tmp2 = "name"
+list(tmp1 tmp2)
+)
+tmp14 = (let
+(tmp1 tmp2)
+tmp1 = 'captab_detail
+tmp2 = "node"
+list(tmp1 tmp2)
+)
+tmp15 = (let
+(tmp1 tmp2)
+tmp1 = 'infoOptions
+tmp2 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9)
+tmp1 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "modelParameter"
+tmp2 = "models"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp2 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "element"
+tmp2 = "inst"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp3 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "outputParameter"
+tmp2 = "output"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp4 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "designParamVals"
+tmp2 = "parameters"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp5 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "primitives"
+tmp2 = "primitives"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp6 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "subckts"
+tmp2 = "subckts"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+tmp7 = 't
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp7 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "asserts"
+tmp2 = "assert"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp8 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "extremeinfo"
+tmp2 = "all"
+tmp3 = "logfile"
+tmp4 = ""
+tmp5 = "yes"
+tmp6 = ""
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+tmp9 = (let
+(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+tmp1 = "<Click_To_Add>"
+tmp2 = "none"
+tmp3 = "rawfile"
+tmp4 = ""
+tmp5 = ""
+tmp6 = ""
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7)
+)
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9)
+)
+list(tmp1 tmp2)
+)
+tmp16 = (let
+(tmp1 tmp2)
+tmp1 = 'infoFrame
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp17 = (let
+(tmp1 tmp2)
+tmp1 = 'saveahdlvars
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp18 = (let
+(tmp1 tmp2)
+tmp1 = 'useprobes
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp19 = (let
+(tmp1 tmp2)
+tmp1 = 'subcktprobelvl
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp20 = (let
+(tmp1 tmp2)
+tmp1 = 'currents
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp21 = (let
+(tmp1 tmp2)
+tmp1 = 'nestlvl
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp22 = (let
+(tmp1 tmp2)
+tmp1 = 'pwr
+tmp2 = ""
+list(tmp1 tmp2)
+)
+tmp23 = (let
+(tmp1 tmp2)
+tmp1 = 'save
+tmp2 = "allpub"
+list(tmp1 tmp2)
+)
+tmp24 = (let
+(tmp1 tmp2)
+tmp1 = 'saveFrame
+tmp2 = ""
+list(tmp1 tmp2)
+)
+list(tmp1 tmp2 tmp3 tmp4 tmp5 tmp6 tmp7 tmp8 tmp9 tmp10 tmp11 tmp12 tmp13 tmp14 tmp15 tmp16 tmp17 tmp18 tmp19 tmp20 tmp21 tmp22 tmp23 tmp24)
+)
+savedComponent = list( _outputList _envSaveOptions ) 
+_outputList = 'unbound
+ _envSaveOptions = 'unbound

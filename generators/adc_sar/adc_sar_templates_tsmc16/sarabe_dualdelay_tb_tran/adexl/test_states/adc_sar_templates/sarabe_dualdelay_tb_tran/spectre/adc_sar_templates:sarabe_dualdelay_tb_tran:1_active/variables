@@ -1,0 +1,31 @@
+savedComponent = (let
+(tmp1 tmp2 tmp3)
+(unless tmp1
+tmp1 = make_sevVariableStruct()
+)
+(unless tmp1
+tmp1 = (ncons nil)
+)
+tmp1->name = "trf"
+tmp1->expression = "10p"
+tmp1->index = 1
+(unless tmp2
+tmp2 = make_sevVariableStruct()
+)
+(unless tmp2
+tmp2 = (ncons nil)
+)
+tmp2->name = "vdd"
+tmp2->expression = "0.8"
+tmp2->index = 2
+(unless tmp3
+tmp3 = make_sevVariableStruct()
+)
+(unless tmp3
+tmp3 = (ncons nil)
+)
+tmp3->name = "cload"
+tmp3->expression = "6f"
+tmp3->index = 3
+list(tmp1 tmp2 tmp3)
+)

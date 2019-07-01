@@ -1,0 +1,23 @@
+(nil	devCheckingEnabled "no"
+  asserts (	)
+	inclusiveFilters (	)
+	exclusiveFilters (	)
+	options (nil
+		checklimit (nil
+			acDisableAll  nil
+			acEnableAll  nil
+			acSeverity  "None"
+			dcOpDisableAll  nil
+			dcOpEnableAll  nil
+			dcOpSeverity  "None"
+			dcDisableAll  nil
+			dcEnableAll  nil
+			dcSeverity  "None"
+			tranDisableAll  nil
+			tranEnableAll  nil
+			tranSeverity  "None"
+			tranStopTime  nil
+			tranStartTime  nil
+		)
+	)
+)

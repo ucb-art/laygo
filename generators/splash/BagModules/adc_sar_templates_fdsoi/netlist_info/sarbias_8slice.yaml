@@ -1,0 +1,128 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_8slice
+pins: [ "VDD", "VSS", "VREF<2:0>", "VOSM6", "VOSP6", "VOSP5", "VOSP4", "VOSP3", "VOSP2", "VOSP1", "VOSP0", "VOSM7", "VOSM5", "VOSM4", "VOSM3", "VOSM2", "VOSM1", "VOSM0", "ADCBIAS", "REF2<7:0>", "VOSP7", "REF1<7:0>", "REF0<7:0>", "OSP7<7:0>", "OSP6<7:0>", "OSP5<7:0>", "OSP4<7:0>", "OSP3<7:0>", "OSP2<7:0>", "OSP1<7:0>", "OSP0<7:0>", "OSM7<7:0>", "OSM6<7:0>", "OSM5<7:0>", "OSM4<7:0>", "OSM3<7:0>", "OSM2<7:0>", "OSM1<7:0>", "OSM0<7:0>", "DUM0<7:0>" ]
+instances:
+  IMIR<2:0>:
+    lib_name: pCM_generated
+    cell_name: pCM
+    instpins:
+      VSS:
+        direction: 
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "SFMIR<2:0>"
+        num_bits: 3
+      VBIAS:
+        direction: input
+        net_name: "<*3>ADCBIAS"
+        num_bits: 3
+  IRDACREF3:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "VOSM3,VOSM2,VOSM1,VOSM0,VDUM0"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "OSM3<7:0>,OSM2<7:0>,OSM1<7:0>,OSM0<7:0>,DUM0<7:0>"
+        num_bits: 40
+  IRDACREF2:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "VOSP0,VOSM7,VOSM6,VOSM5,VOSM4"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "OSP0<7:0>,OSM7<7:0>,OSM6<7:0>,OSM5<7:0>,OSM4<7:0>"
+        num_bits: 40
+  IRDACREF1:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "VOSP5,VOSP4,VOSP3,VOSP2,VOSP1"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "OSP5<7:0>,OSP4<7:0>,OSP3<7:0>,OSP2<7:0>,OSP1<7:0>"
+        num_bits: 40
+  IRDACREF0:
+    lib_name: ge_tech_rdac_8b
+    cell_name: rdac
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<4:0>:
+        direction: inputOutput
+        net_name: "VREFIN<2:0>,VOSP7,VOSP6"
+        num_bits: 5
+      code<39:0>:
+        direction: input
+        net_name: "REF2<7:0>,REF1<7:0>,REF0<7:0>,OSP7<7:0>,OSP6<7:0>"
+        num_bits: 40
+  ISF<2:0>:
+    lib_name: sourceFollower_generated
+    cell_name: sourceFollower
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "SFMIR<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "<*3>VSS"
+        num_bits: 3
+      VDD:
+        direction: inputOutput
+        net_name: "<*3>VDD"
+        num_bits: 3
+      out:
+        direction: output
+        net_name: "VREF<2:0>"
+        num_bits: 3
+      in:
+        direction: input
+        net_name: "VREFIN<2:0>"
+        num_bits: 3

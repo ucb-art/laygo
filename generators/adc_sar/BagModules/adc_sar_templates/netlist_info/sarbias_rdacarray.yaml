@@ -1,0 +1,100 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_rdacarray
+pins: [ "VDD", "VSS", "code0<39:0>", "code1<39:0>", "code2<39:0>", "code3<39:0>", "out0<4:0>", "out1<4:0>", "out2<4:0>", "out3<4:0>" ]
+instances:
+  IRDAC0:
+    lib_name: adc_sar_templates
+    cell_name: sarbias_rdac_core
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out0<4:0>:
+        direction: output
+        net_name: "out0<4:0>"
+        num_bits: 5
+      out1<4:0>:
+        direction: output
+        net_name: "out1<4:0>"
+        num_bits: 5
+      out2<4:0>:
+        direction: output
+        net_name: "out2<4:0>"
+        num_bits: 5
+      out3<4:0>:
+        direction: output
+        net_name: "out3<4:0>"
+        num_bits: 5
+      code0<39:0>:
+        direction: input
+        net_name: "code0<39:0>"
+        num_bits: 40
+      code1<39:0>:
+        direction: input
+        net_name: "code1<39:0>"
+        num_bits: 40
+      code2<39:0>:
+        direction: input
+        net_name: "code2<39:0>"
+        num_bits: 40
+      code3<39:0>:
+        direction: input
+        net_name: "code3<39:0>"
+        num_bits: 40
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  ICUP<1:12200>:
+    lib_name: ge_tech_logic_templates
+    cell_name: dcap2_8x
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "<*12200>VSS"
+        num_bits: 12200
+      VDD:
+        direction: inputOutput
+        net_name: "<*12200>VDD"
+        num_bits: 12200

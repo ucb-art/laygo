@@ -1,0 +1,96 @@
+lib_name: adc_sar_templates
+cell_name: capdac_tb_tran
+pins: [  ]
+instances:
+  VSS0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  VCM0:
+    lib_name: analogLib
+    cell_name: vdc
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  V0:
+    lib_name: analogLib
+    cell_name: vpulse
+    instpins:
+      PLUS:
+        direction: inputOutput
+        net_name: "vin<0>"
+        num_bits: 1
+      MINUS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+  I3:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  I4:
+    lib_name: analogLib
+    cell_name: gnd
+    instpins:
+      gnd!:
+        direction: inputOutput
+        net_name: "gnd!"
+        num_bits: 1
+  S0:
+    lib_name: analogLib
+    cell_name: sp2tswitch
+    instpins:
+      t1:
+        direction: inputOutput
+        net_name: "vcm"
+        num_bits: 1
+      t0:
+        direction: inputOutput
+        net_name: "I<0>"
+        num_bits: 1
+      t2:
+        direction: inputOutput
+        net_name: "vin<0>"
+        num_bits: 1
+  I20:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  ICDAC0:
+    lib_name: adc_sar_templates
+    cell_name: capdac
+    instpins:
+      I:
+        direction: input
+        net_name: "I<0>"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+      I_C0:
+        direction: input
+        net_name: "VSS"
+        num_bits: 1

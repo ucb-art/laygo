@@ -1,0 +1,124 @@
+lib_name: adc_sar_templates
+cell_name: sourceFollower_vref
+pins: [ "VDD", "VSS", "bypass", "in<2:0>", "out<2:0>", "VBIAS" ]
+instances:
+  PIN11:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  I2:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower
+    instpins:
+      bypass:
+        direction: input
+        net_name: "bypass"
+        num_bits: 1
+      Voff:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VBIAS:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "out<2>"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "in<2>"
+        num_bits: 1
+  I1:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower
+    instpins:
+      bypass:
+        direction: input
+        net_name: "bypass"
+        num_bits: 1
+      Voff:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VBIAS:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "out<1>"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "in<1>"
+        num_bits: 1
+  I0:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower
+    instpins:
+      bypass:
+        direction: input
+        net_name: "bypass"
+        num_bits: 1
+      Voff:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VBIAS:
+        direction: inputOutput
+        net_name: "VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out:
+        direction: output
+        net_name: "out<0>"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "in<0>"
+        num_bits: 1

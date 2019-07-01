@@ -1,0 +1,40 @@
+lib_name: adc_sar_templates_fdsoi
+cell_name: capdac
+pins: [ "I_C0", "O", "I" ]
+instances:
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  C0:
+    lib_name: cmos32lp_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I_C0"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  CDAC0:
+    lib_name: cmos32lp_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

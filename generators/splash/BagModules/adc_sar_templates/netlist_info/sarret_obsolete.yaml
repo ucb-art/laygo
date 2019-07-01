@@ -1,0 +1,196 @@
+lib_name: adc_sar_templates
+cell_name: sarret_obsolete
+pins: [ "VDD", "VSS", "ZP<7:0>", "ADCOUT<7:0>", "CLK" ]
+instances:
+  I6:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<6>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<6>"
+        num_bits: 1
+  I7:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<7>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<7>"
+        num_bits: 1
+  I3:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<3>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<3>"
+        num_bits: 1
+  I0:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<0>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<0>"
+        num_bits: 1
+  I4:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<4>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<4>"
+        num_bits: 1
+  I5:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<5>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<5>"
+        num_bits: 1
+  I1:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<1>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<1>"
+        num_bits: 1
+  I2:
+    lib_name: logic_templates
+    cell_name: dff
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ADCOUT<2>"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "ZP<2>"
+        num_bits: 1

@@ -1,0 +1,36 @@
+(envOpts analysisOrder) ("pz" "dcmatch" "stb" "tran" "envlp" "ac" "dc" "noise" "xf" "sp" "acmatch" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "hb" "hbac" "hbnoise" "hbsp" "hbxf" "hbstb" "sens" "lf" "include")
+(envOpts autoDisplay) t
+(envOpts cmd64bit) nil
+(envOpts cpfIsVMSEnabled) t
+(envOpts emAnaType) "Dynamic"
+(envOpts emLayerMap) ""
+(envOpts emOnlyICTFile) ""
+(envOpts emTechFile) ""
+(envOpts emirEnable) nil
+(envOpts emirEnable_static) nil
+(envOpts emirSumList) nil
+(envOpts enableArclength) nil
+(envOpts enableDiagnose) nil
+(envOpts enableNewMultiHarmCut) nil
+(envOpts enableNoiseRefactor) t
+(envOpts enablePhaseNoiseBW) t
+(envOpts firstRun) nil
+(envOpts licQueueTimeOut) "900"
+(envOpts liclog) nil
+(envOpts lsusp) nil
+(envOpts macroModelEnable) nil
+(envOpts macroModelList) nil
+(envOpts paramRangeCheckFile) ""
+(envOpts pllPlugin) ""
+(envOpts pllWizardinfo) ""
+(envOpts printComments) (nil nil)
+(envOpts restart) ""
+(envOpts savestate) ""
+(envOpts setTopLevelAsSubckt) nil
+(envOpts sst2usecolon) nil
+(envOpts stopViewList) ("spectre")
+(envOpts switchViewList) ("spectre" "cmos_sch" "cmos.sch" "schematic" "veriloga")
+(envOpts termDirectionMismatch) "ignore"
+(envOpts termMismatch) "ignore"
+(envOpts userCmdLineOption) ""
+(envOpts vcoType) ""

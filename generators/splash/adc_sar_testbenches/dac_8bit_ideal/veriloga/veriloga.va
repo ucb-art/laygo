@@ -1,0 +1,54 @@
+`include "discipline.h"
+`include "constants.h"
+
+// $Date: 1997/08/28 05:54:36 $
+// $Revision: 1.1 $
+//
+//
+ 
+
+
+//--------------------
+// dac_8bit_ideal
+//
+// -  8 bit digital analog converter
+//
+// vd0..vd7:	data inputs [V,A]
+// vout:	[V,A]
+//
+// INSTANCE parameters
+//    vref   = reference voltage that conversion is with respect to [V]
+//    vtrans = transition voltage between logic high and low [V]
+//    tdel,trise,tfall = {usual} [s]
+//
+// MODEL parameters
+//    {none}
+
+module dac_8bit_ideal (vd7, vd6, vd5, vd4, vd3, vd2, vd1, vd0, vout);
+electrical vd7, vd6, vd5, vd4, vd3, vd2, vd1, vd0, vout;
+parameter real vref  = 1 from [0:inf);
+parameter real trise = 0 from [0:inf);
+parameter real tfall = 0 from [0:inf);
+parameter real tdel  = 0 from [0:inf);
+parameter real vtrans  = 0.45;
+
+    real out_scaled; // output scaled as fraction of 256
+
+    analog begin
+		out_scaled = 0;
+		out_scaled = out_scaled + ((V(vd7) > vtrans) ? 128 : 0);
+		out_scaled = out_scaled + ((V(vd6) > vtrans) ? 64 : 0);
+		out_scaled = out_scaled + ((V(vd5) > vtrans) ? 32 : 0);
+		out_scaled = out_scaled + ((V(vd4) > vtrans) ? 16 : 0);
+		out_scaled = out_scaled + ((V(vd3) > vtrans) ? 8 : 0);
+		out_scaled = out_scaled + ((V(vd2) > vtrans) ? 4 : 0);
+		out_scaled = out_scaled + ((V(vd1) > vtrans) ? 2 : 0);
+		out_scaled = out_scaled + ((V(vd0) > vtrans) ? 1 : 0);
+		V(vout) <+ transition( vref*out_scaled/256, tdel, trise, tfall );
+    end
+endmodule
+
+
+
+
+

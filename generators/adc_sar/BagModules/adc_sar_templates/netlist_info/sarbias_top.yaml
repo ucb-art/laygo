@@ -1,0 +1,248 @@
+lib_name: adc_sar_templates
+cell_name: sarbias_top
+pins: [ "ADCBIAS<2:0>", "VREF<2:0>", "VOSP0", "VOSM0", "VOSP1", "VOSM1", "VOSP2", "VOSM2", "VOSP3", "VOSM3", "VOSP4", "VOSM4", "VOSP5", "VOSM5", "VOSP6", "VOSM6", "VOSP7", "VOSM7", "DUM0<7:0>", "OSM0<7:0>", "OSM1<7:0>", "OSM2<7:0>", "OSM3<7:0>", "OSM4<7:0>", "OSM5<7:0>", "OSM6<7:0>", "OSM7<7:0>", "OSP0<7:0>", "OSP1<7:0>", "OSP2<7:0>", "OSP3<7:0>", "OSP4<7:0>", "OSP5<7:0>", "OSP6<7:0>", "OSP7<7:0>", "REF0<7:0>", "REF1<7:0>", "REF2<7:0>", "VDD", "VSS" ]
+instances:
+  IRDAC0:
+    lib_name: adc_sar_templates
+    cell_name: sarbias_rdacarray
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out0<4:0>:
+        direction: output
+        net_name: "VREFIN<2:0>,VOSP7,VOSP6"
+        num_bits: 5
+      out1<4:0>:
+        direction: output
+        net_name: "VOSP5,VOSP4,VOSP3,VOSP2,VOSP1"
+        num_bits: 5
+      out2<4:0>:
+        direction: output
+        net_name: "VOSP0,VOSM7,VOSM6,VOSM5,VOSM4"
+        num_bits: 5
+      out3<4:0>:
+        direction: output
+        net_name: "VOSM3,VOSM2,VOSM1,VOSM0,VDUM0"
+        num_bits: 5
+      code0<39:0>:
+        direction: input
+        net_name: "REF2<7:0>,REF1<7:0>,REF0<7:0>,OSP7<7:0>,OSP6<7:0>"
+        num_bits: 40
+      code1<39:0>:
+        direction: input
+        net_name: "OSP5<7:0>,OSP4<7:0>,OSP3<7:0>,OSP2<7:0>,OSP1<7:0>"
+        num_bits: 40
+      code2<39:0>:
+        direction: input
+        net_name: "OSP0<7:0>,OSM7<7:0>,OSM6<7:0>,OSM5<7:0>,OSM4<7:0>"
+        num_bits: 40
+      code3<39:0>:
+        direction: input
+        net_name: "OSM3<7:0>,OSM2<7:0>,OSM1<7:0>,OSM0<7:0>,DUM0<7:0>"
+        num_bits: 40
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN19:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN13:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN14:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN15:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN10:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN18:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN20:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN21:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN22:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN23:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN24:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN25:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN26:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN27:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN28:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN29:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN30:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN31:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN32:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN33:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN34:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN35:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN36:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN37:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN38:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN39:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  I3<7:0>:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "DUM0<7:0>"
+        num_bits: 8
+  I4<7:0>:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "<*8>VDUM0"
+        num_bits: 8
+  ISF0:
+    lib_name: adc_sar_templates
+    cell_name: sarbias_sfarray
+    instpins:
+      ADCBIAS<2:0>:
+        direction: inputOutput
+        net_name: "ADCBIAS<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VREF<2:0>:
+        direction: output
+        net_name: "VREF<2:0>"
+        num_bits: 3
+      VIN<2:0>:
+        direction: input
+        net_name: "VREFIN<2:0>"
+        num_bits: 3

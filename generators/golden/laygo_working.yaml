@@ -1,0 +1,117 @@
+laygo_working:
+  nand_16x:
+    pins:
+      A:
+        layer: [M3, pin]
+        netname: A
+        xy0: [3.95, 0.6]
+        xy1: [4.05, 1.2]
+      B:
+        layer: [M3, pin]
+        netname: B
+        xy0: [0.35, 0.6]
+        xy1: [0.45, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [6.75, 0.6]
+        xy1: [6.85, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [7.2, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [7.2, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [7.2, 1.8]
+  nand_2x:
+    pins:
+      A:
+        layer: [M3, pin]
+        netname: A
+        xy0: [0.95, 0.6]
+        xy1: [1.05, 1.2]
+      B:
+        layer: [M3, pin]
+        netname: B
+        xy0: [0.15, 0.6]
+        xy1: [0.25, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [1.15, 0.6]
+        xy1: [1.25, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [1.6, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [1.6, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [1.6, 1.8]
+  nand_4x:
+    pins:
+      A:
+        layer: [M3, pin]
+        netname: A
+        xy0: [1.55, 0.6]
+        xy1: [1.65, 1.2]
+      B:
+        layer: [M3, pin]
+        netname: B
+        xy0: [0.35, 0.6]
+        xy1: [0.45, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [1.95, 0.6]
+        xy1: [2.05, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [2.4, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [2.4, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [2.4, 1.8]
+  nand_8x:
+    pins:
+      A:
+        layer: [M3, pin]
+        netname: A
+        xy0: [2.35, 0.6]
+        xy1: [2.45, 1.2]
+      B:
+        layer: [M3, pin]
+        netname: B
+        xy0: [0.35, 0.6]
+        xy1: [0.45, 1.2]
+      O:
+        layer: [M3, pin]
+        netname: O
+        xy0: [3.55, 0.6]
+        xy1: [3.65, 1.2]
+      VDD:
+        layer: [M2, pin]
+        netname: VDD
+        xy0: [0.0, 1.7]
+        xy1: [4.0, 1.9]
+      VSS:
+        layer: [M2, pin]
+        netname: VSS
+        xy0: [0.0, -0.1]
+        xy1: [4.0, 0.1]
+    xy0: [0.0, 0.0]
+    xy1: [4.0, 1.8]

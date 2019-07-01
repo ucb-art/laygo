@@ -1,0 +1,112 @@
+lib_name: adc_sar_templates
+cell_name: capdac_8b_1x
+pins: [ "I_C0", "O", "I<7:0>" ]
+instances:
+  CDAC6<52:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*53>I<6>"
+        num_bits: 53
+      TOP:
+        direction: inputOutput
+        net_name: "<*53>O"
+        num_bits: 53
+  CDAC7<99:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*100>I<7>"
+        num_bits: 100
+      TOP:
+        direction: inputOutput
+        net_name: "<*100>O"
+        num_bits: 100
+  CDAC0:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I<0>"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1
+  CDAC5<27:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*28>I<5>"
+        num_bits: 28
+      TOP:
+        direction: inputOutput
+        net_name: "<*28>O"
+        num_bits: 28
+  CDAC4<15:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*16>I<4>"
+        num_bits: 16
+      TOP:
+        direction: inputOutput
+        net_name: "<*16>O"
+        num_bits: 16
+  CDAC2<3:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*4>I<2>"
+        num_bits: 4
+      TOP:
+        direction: inputOutput
+        net_name: "<*4>O"
+        num_bits: 4
+  CDAC1<1:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*2>I<1>"
+        num_bits: 2
+      TOP:
+        direction: inputOutput
+        net_name: "<*2>O"
+        num_bits: 2
+  CDAC3<7:0>:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "<*8>I<3>"
+        num_bits: 8
+      TOP:
+        direction: inputOutput
+        net_name: "<*8>O"
+        num_bits: 8
+  C0:
+    lib_name: ge_tech_microtemplates_dense
+    cell_name: momcap_center_1x
+    instpins:
+      BOTTOM:
+        direction: inputOutput
+        net_name: "I_C0"
+        num_bits: 1
+      TOP:
+        direction: inputOutput
+        net_name: "O"
+        num_bits: 1

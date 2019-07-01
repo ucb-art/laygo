@@ -1,0 +1,211 @@
+26a27
+> import bag
+67c68
+<     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg, 
+---
+>     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg,  
+158c159
+<     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg, refinstname=None, 
+---
+>     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg, refobj=None, 
+161c162
+<     isp.append(laygen.relplace(name=None, templatename=space_cellname_list, gridname=pg, refinstname=itap[-1].name, 
+---
+>     isp.append(laygen.relplace(name=None, templatename=space_cellname_list, gridname=pg, refobj=itap[-1], 
+165c166
+<     iinbuf=laygen.relplace(name=None, templatename=inbuf_cellname_list, gridname=pg, refinstname=isp[-1][-1].name, 
+---
+>     iinbuf=laygen.relplace(name=None, templatename=inbuf_cellname_list, gridname=pg, refobj=isp[-1][-1], 
+168c169
+<     ioutbuf=laygen.relplace(name=None, templatename=outbuf_cellname_list, gridname=pg, refinstname=iinbuf[-1].name, 
+---
+>     ioutbuf=laygen.relplace(name=None, templatename=outbuf_cellname_list, gridname=pg, refobj=iinbuf[-1], 
+171c172
+<     isp.append(laygen.relplace(name=None, templatename=list(reversed(space_cellname_list)), gridname=pg, refinstname=ioutbuf[-1].name, 
+---
+>     isp.append(laygen.relplace(name=None, templatename=list(reversed(space_cellname_list)), gridname=pg, refobj=ioutbuf[-1], 
+175c176
+<     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg, refinstname=isp[-1][-1].name, 
+---
+>     itap.append(laygen.relplace(name=None, templatename=tap_cellname, gridname=pg, refobj=isp[-1][-1], 
+249c250
+<     ibuf = laygen.relplace(name=None, templatename='sarsamp_buf', gridname=pg, refinstname=isamp.name,
+---
+>     ibuf = laygen.relplace(name=None, templatename='sarsamp_buf', gridname=pg, refobj=isamp,
+377,378c378,379
+<                 layer=laygen.layers['metal'][6], gridname=pg56t, netnames=['VDD', 'VSS'], direction='x', 
+<                 input_rails_rect=input_rails_rect, generate_pin=False, overwrite_start_coord=0, overwrite_end_coord=x1,
+---
+>                 layer=laygen.layers['pin'][6], gridname=pg56t, netnames=['VDD', 'VSS'], direction='x', 
+>                 input_rails_rect=input_rails_rect, generate_pin=True, overwrite_start_coord=0, overwrite_end_coord=x1,
+380,389d380
+<     #trimming and pinning
+<     x1_phy = laygen.get_inst_bbox(instname=ibuf.name)[1][0] + laygen.get_template_size('nmos4_fast_left')[0]
+<     for r in rvdd_m6:
+<         r.xy1[0]=x1_phy
+<         p=laygen.pin_from_rect(name='VDD_M6_'+r.name, layer=laygen.layers['pin'][6], rect=r, gridname=pg56t, netname='VDD')
+<         p.xy1[0]=x1_phy
+<     for r in rvss_m6:
+<         r.xy1[0]=x1_phy
+<         p=laygen.pin_from_rect(name='VSS_M6_'+r.name, layer=laygen.layers['pin'][6], rect=r, gridname=pg56t, netname='VSS')
+<         p.xy1[0]=x1_phy
+391a383
+>     #laygo generator
+394,400c386
+<     import imp
+<     try:
+<         imp.find_module('bag')
+<         laygen.use_phantom = False
+<     except ImportError:
+<         laygen.use_phantom = True
+< 
+---
+>     #load primitive template/grid
+411c397,398
+<     workinglib = 'adc_sar_generated'
+---
+>     #workinglib = 'adc_sar_generated'
+>     workinglib = 'laygo_working'
+418,420c405,407
+<     #grid
+<     pg = 'placement_basic' #placement grid
+<     rg23 = 'route_M2_M3_cmos'
+---
+>     #grids
+>     pg = 'placement_basic'              #placement grid
+>     rg23 = 'route_M2_M3_cmos'           #route grids
+426,440c413,420
+< 
+<     mycell_list = []
+<     #load from preset
+<     load_from_file=True
+<     yamlfile_spec="adc_sar_spec.yaml"
+<     yamlfile_size="adc_sar_size.yaml"
+<     if load_from_file==True:
+<         with open(yamlfile_spec, 'r') as stream:
+<             specdict = yaml.load(stream)
+<         with open(yamlfile_size, 'r') as stream:
+<             sizedict = yaml.load(stream)
+<         m_sw=sizedict['sarsamp_m_sw']
+<         m_sw_arr=sizedict['sarsamp_m_sw_arr']
+<         m_inbuf_list=sizedict['sarsamp_m_inbuf_list']
+<         m_outbuf_list=sizedict['sarsamp_m_outbuf_list']
+---
+>     
+>     #parameters
+>     m_sw=4
+>     m_sw_arr=6
+>     m_inbuf_list=[16, 24]
+>     m_outbuf_list=[8, 32]
+>     m_space_sw=[2, 0, 0]
+>     m_space_buf=[0, 0, 0]
+445c425,428
+<     #body cell generation (2 step)
+---
+>     #cell generation
+>     mycell_list = []
+> 
+>     #body cell generation
+449,472d431
+<     # 1. generate without spacing
+<     laygen.add_cell(cellname)
+<     laygen.sel_cell(cellname)
+<     generate_samp_body(laygen, objectname_pfix='SW0', templib_logic=logictemplib, 
+<                        placement_grid=pg,
+<                        routing_grid_m2m3=rg23,
+<                        routing_grid_m3m4=rg34,
+<                        samp_cellname=samp_cellname,
+<                        samp_m=m_sw_arr,
+<                        space_cellname_list=['space_wovdd_4x', 'space_wovdd_2x', 'space_wovdd_1x'],
+<                        tap_cellname='tap_wovdd',
+<                        space_m_list=[0, 0, 0],
+<                        tap_m_list=[4, 4],
+<                        origin=np.array([0, 0]))
+<     laygen.add_template_from_cell()
+<     # 2. calculate spacing param and regenerate
+<     x0 = laygen.templates.get_template('sarafe_nsw', libname=workinglib).xy[1][0] \
+<          - laygen.templates.get_template(cellname, libname=workinglib).xy[1][0] \
+<          - laygen.templates.get_template('nmos4_fast_left').xy[1][0]*2
+<     m_space = int(round(x0 / laygen.templates.get_template('space_1x', libname=logictemplib).xy[1][0]))
+<     m_space = int(m_space/2) #double space cells
+<     m_space_4x = int(m_space / 4)
+<     m_space_2x = int((m_space - m_space_4x * 4) / 2)
+<     m_space_1x = int(m_space - m_space_4x * 4 - m_space_2x * 2)
+475c434,435
+<     generate_samp_body(laygen, objectname_pfix='SW0', templib_logic=logictemplib, 
+---
+>     generate_samp_body(laygen, objectname_pfix='SW0', 
+>                        templib_logic=logictemplib, 
+483c443
+<                        space_m_list=[m_space_4x, m_space_2x, m_space_1x],
+---
+>                        space_m_list=m_space_sw,
+488c448
+<     #buffer cell generation (2 step)
+---
+>     #buffer cell generation
+492,515d451
+<     # 1. generate without spacing
+<     laygen.add_cell(cellname)
+<     laygen.sel_cell(cellname)
+<     generate_samp_buffer(laygen, objectname_pfix='BUF0', templib_logic=logictemplib, 
+<                          placement_grid=pg,
+<                          routing_grid_m2m3=rg23,
+<                          routing_grid_m3m4=rg34, 
+<                          inbuf_cellname_list=inbuf_cellname_list,
+<                          outbuf_cellname_list=outbuf_cellname_list,
+<                          space_cellname_list=['space_4x', 'space_2x', 'space_1x'],
+<                          tap_cellname='tap',
+<                          space_m_list=[0, 0, 0],
+<                          tap_m_list=[4, 4],
+<                          origin=np.array([0, 0]))
+<     laygen.add_template_from_cell()
+<     # 2. calculate spacing param and regenerate
+<     x0 = laygen.templates.get_template('sarafe_nsw', libname=workinglib).xy[1][0] \
+<          - laygen.templates.get_template(cellname, libname=workinglib).xy[1][0] \
+<          - laygen.templates.get_template('nmos4_fast_left').xy[1][0]*2
+<     m_space = int(round(x0 / laygen.templates.get_template('space_1x', libname=logictemplib).xy[1][0]))
+<     m_space = int(m_space/2) #double space cells
+<     m_space_4x = int(m_space / 4)
+<     m_space_2x = int((m_space - m_space_4x * 4) / 2)
+<     m_space_1x = int(m_space - m_space_4x * 4 - m_space_2x * 2)
+518c454,455
+<     generate_samp_buffer(laygen, objectname_pfix='BUF0', templib_logic=logictemplib, 
+---
+>     generate_samp_buffer(laygen, objectname_pfix='BUF0', 
+>                          templib_logic=logictemplib, 
+526c463
+<                          space_m_list=[m_space_4x, m_space_2x, m_space_1x],
+---
+>                          space_m_list=m_space_buf,
+535d471
+<     # 1. generate without spacing
+538c474,476
+<     generate_samp(laygen, objectname_pfix='SAMP0', workinglib=workinglib, placement_grid=pg,
+---
+>     generate_samp(laygen, objectname_pfix='SAMP0', 
+>                   workinglib=workinglib, 
+>                   placement_grid=pg,
+546c484
+< 
+---
+>     #save template database to file
+548,558c486,491
+<     #bag export, if bag does not exist, gds export
+<     import imp
+<     try:
+<         imp.find_module('bag')
+<         import bag
+<         prj = bag.BagProject()
+<         for mycell in mycell_list:
+<             laygen.sel_cell(mycell)
+<             laygen.export_BAG(prj, array_delimiter=['[', ']'])
+<     except ImportError:
+<         laygen.export_GDS('output.gds', cellname=mycell_list, layermapfile=tech+".layermap")  # change layermapfile
+---
+> 
+>     #export to bag
+>     prj = bag.BagProject()
+>     for mycell in mycell_list:
+>         laygen.sel_cell(mycell)
+>         laygen.export_BAG(prj, array_delimiter=['[', ']'])

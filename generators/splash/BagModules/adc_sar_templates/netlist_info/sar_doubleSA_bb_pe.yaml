@@ -1,0 +1,256 @@
+lib_name: adc_sar_templates
+cell_name: sar_doubleSA_bb_pe
+pins: [ "INP", "INM", "CLK", "VREF<2:0>", "OSP", "OSM", "CLKOUT", "ADCOUT<0>", "VDD", "VSS", "CKDSEL1<1:0>", "PHI0", "DONE", "EXTSEL_CLK", "UP", "SB<0>", "CKDSEL0<1:0>", "SARCLK", "VBB", "VOL<0>", "ZP<0>", "VOR<0>", "ZMID<0>", "ZM<0>", "SARCLKB", "SAOP", "SAOM" ]
+instances:
+  IAFE0:
+    lib_name: adc_sar_templates
+    cell_name: sarafe_nsw_doubleSA
+    instpins:
+      VOL:
+        direction: output
+        net_name: "VOL<0>"
+        num_bits: 1
+      VOR:
+        direction: output
+        net_name: "VOR<0>"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "SARCLKB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      OUTM:
+        direction: output
+        net_name: "SAOM"
+        num_bits: 1
+      OUTP:
+        direction: output
+        net_name: "SAOP"
+        num_bits: 1
+      ENL0<2:0>:
+        direction: input
+        net_name: "ZM<1>,ZMID<1>,ZP<1>"
+        num_bits: 3
+      ENR0<2:0>:
+        direction: input
+        net_name: "ZP<1>,ZMID<1>,ZM<1>"
+        num_bits: 3
+      INM:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  IABE0:
+    lib_name: adc_sar_templates
+    cell_name: sarabe_dualdelay_bb_pe
+    instpins:
+      VBB:
+        direction: inputOutput
+        net_name: "VBB"
+        num_bits: 1
+      ADCOUT<0>:
+        direction: output
+        net_name: "ADCOUT<0>"
+        num_bits: 1
+      SB<0>:
+        direction: output
+        net_name: "SB<0>"
+        num_bits: 1
+      ZM<0>:
+        direction: output
+        net_name: "ZM<0>"
+        num_bits: 1
+      ZMID<0>:
+        direction: output
+        net_name: "ZMID<0>"
+        num_bits: 1
+      ZP<0>:
+        direction: output
+        net_name: "ZP<0>"
+        num_bits: 1
+      RSTOUT:
+        direction: output
+        net_name: "CLKOUT"
+        num_bits: 1
+      PHI0:
+        direction: output
+        net_name: "PHI0"
+        num_bits: 1
+      SAOP:
+        direction: input
+        net_name: "SAOP"
+        num_bits: 1
+      SAOM:
+        direction: input
+        net_name: "SAOM"
+        num_bits: 1
+      CKDSEL0<1:0>:
+        direction: input
+        net_name: "CKDSEL0<1:0>"
+        num_bits: 2
+      CKDSEL1<1:0>:
+        direction: input
+        net_name: "CKDSEL1<1:0>"
+        num_bits: 2
+      SARCLKB:
+        direction: output
+        net_name: "SARCLKB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      DONE:
+        direction: output
+        net_name: "DONE"
+        num_bits: 1
+      SARCLK:
+        direction: output
+        net_name: "SARCLK"
+        num_bits: 1
+      UP:
+        direction: output
+        net_name: "UP"
+        num_bits: 1
+      EXTSEL_CLK:
+        direction: input
+        net_name: "EXTSEL_CLK"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+  PIN10:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN9:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN18:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN35:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN36:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN32:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN34:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN27:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN33:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN30:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN29:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN23:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN22:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN21:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN28:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN11:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>adc_sar_templates:capdac_tb_tran:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>capdac_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_templates</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_templates:capdac_tb_tran:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>capdac_tb_tran</value>
+					</option>
+					<option>lib
+						<value>adc_sar_templates</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state1</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>tsim
+				<value>400n</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vcm
+				<value>150m</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pper
+				<value>1n</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvcm
+				<value>0.15</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvh
+				<value>0.3</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pvl
+				<value>0</value>
+				<dependentTests>
+					<dependentTest omitted="0">adc_sar_templates:capdac_tb_tran:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+	</active>
+	<history>History</history>
+</setupdb>

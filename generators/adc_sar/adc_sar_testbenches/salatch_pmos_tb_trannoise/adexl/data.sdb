@@ -1,0 +1,1903 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>adc_sar_testbenches:salatch_tb_trannoise:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>salatch_pmos_tb_trannoise</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>adc_sar_testbenches:salatch_tb_trannoise:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>salatch_tb_trannoise</value>
+					</option>
+					<option>lib
+						<value>adc_sar_testbenches</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>spectre_state2_noise</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>vdd
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vamp
+				<value>0.5m</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vcm
+				<value>0.2</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>vos
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>voscm
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>cload
+				<value>20f</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>cint
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>ctail
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>costail
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tper
+				<value>1n</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tr
+				<value>20p</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tsim
+				<value>2.5n</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tstep
+				<value>1p</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>csaload
+				<value>10f</value>
+				<dependentTests>
+					<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+	</active>
+	<history>History
+		<historyentry>Interactive.3
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_tran:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_tran</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_tran:1_spectre_state1_Interactive.3</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_tran</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state1</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>10m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_tran:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Mon Dec 12 17:35:32 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.3.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-10.EECS.Berkeley.EDU_jdhan_173532306</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.3.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.4
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.4</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>10m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Tue Dec 13 01:07:35 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.4.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-10.EECS.Berkeley.EDU_jdhan_010735781</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.4.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.5
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.5</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Tue Dec 13 01:10:13 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.5.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-10.EECS.Berkeley.EDU_jdhan_011013306</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.5.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.6
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.6</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Thu Dec 29 15:49:57 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.6.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_154957237</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.6.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.7
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.7</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.0001</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Thu Dec 29 15:52:26 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.7.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_155226608</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.7.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.8
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.8</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.0001</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Thu Dec 29 19:53:27 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.8.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_195327238</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.8.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.9
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.9</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.0001</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Thu Dec 29 20:04:53 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.9.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_200453302</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.9.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.10
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.10</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.5m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Thu Dec 29 20:08:09 2016</timestamp>
+			<resultsname></resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.10.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_200809751</localpsfdir>
+			<psfdir></psfdir>
+			<simdir></simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog></runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.10.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.11
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_pmos_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.11</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.9</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.5m</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.6</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest omitted="0">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Mon Jan 23 14:23:17 2017</timestamp>
+			<resultsname>/tools/projects/jdhan/BAG/techno_craft/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.11.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.11.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_142317321</localpsfdir>
+			<psfdir>/tools/scratch/jdhan/simulation/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.11</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.11</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/jdhan/BAG/techno_craft/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.11.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.11.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry>Interactive.12
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>adc_sar_testbenches:salatch_tb_trannoise:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>salatch_pmos_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>adc_sar_testbenches:salatch_tb_trannoise:1_spectre_state2_noise_Interactive.12</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>salatch_tb_trannoise</value>
+							</option>
+							<option>lib
+								<value>adc_sar_testbenches</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>spectre_state2_noise</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>vdd
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vamp
+						<value>0.5m</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vcm
+						<value>0.2</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>vos
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>voscm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cload
+						<value>20f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>cint
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ctail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>costail
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tper
+						<value>1n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tsim
+						<value>2.5n</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tstep
+						<value>1p</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>csaload
+						<value>10f</value>
+						<dependentTests>
+							<dependentTest enabled="1">adc_sar_testbenches:salatch_tb_trannoise:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Mon Jan 23 23:10:54 2017</timestamp>
+			<resultsname>/tools/projects/jdhan/BAG/techno_craft/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.12.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.12.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/bwrcr720-5.eecs.berkeley.edu_jdhan_231054069</localpsfdir>
+			<psfdir>/tools/scratch/jdhan/simulation/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.12</psfdir>
+			<simdir>$AXL_PROJECT_DIR/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.12</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/tools/projects/jdhan/BAG/techno_craft/adc_sar_testbenches/salatch_pmos_tb_trannoise/adexl/results/data/Interactive.12.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.12.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

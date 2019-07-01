@@ -1,0 +1,62 @@
+#temperature
+temp: 300                 
+temp_min: 273
+temp_max: 400
+#input range
+v_in: 0.3               
+v_in_max: 0.5
+v_in_cm: 0.21
+#number of bits
+n_bit: 9
+#number of bits after cal
+n_bit_cal: 8
+#effective sampling rate
+fsamp: 7.5e+9
+#sampling network bw
+fbw_samp: 3.0e+10
+#interleaving ratio
+n_interleave: 8
+#minimum cap size (set by process and template)
+c_unit: 0.205e-15       
+#ground cap size (for noise calculations)
+c_ground: 0.250e-15       
+#Max. cap mismatch ratio for c_unit
+c_delta: 0.5   
+#stardard deviation of sampling noise in bits
+n_bit_samp_noise: 0.5 
+#max. sampling settling error in bits
+n_bit_samp_settle: 0.5 
+#sigma of comparator noise in bits
+n_bit_comp_noise: 1
+#capdac radix array
+#rdx_array: [1, 2, 4, 8, 16, 28, 53, 100] 
+rdx_array: [1, 2, 4, 8, 16, 32, 64, 128] 
+#rdx_array: [1, 2, 4, 8, 16, 32, 64, 128, 256] 
+#enob from redundancy
+rdx_enob: 8             
+#timing budget
+cycle_comp: 0.6
+cycle_logic: 0.3
+cycle_dac: 0.1
+#voltage - vdd
+vdd: 0.9
+vdd_min: 0.72
+vdd_max: 0.88
+#logic timing
+trf_fo4: 8.0e-12 #nominal logic transition timing
+tfo4: 10.0e-12 #nominal fo4 delay
+momcap_layer: 6
+#True if laygo is used for sampler generation. If false, AnalogBase is used
+samp_use_laygo: True
+#True if tgate is used for sampling switch. If false, NMOS-only sampler is used
+samp_with_tgate: False
+#True if source follower buffer is used.
+use_sf: True
+#True if individual VREF source follower is used for each slice.
+use_vref_sf: True
+#True if laygo is used for retimer generation. If false, AnalogBase is used
+ret_use_laygo: True
+pmos_body: 'VDD' #'VSS' or 'VDD'
+use_offset: False # False if use_sf is True, True if you want calibrate comparator offset
+clk_pulse_overlap: True # default: False
+input_htree: False

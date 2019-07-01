@@ -1,0 +1,324 @@
+lib_name: adc_sar_templates
+cell_name: sarlogic_array_8b
+pins: [ "SAOPB", "SAOMB", "SB<7:0>", "RST", "VDD", "VSS", "ZP<7:0>", "ZMID<7:0>", "ZM<7:0>" ]
+instances:
+  ISL7:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<7>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<7>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<7>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<7>"
+        num_bits: 1
+  ISL3:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<3>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<3>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<3>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<3>"
+        num_bits: 1
+  ISL1:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<1>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<1>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<1>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<1>"
+        num_bits: 1
+  ISL0:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<0>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<0>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<0>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<0>"
+        num_bits: 1
+  ISL2:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<2>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<2>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<2>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<2>"
+        num_bits: 1
+  ISL5:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<5>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<5>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<5>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<5>"
+        num_bits: 1
+  ISL4:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<4>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<4>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<4>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<4>"
+        num_bits: 1
+  ISL6:
+    lib_name: adc_sar_templates
+    cell_name: sarlogic
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      ZP:
+        direction: output
+        net_name: "ZP<6>"
+        num_bits: 1
+      ZMID:
+        direction: output
+        net_name: "ZMID<6>"
+        num_bits: 1
+      ZM:
+        direction: output
+        net_name: "ZM<6>"
+        num_bits: 1
+      RST:
+        direction: input
+        net_name: "RST"
+        num_bits: 1
+      SAOPB:
+        direction: input
+        net_name: "SAOPB"
+        num_bits: 1
+      SAOMB:
+        direction: input
+        net_name: "SAOMB"
+        num_bits: 1
+      SB:
+        direction: input
+        net_name: "SB<6>"
+        num_bits: 1

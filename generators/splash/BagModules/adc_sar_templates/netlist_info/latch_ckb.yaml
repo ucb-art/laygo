@@ -1,0 +1,72 @@
+lib_name: adc_sar_templates
+cell_name: latch_ckb
+pins: [ "I", "O", "VDD", "VSS", "CLKB" ]
+instances:
+  I1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "CLK"
+        num_bits: 1
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  I0:
+    lib_name: logic_templates
+    cell_name: latch_2ck
+    instpins:
+      I:
+        direction: input
+        net_name: "I"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      CLK:
+        direction: input
+        net_name: "CLK"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}

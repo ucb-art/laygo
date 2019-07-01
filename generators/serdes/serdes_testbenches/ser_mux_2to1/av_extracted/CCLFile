@@ -1,0 +1,61 @@
+#
+# OPTION COMMAND FILE created by Cadence Quantus QRC Extraction Version 15.1.4-s005 from CCL
+#
+capacitance \
+	 -decoupling_factor 1.0 \
+	 -ground_net "VSS"
+distributed_processing \
+	 -multi_cpu 6
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -array_vias_spacing auto \
+	 -max_fracture_length infinite \
+	 -max_fracture_length_unit "MICRONS" \
+	 -max_via_array_size \
+		"auto" \
+	 -net_name_space "SCHEMATIC"
+filter_cap \
+	 -exclude_self_cap true
+filter_coupling_cap \
+	 -coupling_cap_threshold_absolute 0.01 \
+	 -coupling_cap_threshold_relative 0.001
+filter_res \
+	 -min_res 0.001
+input_db -type pvs \
+	 -design_cell_name "ser_mux_2to1 layout serdes_testbenches" \
+	 -directory_name "/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/pvs_run/lvs_run_dir/svdb" \
+	 -format "DFII" \
+	 -run_name "ser_mux_2to1"
+log_file \
+	 -file_name "/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/pvs_run/lvs_run_dir/svdb/qrc.ser_mux_2to1.log"
+output_db -type extracted_view \
+	 -cap_component "pcapacitor" \
+	 -cap_property_name "c" \
+	 -cdl_out_map_directory \
+		"/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/pvs_run/lvs_run_dir" \
+	 -device_finger_delimiter "@" \
+	 -enable_cellview_check true \
+	 -include_cap_model "false" \
+	 -include_parasitic_cap_model "false" \
+	 -include_parasitic_res_model "false" \
+	 -include_res_model "false" \
+	 -res_component "presistor" \
+	 -res_property_name "r" \
+	 -view_name "av_extracted"
+output_setup \
+	 -directory_name "/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/pvs_run/lvs_run_dir/svdb" \
+	 -temporary_directory_name "ser_mux_2to1"
+parasitic_reduction \
+	 -enable_reduction true \
+	 -reduction_control 0.9
+process_technology \
+	 -technology_corner \
+		"nom" \
+	 -technology_library_file "/tools/projects/wrbae/fader/test_M3/TISARADC_init_tech/pvtech.lib" \
+	 -technology_name "N16" \
+	 -temperature \
+		25.0
+
+

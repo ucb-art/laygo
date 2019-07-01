@@ -1,0 +1,5 @@
+
+To clean up:
+	make clean
+To publish
+	make publish

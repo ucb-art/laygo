@@ -1,0 +1,34 @@
+capdac_c_m: 2
+capdac_num_bits_horizontal: 2
+capdac_num_bits_vertical: 3
+capdrv_m_list: [2, 2, 2, 2, 4]
+capdrv_space_offset: 0
+dcap2_m: 19
+device_intent: ulvt
+lch: 1.6e-08
+m_dcap2: 19
+num_space_samp: 42
+num_space_sar: 48
+nw: 4
+pw: 4
+salatch_m_preset: [4, 8, 12, 16, 20]
+salatch_m_buf_preset: [4, 6, 8, 12, 16]
+salatch_m_rgnn_preset: [6, 6, 8, 12, 16]
+salatch_m_rst_preset: [2, 4, 6, 8, 10]
+salatch_m: 12
+salatch_m_buf: 8
+salatch_m_rgnn: 8
+salatch_m_rst: 6
+sarabe_m_space_left_4x: 0
+sarclkgen_fo: 4
+sarclkgen_m: 2
+sarclkgen_ndelay: 1
+sarfsm_m: 2
+sarlogic_m: 4
+sarret_fo: 2
+sarret_m: 1
+sarsamp_m_inbuf_list: [16, 24]
+sarsamp_m_outbuf_list: [8, 32]
+sarsamp_m_sw: 4
+sarsamp_m_sw_arr: 6
+slice_order: [0, 1]

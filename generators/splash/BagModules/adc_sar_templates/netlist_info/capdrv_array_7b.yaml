@@ -1,0 +1,196 @@
+lib_name: adc_sar_templates
+cell_name: capdrv_array_7b
+pins: [ "VDD", "VSS", "VREF<2:0>", "EN6<2:0>", "EN5<2:0>", "EN4<2:0>", "EN3<2:0>", "EN2<2:0>", "EN1<2:0>", "EN0<2:0>", "VO<6:0>" ]
+instances:
+  IC0DRV0:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<6>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN6<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV0:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<0>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN0<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV2:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<2>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN2<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV1:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<1>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN1<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV3:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<3>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN3<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV5:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<5>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN5<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV4:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<4>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN4<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRV6:
+    lib_name: adc_sar_templates
+    cell_name: capdrv
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO<6>"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN6<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3

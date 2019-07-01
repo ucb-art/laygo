@@ -1,0 +1,108 @@
+lib_name: logic_templates_pmos_vss
+cell_name: mux2to1
+pins: [ "O", "VDD", "VSS", "EN0", "I1", "I0", "EN1" ]
+instances:
+  IINV0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "net8"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "O"
+        num_bits: 1
+  PIN3:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN6:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  ITINV1:
+    lib_name: logic_templates
+    cell_name: tinv
+    instpins:
+      O:
+        direction: inputOutput
+        net_name: "net8"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN1"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "EN0"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "I1"
+        num_bits: 1
+  ITINV0:
+    lib_name: logic_templates
+    cell_name: tinv
+    instpins:
+      O:
+        direction: inputOutput
+        net_name: "net8"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      EN:
+        direction: input
+        net_name: "EN0"
+        num_bits: 1
+      ENB:
+        direction: input
+        net_name: "EN1"
+        num_bits: 1
+      I:
+        direction: input
+        net_name: "I0"
+        num_bits: 1

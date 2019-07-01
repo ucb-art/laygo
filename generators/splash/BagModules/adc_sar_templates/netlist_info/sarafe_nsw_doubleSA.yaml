@@ -1,0 +1,232 @@
+lib_name: adc_sar_templates
+cell_name: sarafe_nsw_doubleSA
+pins: [ "INM", "OSM", "CLKB", "VDD", "VSS", "VREF<2:0>", "ENL0<2:0>", "ENR0<2:0>", "OUTM", "INP", "OSP", "VOL", "SF_bypass", "SF_VBIAS", "OUTP", "VOR" ]
+instances:
+  PIN3:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN23:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN31:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN30:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN7:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN4:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  ICAPM0:
+    lib_name: adc_sar_templates
+    cell_name: capdac
+    instpins:
+      I:
+        direction: input
+        net_name: "VOR"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "INM"
+        num_bits: 1
+      I_C0:
+        direction: input
+        net_name: "VREF<1>"
+        num_bits: 1
+  ICAPP0:
+    lib_name: adc_sar_templates
+    cell_name: capdac
+    instpins:
+      I:
+        direction: input
+        net_name: "VOL"
+        num_bits: 1
+      O:
+        direction: inputOutput
+        net_name: "INP"
+        num_bits: 1
+      I_C0:
+        direction: input
+        net_name: "VREF<1>"
+        num_bits: 1
+  ISA0:
+    lib_name: adc_sar_templates
+    cell_name: salatch_pmos
+    instpins:
+      CLKB:
+        direction: input
+        net_name: "CLKB"
+        num_bits: 1
+      INTM:
+        direction: output
+        net_name: "INTM"
+        num_bits: 1
+      OSP:
+        direction: input
+        net_name: "OSP"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      OUTP:
+        direction: output
+        net_name: "OUTP"
+        num_bits: 1
+      OUTM:
+        direction: output
+        net_name: "OUTM"
+        num_bits: 1
+      INP:
+        direction: input
+        net_name: "INP"
+        num_bits: 1
+      INM:
+        direction: input
+        net_name: "INM"
+        num_bits: 1
+      OSM:
+        direction: input
+        net_name: "OSM"
+        num_bits: 1
+      INTP:
+        direction: output
+        net_name: "INTP"
+        num_bits: 1
+  ISF:
+    lib_name: adc_sar_templates
+    cell_name: sourceFollower_vref
+    instpins:
+      VBIAS:
+        direction: inputOutput
+        net_name: "SF_VBIAS"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      out<2:0>:
+        direction: output
+        net_name: "SF_VREF<2:0>"
+        num_bits: 3
+      bypass:
+        direction: input
+        net_name: "SF_bypass"
+        num_bits: 1
+      in<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  PIN6:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN5:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  I6:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "INTP"
+        num_bits: 1
+  I5:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "INTM"
+        num_bits: 1
+  PIN24:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN25:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN26:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN28:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  ICDRVM0:
+    lib_name: adc_sar_templates
+    cell_name: capdrv_nsw_array
+    instpins:
+      VO:
+        direction: inputOutput
+        net_name: "VOR"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "ENR0<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VREF<2:0>:
+        direction: inputOutput
+        net_name: "VREF<2:0>"
+        num_bits: 3
+  ICDRVP0:
+    lib_name: adc_sar_templates
+    cell_name: capdrv_nsw_array
+    instpins:
+      VO:
+        direction: inputOutput
+        net_name: "VOL"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "ENL0<2:0>"
+        num_bits: 3
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VREF<2:0>:
+        direction: inputOutput
+        net_name: "VREF<2:0>"
+        num_bits: 3

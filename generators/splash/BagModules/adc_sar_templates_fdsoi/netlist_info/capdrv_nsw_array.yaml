@@ -1,0 +1,40 @@
+lib_name: adc_sar_templates_fdsoi
+cell_name: capdrv_nsw_array
+pins: [ "EN<2:0>", "VSS", "VREF<2:0>", "VO" ]
+instances:
+  PIN10:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN2:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN12:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  ICDRV0:
+    lib_name: adc_sar_templates
+    cell_name: capdrv_nsw
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VO:
+        direction: output
+        net_name: "VO"
+        num_bits: 1
+      EN<2:0>:
+        direction: input
+        net_name: "EN<2:0>"
+        num_bits: 3
+      VREF<2:0>:
+        direction: input
+        net_name: "VREF<2:0>"
+        num_bits: 3

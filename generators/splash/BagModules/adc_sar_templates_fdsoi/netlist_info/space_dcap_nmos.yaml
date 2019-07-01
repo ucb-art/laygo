@@ -1,0 +1,24 @@
+lib_name: adc_sar_templates_fdsoi
+cell_name: space_dcap_nmos
+pins: [ "VDD", "VSS" ]
+instances:
+  PIN1:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN0:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  IDCAP0:
+    lib_name: logic_templates
+    cell_name: dcap
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1

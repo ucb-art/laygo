@@ -1,0 +1,176 @@
+lib_name: adc_sar_templates
+cell_name: adc_retimer
+pins: [ "in", "ck_out", "out", "VSS", "VDD", "clk" ]
+instances:
+  PIN0:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN22:
+    lib_name: basic
+    cell_name: ipin
+    instpins: {}
+  PIN8:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN26:
+    lib_name: basic
+    cell_name: opin
+    instpins: {}
+  PIN16:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  PIN17:
+    lib_name: basic
+    cell_name: iopin
+    instpins: {}
+  IOBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "clk_duty"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "ck_out"
+        num_bits: 1
+  IIBUF0:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "iclk"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "clkb"
+        num_bits: 1
+  IIBUF2:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "clk"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "iclkb"
+        num_bits: 1
+  IIBUF1:
+    lib_name: logic_templates
+    cell_name: inv
+    instpins:
+      I:
+        direction: input
+        net_name: "iclkb"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      O:
+        direction: output
+        net_name: "iclk"
+        num_bits: 1
+  I19:
+    lib_name: basic
+    cell_name: noConn
+    instpins:
+      noConn:
+        direction: inputOutput
+        net_name: "net03"
+        num_bits: 1
+  ISLICE0:
+    lib_name: adc_sar_templates
+    cell_name: adc_retimer_slice
+    instpins:
+      out:
+        direction: output
+        net_name: "out"
+        num_bits: 1
+      clkb0:
+        direction: input
+        net_name: "clkb0"
+        num_bits: 1
+      clkb1:
+        direction: input
+        net_name: "clkb1"
+        num_bits: 1
+      clkb2:
+        direction: input
+        net_name: "clkb2"
+        num_bits: 1
+      in:
+        direction: input
+        net_name: "in"
+        num_bits: 1
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+  ISR:
+    lib_name: logic_templates
+    cell_name: ndsr
+    instpins:
+      VSS:
+        direction: inputOutput
+        net_name: "VSS"
+        num_bits: 1
+      VDD:
+        direction: inputOutput
+        net_name: "VDD"
+        num_bits: 1
+      Q:
+        direction: output
+        net_name: "clk_duty"
+        num_bits: 1
+      QB:
+        direction: output
+        net_name: "net03"
+        num_bits: 1
+      R:
+        direction: input
+        net_name: "clkb"
+        num_bits: 1
+      S:
+        direction: input
+        net_name: "clkb"
+        num_bits: 1
