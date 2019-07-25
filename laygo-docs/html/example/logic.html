@@ -1,0 +1,196 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Logic family generator &#8212; laygo_documentation 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CMOS SERDES generator" href="serdes.html" />
+    <link rel="prev" title="Laygo architecture" href="../architecture/architecture.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="logic-family-generator">
+<h1>Logic family generator<a class="headerlink" href="#logic-family-generator" title="Permalink to this headline">¶</a></h1>
+<p><img alt="../_images/logic.png" src="../_images/logic.png" />logic</p>
+<p>This section describes how to generate logic gate layout templates,
+which are used for constructing custom digital cells.</p>
+<blockquote>
+<div>Note: the codes are lengthy and not cleaned up yet. An improved
+version following the tutorial conventions (possibly with more
+abstracting functions) will be released soon.</div></blockquote>
+<div class="section" id="install-and-launch">
+<h2>Install and launch<a class="headerlink" href="#install-and-launch" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">Clone a proper tech repo. For cds_ff_mpt example type following
+commands.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:ucb-art/BAG2_cds_ff_mpt.git
+$ cd BAG2_cds_ff_mpt
+$ git submodule init
+$ git submodule update
+$ git submodule foreach git pull origin master
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set setting up files, run virtuoso and BAG.</p>
+</li>
+<li><p class="first">Run this command to generate logic layouts. The script will create
+logic layouts in (tech)_logic_templates library. For example, for
+<strong>cds_ff_mpt</strong> technology, the library name will be
+<strong>cds_ff_mpt_logic_template</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">laygo</span><span class="o">/</span><span class="n">generators</span><span class="o">/</span><span class="n">logic</span><span class="o">/</span><span class="n">logic_templates_layout_generator</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Open (tech)_logic_templates library and check if cells are
+generated.</p>
+<p><img alt="../_images/logic_lib.png" src="../_images/logic_lib.png" />logic_lib</p>
+</li>
+</ol>
+</div>
+<div class="section" id="supported-logic-gate-types">
+<h2>Supported logic gate types<a class="headerlink" href="#supported-logic-gate-types" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>bcap : capacitors</li>
+<li>dcap : decoupling capacitors</li>
+<li>dff : D flip-flops</li>
+<li>dff_rsth : D flip-flops with reset high</li>
+<li>inv : inverters</li>
+<li>latch_2ck : D latches with differential clock input</li>
+<li>latch_2ck : D latches with differential clock input, with reset high</li>
+<li>mux2to1 : 2-to-1 muxes</li>
+<li>nand : nand gates</li>
+<li>ndsr : nand-type sr latches</li>
+<li>nor : nor gates</li>
+<li>nsw : nmos switches</li>
+<li>nsw_wovdd : nmos switches without VDD rail</li>
+<li>oai22 : 2-input oai gates</li>
+<li>space : fillers</li>
+<li>space_wovdd : fillers without VDD rail</li>
+<li>tap : tap cells</li>
+<li>tap_wovdd : tap cells without vdd rail</li>
+<li>tgate : transmission gates</li>
+<li>tie : tie cells</li>
+<li>tie_wovdd : tie cells without vdd rail</li>
+<li>tinv : tri-state inverters</li>
+<li>tinv_small : small tri-state inverters</li>
+</ol>
+</div>
+<div class="section" id="schematic-templates">
+<h2>Schematic templates<a class="headerlink" href="#schematic-templates" title="Permalink to this headline">¶</a></h2>
+<p>Corresponding schematic templates can be found in:
+<strong>generators/logic/logic_templates</strong>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">laygo_documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_GDS.html">Tutorial (GDS flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG.html">Tutorial (BAG flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG_v2.html">Tutorial (BAG flow, new version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generator example - CMOS logic family</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-and-launch">Install and launch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-logic-gate-types">Supported logic gate types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schematic-templates">Schematic templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serdes.html">Generator example - CMOS 2:1 mux serializer (obsolete)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ser_des.html">Generator example - Flexible CMOS SERDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tisar.html">Generator example - TISAR ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code examples (to be uploaded)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/tech.html">Technology setup instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/Laygo_templates_guide.html">Template library setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../architecture/architecture.html" title="previous chapter">Laygo architecture</a></li>
+      <li>Next: <a href="serdes.html" title="next chapter">CMOS SERDES generator</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Jaeduk Han.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/example/logic.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

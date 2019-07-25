@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LAYGO - LAYout with Gridded Objects &#8212; laygo_documentation 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NAND gate generation and GDS export tutorial" href="../tutorial/tutorial_GDS.html" />
+    <link rel="prev" title="Welcome to laygo’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="laygo-layout-with-gridded-objects">
+<h1>LAYGO - LAYout with Gridded Objects<a class="headerlink" href="#laygo-layout-with-gridded-objects" title="Permalink to this headline">¶</a></h1>
+<p>Laygo is an add-on to <a class="reference external" href="https://github.com/ucb-art/BAG_framework">BAG2</a>
+framework for layout generation, written by <a class="reference external" href="https://jdhan.github.io/">Jaeduk Han</a>,
+Woorham Bae, Zhongkai Wang, and Eric Jan.
+The physical design of analog and mixed-signal (AMS) circuits is very
+challenging in advanced CMOS processes, due to their complex design rules.
+Laygo abstracts the design rules by introducing quantized templates and
+grids. With Laygo, the AMS layout is constructed by placing templates and
+routing wires on grids; designers don’t need to deal with complex design
+rules. Using Laygo, you can script your layout construction process in
+Python, which gives higher productivity and process portability over
+multiple technology nodes.</p>
+<p><img alt="../_images/laygo_concept.png" src="../_images/laygo_concept.png" />laygo</p>
+<div class="section" id="installation-and-quick-start">
+<h2>Installation and Quick Start<a class="headerlink" href="#installation-and-quick-start" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">Install BAG2 (skip if you are using the GDS flow)</p>
+</li>
+<li><p class="first">Clone laygo repo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:ucb-art/laygo.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Prepare setup files for your technology.</p>
+<ul>
+<li><p class="first"><strong>laygo_config.yaml</strong> - contains general technology information.</p>
+<p>Example: <a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/labs/laygo_config.yaml">labs/laygo_config.yaml</a></p>
+</li>
+<li><p class="first"><strong>(technology_name).layermap</strong>(optional) - layer mapping file only
+for the GDS flow. Usually the layermap file can be found in your PDK
+library.</p>
+<p>Example: <a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech.layermap">labs/laygo_faketech.layermap</a></p>
+</li>
+<li><p class="first"><strong>primitive template and grid database</strong> : laygo stores template
+and grid information in yaml files. Users can construct their yaml
+files, or provided from external vendors under NDA.</p>
+<p>Example database files (for laygo_faketech, used in the GDS flow):
+<a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech_microtemplates_dense_templates.yaml">labs/laygo_faketech_microtemplates_dense_templates.yaml</a>,
+<a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech_microtemplates_dense_grids.yaml">labs/laygo_faketech_microtemplates_dense_grids.yaml</a></p>
+<p>An example script for constructing the yaml database:
+<a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/labs/lab2_a_gridlayoutgenerator_constructtemplate.py">labs/lab2_a_gridlayoutgenerator_constructtemplate.py</a></p>
+</li>
+</ul>
+<p>Example setup files for generic technologies are released for
+reference, which can be found here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">*</span> <span class="p">[</span><span class="n">cds_ff_mpt</span><span class="p">](</span><span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ucb</span><span class="o">-</span><span class="n">art</span><span class="o">/</span><span class="n">BAG2_cds_ff_mpt</span><span class="o">.</span><span class="n">git</span><span class="p">)</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">NCSU</span> <span class="n">FreePDK45</span><span class="p">](</span><span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ucb</span><span class="o">-</span><span class="n">art</span><span class="o">/</span><span class="n">BAG2_freePDK45</span><span class="o">.</span><span class="n">git</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For <strong>BWRC users</strong>, default setup files for various technologies are
+provided under proper NDAs.</p>
+</li>
+<li><p class="first">Let’s run a toy example. Launch ipython and run the GDS tutorial script
+<a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/quick_start_GDS.py">quick_start_GDS.py</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ start_bag.sh    (or ipython)
+&gt; cd laygo
+&gt; run quick_start_GDS.py
+</pre></div>
+</div>
+<p>It will create a nand gate layout and save the layout to <em>output.gds</em>.</p>
+<p><img alt="../_images/laygo_quickstart.png" src="../_images/laygo_quickstart.png" />qs_nand</p>
+<p><a class="reference external" href="http://www.klayout.de/">KLayout</a> was used for the gds display. Detailed
+explanations on the tutorial script are
+<a class="reference external" href="https://ucb-art.github.io/laygo/tutorial/tutorial_GDS.html">here</a>.
+You can also export the layout to the BAG framework. Refer to
+<a class="reference external" href="https://ucb-art.github.io/laygo/tutorial/tutorial_BAG.html">this document</a>
+for details.</p>
+</li>
+<li><p class="first">For more practice examples, go over lab materials in <a class="reference external" href="https://github.com/ucb-art/laygo/tree/master/labs">labs/</a>.
+Detailed instructions can be found in <a class="reference external" href="docs/labs">lab readme</a>.</p>
+</li>
+<li><p class="first">More generator examples are being uploaded in <a class="reference external" href="https://ucb-art.github.io/laygo/">https://ucb-art.github.io/laygo/</a> for reference.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="documentations">
+<h2>Documentations<a class="headerlink" href="#documentations" title="Permalink to this headline">¶</a></h2>
+<p>Documents are stored in <a class="reference external" href="https://ucb-art.github.io/laygo/">https://ucb-art.github.io/laygo/</a>.</p>
+</div>
+<div class="section" id="example-labs">
+<h2>Example Labs<a class="headerlink" href="#example-labs" title="Permalink to this headline">¶</a></h2>
+<p>Various lab modules are provided to guide the layout generation
+procedure. Users are strongly recommended to finish all lab modules
+before working on their designs. Labs modules can be found <a class="reference external" href="docs/labs">here</a></p>
+</div>
+<div class="section" id="example-generators">
+<h2>Example Generators<a class="headerlink" href="#example-generators" title="Permalink to this headline">¶</a></h2>
+<p>Example generaters can be found <a class="reference external" href="docs/generators">here</a>.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>This project is licensed under the BSD License - check the
+<a class="reference external" href="LICENSE">LICENSE</a> file for details.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">laygo_documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-quick-start">Installation and Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentations">Documentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-labs">Example Labs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-generators">Example Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_GDS.html">Tutorial (GDS flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG.html">Tutorial (BAG flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG_v2.html">Tutorial (BAG flow, new version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example/logic.html">Generator example - CMOS logic family</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example/serdes.html">Generator example - CMOS 2:1 mux serializer (obsolete)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example/ser_des.html">Generator example - Flexible CMOS SERDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example/tisar.html">Generator example - TISAR ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example/code.html">Code examples (to be uploaded)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/tech.html">Technology setup instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/Laygo_templates_guide.html">Template library setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to laygo’s documentation!</a></li>
+      <li>Next: <a href="../tutorial/tutorial_GDS.html" title="next chapter">NAND gate generation and GDS export tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Jaeduk Han.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/introduction/introduction.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
