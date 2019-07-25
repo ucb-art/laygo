@@ -1,0 +1,685 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>laygo.GridObject &#8212; laygo_documentation 1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for laygo.GridObject</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1">########################################################################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2014, Regents of the University of California</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without modification, are permitted provided that the</span>
+<span class="c1"># following conditions are met:</span>
+<span class="c1">#</span>
+<span class="c1"># 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following</span>
+<span class="c1">#   disclaimer.</span>
+<span class="c1"># 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the</span>
+<span class="c1">#    following disclaimer in the documentation and/or other materials provided with the distribution.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES,</span>
+<span class="c1"># INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<span class="c1"># DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span>
+<span class="c1"># SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<span class="c1"># WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="c1">#</span>
+<span class="c1">########################################################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The GridObject module and class implements a object that contains grid information for placement and route. It also</span>
+<span class="sd">provides useful functions for coordinate conversion between physical and abstract grids.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jaeduk Han&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jaeduk Han&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;jdhan@eecs.berkeley.edu&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;Prototype&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="GridObject"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject">[docs]</a><span class="k">class</span> <span class="nc">GridObject</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Layout abstract grid class&quot;&quot;&quot;</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;native&quot;</span>
+    <span class="sd">&quot;&quot;&quot;str: type of grid. can be &#39;native&#39;, &#39;route&#39;, &#39;placement&#39;&quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="o">=</span><span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;str: name of grid&quot;&quot;&quot;</span>
+    <span class="n">libname</span><span class="o">=</span><span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;str: library name of grid&quot;&quot;&quot;</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># Coordinate</span>
+    <span class="sd">&quot;&quot;&quot;np.array([float, float]): size of grid&quot;&quot;&quot;</span>
+    <span class="n">xgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="sd">&quot;&quot;&quot;np.array([float, float, ...]): x coordinates of grid&quot;&quot;&quot;</span>
+    <span class="n">ygrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="sd">&quot;&quot;&quot;np.array([float, float, ...]): y coordinates of grid&quot;&quot;&quot;</span>
+    <span class="n">max_resolution</span><span class="o">=</span><span class="mi">10</span>
+    <span class="sd">&quot;&quot;&quot;int: maximum resolution to handle floating point numbers&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;float: height of grid&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;float: width of grid&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">libname</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">_xgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]),</span> <span class="n">_ygrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">libname</span><span class="o">=</span><span class="n">libname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="o">=</span><span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="o">=</span><span class="n">_xgrid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="o">=</span><span class="n">_ygrid</span>
+
+<div class="viewcode-block" id="GridObject.display"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.display">[docs]</a>    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Display grid information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; width:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>
+                               <span class="o">+</span> <span class="s2">&quot; height:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="GridObject.export_dict"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.export_dict">[docs]</a>    <span class="k">def</span> <span class="nf">export_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export object information in dict format</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            grid information in dict format</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">export_dict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                     <span class="s1">&#39;xy0&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+                     <span class="s1">&#39;xy1&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">==</span><span class="p">[]:</span>
+            <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;xgrid&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">==</span><span class="p">[]:</span>
+            <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;ygrid&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">export_dict</span></div>
+
+    <span class="k">def</span> <span class="nf">_add_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add a grid coordinate</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        grid : np.array</span>
+<span class="sd">            grid array</span>
+<span class="sd">        v : float</span>
+<span class="sd">            value</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.array</span>
+<span class="sd">            updated grid array</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">grid</span>
+
+<div class="viewcode-block" id="GridObject.add_xgrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.add_xgrid">[docs]</a>    <span class="k">def</span> <span class="nf">add_xgrid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add a coordinate value to grid in x direction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : float</span>
+<span class="sd">            value to be added</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_add_grid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.add_ygrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.add_ygrid">[docs]</a>    <span class="k">def</span> <span class="nf">add_ygrid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add a coordinate value to grid in y direction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : float</span>
+<span class="sd">            value to be added</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_add_grid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.get_xgrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_xgrid">[docs]</a>    <span class="k">def</span> <span class="nf">get_xgrid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;use laygo.GridObject.GridObject.xgrid instead&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span></div>
+
+<div class="viewcode-block" id="GridObject.get_ygrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_ygrid">[docs]</a>    <span class="k">def</span> <span class="nf">get_ygrid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;use laygo.GridObject.GridObject.ygrid instead&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span></div>
+
+    <span class="c1">#abstract to physical conversion functions</span>
+    <span class="k">def</span> <span class="nf">_get_absgrid_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ceil&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert physical value to abstract value on grid. Since physical values are continuous and grid values are</span>
+<span class="sd">        discrete, boundary conditions are need to be defined for the conversion.</span>
+<span class="sd">        Default (and only supported in the current version) converting method is ceil, which is described as follows:</span>
+<span class="sd">        #   physical grid: 0----grid0----grid1----grid2----...----gridN---size</span>
+<span class="sd">        # abstracted grid: 0  0   0    1   1    2   2           N   N   N+1</span>
+<span class="sd">        The ceiling method works well with stacked grids. For example, in the example, phyical values ranging from</span>
+<span class="sd">        (larger than) GridN to (equal to) gridN+1 (grid0 of the second stack) will be converted to N+1.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v : float</span>
+<span class="sd">            grid value</span>
+<span class="sd">        grid : np.array</span>
+<span class="sd">            grid array</span>
+<span class="sd">        size : float</span>
+<span class="sd">            grid size</span>
+<span class="sd">        method : str, optional</span>
+<span class="sd">            converting method</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            abstract grid value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">quo</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+        <span class="n">mod</span><span class="o">=</span><span class="n">v</span><span class="o">-</span><span class="n">quo</span><span class="o">*</span><span class="n">size</span> <span class="c1">#mod=np.mod(v, size) not working well</span>
+        <span class="n">mod_ongrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">grid</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span> <span class="c1">#add 1e-10 to handle floating point precision errors</span>
+        <span class="c1">#print(&#39;physical:&#39; + str(v.tolist()) + &#39; size:&#39;+ str(size) +</span>
+        <span class="c1">#      &#39; quo:&#39; + str(quo.tolist()) + &#39; mod:&#39; + str(mod) +</span>
+        <span class="c1">#      &#39; abs:&#39; + str(np.add(np.multiply(quo,grid.shape[0]), mod_ongrid).tolist()))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">quo</span><span class="p">,</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">mod_ongrid</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GridObject.get_absgrid_coord_x"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_coord_x">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_coord_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_absgrid_x"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_x">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a physical x coordinate to a corresponding value in abstract grid</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : float</span>
+<span class="sd">            value</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            converted value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_absgrid_coord</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.get_absgrid_coord_y"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_coord_y">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_coord_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_absgrid_y"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_y">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a physical y coordinate to a corresponding value in abstract grid</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : float</span>
+<span class="sd">            value</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            converted value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_absgrid_coord</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.get_absgrid_coord_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_coord_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_coord_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_xy</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_absgrid_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a physical xy coordinate to a corresponding vector in abstract grid</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([float, float])</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.array([int, int])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_xy</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_x</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_y</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">if</span> <span class="n">_xy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="n">_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="n">_xy</span></div>
+
+<div class="viewcode-block" id="GridObject.get_absgrid_coord_region"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_coord_region">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_coord_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy0</span><span class="p">,</span> <span class="n">xy1</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_region</span><span class="p">(</span><span class="n">xy0</span><span class="p">,</span> <span class="n">xy1</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_absgrid_region"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_absgrid_region">[docs]</a>    <span class="k">def</span> <span class="nf">get_absgrid_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy0</span><span class="p">,</span> <span class="n">xy1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a physical regin to a corresponding region in abstract grid</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy0 : np.array([float, float])</span>
+<span class="sd">            first coordinate</span>
+<span class="sd">        xy1 : np.array([float, float])</span>
+<span class="sd">            second coordinate</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.array([[int, int], [int, int]])</span>
+<span class="sd">            converted coordinate</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_xy0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_coord_x</span><span class="p">(</span><span class="n">xy0</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_coord_y</span><span class="p">(</span><span class="n">xy0</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">_xy1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_coord_x</span><span class="p">(</span><span class="n">xy1</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_absgrid_coord_y</span><span class="p">(</span><span class="n">xy1</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">if</span> <span class="n">_xy0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">_xy0</span> <span class="o">=</span> <span class="n">_xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">_xy1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">_xy1</span> <span class="o">=</span> <span class="n">_xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1">#upper right boundary adjust</span>
+        <span class="c1">#check by re-converting to physical grid and see if the points are within original [xy0, xy1]</span>
+        <span class="c1">#xy0_check = self.get_phygrid_coord_xy(_xy0)[0]</span>
+        <span class="c1">#xy1_check = self.get_phygrid_coord_xy(_xy1)[0]</span>
+        <span class="n">xy0_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_xy</span><span class="p">(</span><span class="n">_xy0</span><span class="p">)</span>
+        <span class="n">xy1_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_xy</span><span class="p">(</span><span class="n">_xy1</span><span class="p">)</span>
+        <span class="n">xy0_check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">xy0_check</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span>
+        <span class="n">xy1_check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">xy1_check</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span>
+        <span class="n">xy0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">xy0</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span>
+        <span class="n">xy1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">xy1</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span>
+        <span class="c1">#print(&quot;phy:&quot; + str(xy0) + &quot; &quot; + str(xy1) + &quot; abs:&quot; + str(_xy0) + &quot; &quot; + str(_xy1) + &quot; chk:&quot; + str(xy0_check) + &quot; &quot; + str(xy1_check))</span>
+        <span class="k">if</span> <span class="n">xy0_check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">xy0_check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">_xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">xy1_check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">xy1_check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">_xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">xy0_check</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">xy0_check</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">_xy0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">xy1_check</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">xy1_check</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">_xy1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="c1">#if _xy1[1]==7:</span>
+        <span class="c1">#    print(&quot;phy:&quot;+str(xy0)+&quot; &quot;+str(xy1)+&quot; abs:&quot;+str(_xy0)+&quot; &quot;+str(_xy1)+&quot; chk:&quot;+str(xy0_check)+&quot; &quot;+str(xy1_check))</span>
+        <span class="c1">#print(xy1)</span>
+
+        <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">_xy0</span><span class="p">,</span> <span class="n">_xy1</span><span class="p">)))</span></div>
+
+    <span class="c1"># physical to abstract conversion functions</span>
+    <span class="k">def</span> <span class="nf">_get_phygrid_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function for abstract to physical coordinate conversions</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v : int</span>
+<span class="sd">            value in abstract coordinate</span>
+<span class="sd">        grid : np.array</span>
+<span class="sd">            grid array</span>
+<span class="sd">        size : float</span>
+<span class="sd">            grid size</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            value in physical coordinate</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">quo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># mod = v - quo * grid.shape[0]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">quo</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">mod</span><span class="p">))</span>
+
+<div class="viewcode-block" id="GridObject.get_phygrid_coord_x"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_coord_x">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_coord_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_phygrid_x"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_x">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the physical value of a abstract x coordinate</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : int</span>
+<span class="sd">            abstract coordinate value</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            physical coordinate value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_phygrid_coord</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.get_phygrid_coord_y"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_coord_y">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_coord_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_phygrid_y"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_y">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the physical value of a abstract y coordinate</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : int</span>
+<span class="sd">            abstract coordinate value</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            physical coordinate value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_phygrid_coord</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GridObject.get_phygrid_coord_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_coord_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_coord_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_xy</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GridObject.get_phygrid_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.GridObject.get_phygrid_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_phygrid_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the physical value of a abstract vector</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([int, int])</span>
+<span class="sd">            abstract coordinate vector</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.array([float, float])</span>
+<span class="sd">            physical coordinate vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">xy</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="c1">#single coordinate</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_coord_x</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_coord_y</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_coord_x</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_phygrid_coord_y</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span></div></div>
+
+
+<div class="viewcode-block" id="PlacementGrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.PlacementGrid">[docs]</a><span class="k">class</span> <span class="nc">PlacementGrid</span><span class="p">(</span><span class="n">GridObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Placement grid class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;placement&#39;</span></div>
+
+
+<div class="viewcode-block" id="RouteGrid"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid">[docs]</a><span class="k">class</span> <span class="nc">RouteGrid</span><span class="p">(</span><span class="n">GridObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Routing grid class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;route&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: type of grid. can be &#39;native&#39;, &#39;route&#39;, &#39;placement&#39;&quot;&quot;&quot;</span>
+    <span class="n">xwidth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="sd">&quot;&quot;&quot;np.array: width of xgrid&quot;&quot;&quot;</span>
+    <span class="n">ywidth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="sd">&quot;&quot;&quot;np.array: width of ygrid&quot;&quot;&quot;</span>
+    <span class="n">viamap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="sd">&quot;&quot;&quot;dict: via map information&quot;&quot;&quot;</span>
+    <span class="n">xlayer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;list: layer of xgrid&quot;&quot;&quot;</span>
+    <span class="n">ylayer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;list: layer of ygrid&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">libname</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">,</span> <span class="n">xwidth</span><span class="p">,</span> <span class="n">ywidth</span><span class="p">,</span> <span class="n">xlayer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylayer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viamap</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">libname</span> <span class="o">=</span> <span class="n">libname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span> <span class="o">=</span> <span class="n">xgrid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span> <span class="o">=</span> <span class="n">ygrid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="n">xwidth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span> <span class="o">=</span> <span class="n">ywidth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xlayer</span> <span class="o">=</span> <span class="n">xlayer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ylayer</span> <span class="o">=</span> <span class="n">ylayer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viamap</span> <span class="o">=</span> <span class="n">viamap</span>
+
+    <span class="k">def</span> <span class="nf">_get_route_width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">_width</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get metal width</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v : int</span>
+<span class="sd">            value</span>
+<span class="sd">        _width : np.array</span>
+<span class="sd">            width vector</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            route width</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#quo=np.floor(np.divide(v, self._width.shape[0]))</span>
+        <span class="n">mod</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">_width</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="c1">#if not isinstance(mod, int):</span>
+        <span class="c1">#    print(v, _width, mod)</span>
+        <span class="k">return</span> <span class="n">_width</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">mod</span><span class="p">))]</span>
+
+    <span class="k">def</span> <span class="nf">_get_route_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">_layer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get metal layer</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v : int</span>
+<span class="sd">            index value</span>
+<span class="sd">        _layer : list</span>
+<span class="sd">            layer list</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        [str, str]</span>
+<span class="sd">            route layer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mod</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">_layer</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">_layer</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span>
+
+    <span class="c1">#def get_xwidth(self): return self.xwidth</span>
+    <span class="c1">#def get_ywidth(self): return self.ywidth</span>
+    <span class="c1">#def get_viamap(self): return self.viamap</span>
+
+<div class="viewcode-block" id="RouteGrid.get_route_width_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.get_route_width_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_route_width_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get metal width vector</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([int, int])</span>
+<span class="sd">            coordinate</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.array([float, float])</span>
+<span class="sd">            route width vector ([xgrid, ygrid])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_route_width</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="p">),</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">_get_route_width</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="p">)])</span></div>
+
+<div class="viewcode-block" id="RouteGrid.get_route_xlayer_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.get_route_xlayer_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_route_xlayer_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get route layer in xgrid direction (vertical)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([int, int])</span>
+<span class="sd">            coordinate</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        [str, str]</span>
+<span class="sd">            route layer information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_route_layer</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xlayer</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RouteGrid.get_route_ylayer_xy"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.get_route_ylayer_xy">[docs]</a>    <span class="k">def</span> <span class="nf">get_route_ylayer_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get route layer in ygrid direction (horizontal)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([int, int])</span>
+<span class="sd">            coordinate</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        [str, str]</span>
+<span class="sd">            route layer information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_route_layer</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">ylayer</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RouteGrid.get_vianame"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.get_vianame">[docs]</a>    <span class="k">def</span> <span class="nf">get_vianame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of via on xy</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy : np.array([int, int])</span>
+<span class="sd">            coordinate</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            cellname of via</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+        <span class="k">for</span> <span class="n">vianame</span><span class="p">,</span> <span class="n">viacoord</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viamap</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">viacoord</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">viacoord</span><span class="p">):</span> <span class="k">return</span> <span class="n">vianame</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">viacoord</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="n">vianame</span></div>
+
+<div class="viewcode-block" id="RouteGrid.display"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.display">[docs]</a>    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Display RouteGrid information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">display_str</span><span class="o">=</span><span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; width:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; height:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; xgrid:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; ygrid:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ygrid</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; xwidth:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; ywidth:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">))</span>\
+                    <span class="o">+</span> <span class="s2">&quot; xlayer:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xlayer</span><span class="p">)</span>\
+                    <span class="o">+</span> <span class="s2">&quot; ylayer:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ylayer</span><span class="p">)</span>\
+                    <span class="o">+</span> <span class="s2">&quot; viamap:{&quot;</span>
+        <span class="k">for</span> <span class="n">vm_name</span><span class="p">,</span> <span class="n">vm</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viamap</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">display_str</span><span class="o">+=</span><span class="n">vm_name</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">vm</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="n">display_str</span><span class="o">+=</span><span class="s2">&quot;}&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">display_str</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RouteGrid.export_dict"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.export_dict">[docs]</a>    <span class="k">def</span> <span class="nf">export_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export grid information in dict format</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            Grid information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">export_dict</span><span class="o">=</span><span class="n">GridObject</span><span class="o">.</span><span class="n">export_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;xwidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;ywidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_resolution</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;xlayer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xlayer</span>
+        <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;ylayer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ylayer</span>
+        <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;viamap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">vn</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viamap</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;viamap&#39;</span><span class="p">][</span><span class="n">vn</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
+            <span class="k">for</span> <span class="n">_v</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">export_dict</span><span class="p">[</span><span class="s1">&#39;viamap&#39;</span><span class="p">][</span><span class="n">vn</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_v</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">export_dict</span></div>
+
+<div class="viewcode-block" id="RouteGrid.update_viamap"><a class="viewcode-back" href="../../api/laygo.html#laygo.GridObject.RouteGrid.update_viamap">[docs]</a>    <span class="k">def</span> <span class="nf">update_viamap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">viamap</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;use laygo.GridObject.RouteGrid.viamap instead&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viamap</span><span class="o">=</span><span class="n">viamap</span></div></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">lgrid</span><span class="o">=</span><span class="n">GridObject</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;LayoutGrid test&#39;</span><span class="p">)</span>
+    <span class="n">lgrid</span><span class="o">.</span><span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+    <span class="n">lgrid</span><span class="o">.</span><span class="n">ygrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">lgrid</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">1.2</span>
+    <span class="n">lgrid</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mf">3.2</span>
+    <span class="n">phycoord</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mf">2.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mf">2.3</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  xgrid:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lgrid</span><span class="o">.</span><span class="n">xgrid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; width:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lgrid</span><span class="o">.</span><span class="n">width</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ygrid:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lgrid</span><span class="o">.</span><span class="n">ygrid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; height:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lgrid</span><span class="o">.</span><span class="n">height</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;physical grid to abstract grid&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  input:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">phycoord</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+    <span class="n">abscoord</span><span class="o">=</span><span class="n">lgrid</span><span class="o">.</span><span class="n">get_absgrid_coord_xy</span><span class="p">(</span><span class="n">phycoord</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  output:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">abscoord</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abstract grid to physical grid&#39;</span><span class="p">)</span>
+    <span class="n">phycoord</span><span class="o">=</span><span class="n">lgrid</span><span class="o">.</span><span class="n">get_phygrid_xy</span><span class="p">(</span><span class="n">abscoord</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  output:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">phycoord</span><span class="p">))</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">laygo_documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tutorial_GDS.html">Tutorial (GDS flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tutorial_BAG.html">Tutorial (BAG flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/tutorial_BAG_v2.html">Tutorial (BAG flow, new version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example/logic.html">Generator example - CMOS logic family</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example/serdes.html">Generator example - CMOS 2:1 mux serializer (obsolete)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example/ser_des.html">Generator example - Flexible CMOS SERDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example/tisar.html">Generator example - TISAR ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example/code.html">Code examples (to be uploaded)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tech/tech.html">Technology setup instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tech/Laygo_templates_guide.html">Template library setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">API documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Jaeduk Han.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
