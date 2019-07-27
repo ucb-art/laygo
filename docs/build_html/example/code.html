@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Example codes &#8212; laygo_documentation 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Laygo setup for new technologies" href="../tech/tech.html" />
+    <link rel="prev" title="Time-interleaved SAR ADC generator" href="tisar.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="example-codes">
+<h1>Example codes<a class="headerlink" href="#example-codes" title="Permalink to this headline">¶</a></h1>
+<p>This section illustrates ways of describing layout generator codes
+efficiently. While other examples focus on describing the generation
+flow with specific circuit examples (and codes might be outdated),
+examples in this section are written in the with the newest APIs and
+coding styles, in order to help users to build their codes in the
+most effective way. Codes will be kept updated, as new features and
+codes added.</p>
+<div class="section" id="code-example-1-low-level-building-block-generations-using-primitive-templates">
+<h2>Code example 1: low-level building block generations using primitive templates<a class="headerlink" href="#code-example-1-low-level-building-block-generations-using-primitive-templates" title="Permalink to this headline">¶</a></h2>
+<p>This example is about making basic functional elements (i.e. logic gates,
+amplifiers) using primitive templates.</p>
+<p><a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/generators/golden/nand_golden_example.py">generators/golden/nand_golden_example.py</a></p>
+</div>
+<div class="section" id="code-example-2-high-level-building-block-top-generations">
+<h2>Code example 2: high-level building block / top generations<a class="headerlink" href="#code-example-2-high-level-building-block-top-generations" title="Permalink to this headline">¶</a></h2>
+<p>This example is about making a block in higher level, composed of basic
+elements described in the example 1 (i.e. register files, ADC samplers).</p>
+<p><a class="reference external" href="https://github.com/ucb-art/laygo/blob/master/generators/golden/sarsamp_golden_example.py">generators/golden/sarsamp_golden_example.py</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">laygo_documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_GDS.html">Tutorial (GDS flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG.html">Tutorial (BAG flow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG_v2.html">Tutorial (BAG flow, new version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">Generator example - CMOS logic family</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serdes.html">Generator example - CMOS 2:1 mux serializer (obsolete)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ser_des.html">Generator example - Flexible CMOS SERDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tisar.html">Generator example - TISAR ADC</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code examples (to be uploaded)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-example-1-low-level-building-block-generations-using-primitive-templates">Code example 1: low-level building block generations using primitive templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-example-2-high-level-building-block-top-generations">Code example 2: high-level building block / top generations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/tech.html">Technology setup instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/Laygo_templates_guide.html">Template library setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tisar.html" title="previous chapter">Time-interleaved SAR ADC generator</a></li>
+      <li>Next: <a href="../tech/tech.html" title="next chapter">Laygo setup for new technologies</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Jaeduk Han.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/example/code.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
