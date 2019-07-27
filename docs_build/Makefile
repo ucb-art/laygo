@@ -50,7 +50,8 @@ help:
 	@echo "  dummy      to check syntax errors of document sources"
 
 .PHONY: publish
-publish: clean gh_clean html gh
+#publish: clean gh_clean html gh
+publish: clean gh_clean gh
 	#cd $(BUILDDIR_GH)/html; git add . ; git commit -m "rebuilt docs"; git push origin gh-pages
 
 .PHONY: clean
@@ -62,10 +63,14 @@ clean:
 gh_clean:
 	rm -rf $(BUILDDIR_GH)/doctrees
 	rm -rf $(BUILDDIR_GH)/html/*
+	rm -rf $(BUILDDIR_GH)/*
 
 .PHONY: gh
 gh:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS_GH) $(BUILDDIR_GH)/html
+	#$(SPHINXBUILD) -b html $(ALLSPHINXOPTS_GH) $(BUILDDIR_GH)/html
+	#@echo
+	#@echo "Build finished. The HTML pages are in ../../docs/html."
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS_GH) $(BUILDDIR_GH)
 	@echo
 	@echo "Build finished. The HTML pages are in ../../docs/html."
 
