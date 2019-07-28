@@ -3,8 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-#SPHINXBUILD   = /tools/projects/erichang/programs/anaconda3d6/bin/sphinx-build
-SPHINXBUILD   = /Users/hjd1207/anaconda3/bin/sphinx-build
+SPHINXBUILD   = /Users/hjd1207/anaconda3/bin/sphinx-build  # point to your local sphinx build path.
 PAPER         =
 BUILDDIR      = build
 BUILDDIR_GH   = ../docs
@@ -50,19 +49,18 @@ help:
 	@echo "  dummy      to check syntax errors of document sources"
 
 .PHONY: publish
-#publish: clean gh_clean html gh
 publish: clean gh_clean gh
-	#cd $(BUILDDIR_GH)/html; git add . ; git commit -m "rebuilt docs"; git push origin gh-pages
+	#cd $(BUILDDIR_GH); git add . ; git commit -m "rebuilt docs"; git push origin master
 
 .PHONY: clean
-clean:
+clean: 
 	rm -rf $(BUILDDIR)/*
 	rm -rf build_html
 
 .PHONY: gh_clean
 gh_clean:
-	rm -rf $(BUILDDIR_GH)/doctrees
-	rm -rf $(BUILDDIR_GH)/html/*
+	#rm -rf $(BUILDDIR_GH)/doctrees
+	#rm -rf $(BUILDDIR_GH)/html/*
 	rm -rf $(BUILDDIR_GH)/*
 
 .PHONY: gh
