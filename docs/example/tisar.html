@@ -33,7 +33,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setup" href="../tech/setup.html" />
+    <link rel="prev" title="CMOS SERDES generator" href="serdes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,10 +83,40 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="example.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="logic.html">CMOS logic family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ser_des.html">CMOS SERDES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serdes.html">CMOS 2:1-mux-based serializer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TISAR ADC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notice-sep-4th-2018">(Notice: Sep. 4th 2018)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-tisaradc-generator-has-been-completely-refactored-fixed-by-woorham-bae-please-carefully-read-this-document">The TISARADC generator has been completely refactored/fixed by Woorham Bae. Please carefully read this document.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-parameters">Setting up parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tisaradc-architecture">TISARADC architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subadc-frontend-layout-generation">SubADC frontend layout generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subadc-backend-layout-generation">SubADC backend layout generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subadc-switch-generation">SubADC switch generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subadc-top-generation">SubADC top generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subadc-testbench">SubADC testbench</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-generation">Array generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clocking-path-generation">Clocking path generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retimer">Retimer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tisaradc-body-clock-sar-retimer">TISARADC body (clock+sar+retimer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bias">Bias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#top">Top</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#full-stack-generation">Full stack generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contributors">Contributors</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tech/setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
 </ul>
@@ -131,6 +163,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="example.html">Examples</a> &raquo;</li>
         
       <li>Time-interleaved SAR ADC generator</li>
     
@@ -774,6 +808,15 @@ and Pengpeng Lu. This document is written by Jaeduk Han and Woorham Bae.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tech/setup.html" class="btn btn-neutral float-right" title="Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="serdes.html" class="btn btn-neutral float-left" title="CMOS SERDES generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

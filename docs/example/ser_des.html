@@ -33,7 +33,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CMOS SERDES generator" href="serdes.html" />
+    <link rel="prev" title="Logic family generator" href="logic.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,10 +83,26 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="example.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="logic.html">CMOS logic family</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CMOS SERDES</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-for-bwrc-users">Setup (for BWRC users)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serializer-generation">Serializer Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#optional-generate-3-stage-ser-for-higher-serialization-ratio-of-m-x-2n">(Optional) Generate 3-stage SER for higher serialization ratio of M x 2N</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deserializer-generation">Deserializer Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="serdes.html">CMOS 2:1-mux-based serializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tisar.html">TISAR ADC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tech/setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
 </ul>
@@ -131,6 +149,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="example.html">Examples</a> &raquo;</li>
         
       <li>CMOS SER/DES generator</li>
     
@@ -366,6 +386,15 @@ $BAG_WORK_DIR/laygo/generators/logic/BagModules
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="serdes.html" class="btn btn-neutral float-right" title="CMOS SERDES generator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="logic.html" class="btn btn-neutral float-left" title="Logic family generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

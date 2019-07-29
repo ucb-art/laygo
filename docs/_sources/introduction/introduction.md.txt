@@ -1,25 +1,32 @@
 # LAYGO - LAYout with Gridded Objects
 
 ## Introduction
-Laygo is an add-on to [BAG2](https://github.com/ucb-art/BAG_framework)
-framework written by [Jaeduk Han](https://jdhan.github.io/), Woorham Bae, 
-Zhongkai Wang, and Eric Jan, to generate physical designs (layouts) of 
-integrated circuits. Laygo provides various functions and objects to describe 
-layout generators, which helps designers produce layouts efficiently in 
-advanced CMOS technologies.
-
-To properly abstract the complex design rules in the advanced technologies, 
-Laygo introduced quantized templates and grids for its layout generation process;
- the layouts are constructed by placing templates and
-routing wires on grids, and designers don't need to deal with complex design
-rules. With Laygo, you can easily describe process portable and parameterized 
-layout generators in Python, which provide higher productivity and flexibility
-to your designs.
-
 ![laygo](images/laygo_concept.png)
 
-## Installation and Quick Start
-1. Install BAG2 (skip this if you are using the GDS flow).
+Laygo is an add-on to [BAG2](https://github.com/ucb-art/BAG_framework)
+framework, which helps designers generate physical designs (layouts) of integrated
+circuits (IC) automatically, and boost the design productivity of modern IC 
+designs in advanced CMOS processes.
+ 
+Laygo nicely abstracts the complex design rules (which take the most efforts to 
+be cleaned up manually) by introducing template and grid concepts; layout objects 
+are abstracted with their size and port information, and are placed on 
+predefined grids to meet design rules by placement, with their routing 
+wires are placed on grids as well. Designers combine these technology-specific 
+templates and grids with technology-independent laygo scripts to produce 
+process-portable and parameterized layouts. The laygo layout generators are 
+written in Python, which provides higher productivity and flexibility to your 
+generators.
+
+The initial versions of laygo have been developed by 
+[Jaeduk Han](https://jdhan.github.io/),  Woorham Bae, Zhongkai Wang, Eric Jan, 
+and researchers at 
+[Berkeley Wireless Research Center](https://bwrc.eecs.berkeley.edu) (BWRC). The 
+laygo is currently maintained by Jaeduk Han at Hanyang University.
+
+
+## Getting Started
+1. Install BAG2 (skip if you are using the GDS flow).
 2. Clone the laygo repository.
     ```
     $ git clone git@github.com:ucb-art/laygo.git
@@ -84,6 +91,17 @@ generation process. Check [this link](docs/labs.md) for details.
 
 ## Example Generators
 Example generaters can be found [here](docs/generators.md).
+
+## More References
+Check the following papers for the successful IC generation history using laygo:
+
+[1] E. Chang et al., ["BAG2: A process-portable framework for generator-based AMS circuit design,"](https://ieeexplore.ieee.org/document/8357061/)
+in Proc. IEEE CICC, Apr. 2018.
+
+[2] J. Han et al., "A generated 7 GS/s 8 b time-interleaved SAR ADC with 38.2 dB SNDR at Nyquist in 16 nm CMOS FinFET," 
+in Proc. IEEE CICC, Apr. 2019.
+
+Several bootcamp sessions are held at BWRC and other places to introduce laygo to public. 
 
 ## License
 This project is licensed under the BSD License - check the
