@@ -35,7 +35,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Laygo Template Library Setup Guide" href="Laygo_templates_guide.html" />
-    <link rel="prev" title="Example codes" href="../example/code.html" /> 
+    <link rel="prev" title="Setup" href="setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,40 +85,29 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_GDS.html">Tutorial (GDS flow)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG.html">Tutorial (BAG flow)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_BAG_v2.html">Tutorial (BAG flow, new version)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example/logic.html">Generator example - CMOS logic family</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example/serdes.html">Generator example - CMOS 2:1 mux serializer (obsolete)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example/ser_des.html">Generator example - Flexible CMOS SERDES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example/tisar.html">Generator example - TISAR ADC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example/code.html">Code examples (to be uploaded)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Technology setup instructions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#example-setup-files">Example setup files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bag-setup">BAG setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#config-file-laygo-config-yaml">Config file (laygo_config.yaml)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tech-lib-layermap-gds-flow-only">(tech_lib).layermap (GDS flow only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#template-library">Template library</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#template-library-name">Template library name</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#placement-grids">Placement grids</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#routing-grids-and-vias">Routing grids and vias</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mosfet-templates">Mosfet templates</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#basic-idea">Basic idea</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nmos4-fast-family-cells">nmos4_fast family cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pmos4-fast-family-cells">pmos4_fast family cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ptap-fast-family-cells">ptap_fast family cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ntap-fast-family-cells">ntap_fast family cells</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#momcap-family-cells">MOMCAP family cells</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#converting-template-layout-to-laygo-database">Converting template layout to laygo database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="setup.html">Setup</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Setup laygo for a new technology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-setup-files">Example setup files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bag-setup">BAG setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config-file-laygo-config-yaml">Config file (laygo_config.yaml)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tech-lib-layermap-gds-flow-only">(tech_lib).layermap (GDS flow only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library">Template library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#template-library-name">Template library name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placement-grids">Placement grids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#routing-grids-and-vias">Routing grids and vias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mosfet-templates">Mosfet templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#momcap-family-cells">MOMCAP family cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-template-layout-to-laygo-database">Converting template layout to laygo database</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Laygo_templates_guide.html">Template library setup guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Laygo_templates_guide.html">Create new templates</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
 </ul>
 
@@ -164,6 +153,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="setup.html">Setup</a> &raquo;</li>
         
       <li>Laygo setup for new technologies</li>
     
@@ -540,7 +531,7 @@ databases and save them to the following 2 yaml files:</p>
         <a href="Laygo_templates_guide.html" class="btn btn-neutral float-right" title="Laygo Template Library Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../example/code.html" class="btn btn-neutral float-left" title="Example codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="setup.html" class="btn btn-neutral float-left" title="Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

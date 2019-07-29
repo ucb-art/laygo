@@ -50,7 +50,7 @@ help:
 
 .PHONY: publish
 publish: clean gh_clean gh
-	#cd $(BUILDDIR_GH); git add . ; git commit -m "rebuilt docs"; git push origin master
+	cd $(BUILDDIR_GH); git add . ; git commit -m "rebuilt docs"; git push origin master
 
 .PHONY: clean
 clean: 
