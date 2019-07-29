@@ -6,7 +6,7 @@
 Welcome to laygo's documentation!
 ===============================================
 
-This page summarizes documentations for laygo_ repository.
+This page summarizes documentations for laygo_, a python-based layout generation framework.
 
 .. _Laygo: https://github.com/ucb-art/laygo
 
