@@ -83,7 +83,18 @@ with [additional documentations](docs/labs.md).
 [https://ucb-art.github.io/laygo/](https://ucb-art.github.io/laygo/) as well.
 
 ## Documentations
-More complete documentation can be found here: [https://ucb-art.github.io/laygo/](https://ucb-art.github.io/laygo/).
+* A complete API documentation can be found here: [https://ucb-art.github.io/laygo/](https://ucb-art.github.io/laygo/).
+
+* Check the following papers for the successful IC generation history using laygo:
+
+    [1] E. Chang et al., ["BAG2: A process-portable framework for generator-based AMS circuit design,"](https://ieeexplore.ieee.org/document/8357061/)
+in Proc. IEEE CICC, Apr. 2018.
+
+    [2] J. Han et al., "A generated 7 GS/s 8 b time-interleaved SAR ADC with 38.2 dB SNDR at Nyquist in 16 nm CMOS FinFET," 
+in Proc. IEEE CICC, Apr. 2019.
+
+* Several bootcamp sessions are held at BWRC and other places to introduce laygo to public. 
+Check [here](images/BAG_bootcamp_laygo.pdf) for slides.
 
 ## Example Labs
 Various lab modules are provided to help designers understand the Laygo-based layout 
@@ -93,15 +104,7 @@ generation process. Check [this link](docs/labs.md) for details.
 Example generaters can be found [here](docs/generators.md).
 
 ## More References
-Check the following papers for the successful IC generation history using laygo:
 
-[1] E. Chang et al., ["BAG2: A process-portable framework for generator-based AMS circuit design,"](https://ieeexplore.ieee.org/document/8357061/)
-in Proc. IEEE CICC, Apr. 2018.
-
-[2] J. Han et al., "A generated 7 GS/s 8 b time-interleaved SAR ADC with 38.2 dB SNDR at Nyquist in 16 nm CMOS FinFET," 
-in Proc. IEEE CICC, Apr. 2019.
-
-Several bootcamp sessions are held at BWRC and other places to introduce laygo to public. 
 
 ## License
 This project is licensed under the BSD License - check the

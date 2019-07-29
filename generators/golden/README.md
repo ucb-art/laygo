@@ -1,1 +1,1 @@
-Golden codes for developer reference
+Maintaining golden code for developer reference
