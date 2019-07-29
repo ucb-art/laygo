@@ -18,10 +18,10 @@ Contents:
    Introduction <introduction/introduction>
    Architecture <architecture/architecture>
    Tutorials <tutorial/tutorial>
-   Examples <example/examples>
+   Practice Labs <lab/lab>
+   Examples <example/example>
    Setup <tech/setup>
    API documentation <api/modules>
-.. #Example/CMOS 2:1 mux serializer (obsolete) <example/serdes>
 .. #Code examples (to be uploaded) <example/code>
 
 
