@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Laygo practice labs &mdash; laygo_documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="../example/example.html" />
+    <link rel="prev" title="NAND gate generation and BAG export tutorial (API v2)" href="../tutorial/tutorial_BAG_v2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> laygo_documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Practice Labs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-lab-bag-flow">Running the Lab - BAG flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-lab-gds-flow">Running the Lab - GDS flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../example/example.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">API documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">laygo_documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Laygo practice labs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/lab/lab.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="laygo-practice-labs">
+<h1>Laygo practice labs<a class="headerlink" href="#laygo-practice-labs" title="Permalink to this headline">¶</a></h1>
+<p>This document illustrates procedures for running training modules of laygo.
+The training modules(labs) are written to help users to get used to the laygo
+layout generation flow.</p>
+<p>Basically, the entire lab is composed of 2 parts. The first part is
+generating layout on physical grids. After completing lab 1, users will
+understand the fundemental layout generation flow of laygo. The second part is
+generating layout on abstracted grid. Users will build custom templates for their
+process, build template and grid database, and place/route objects on their grids.</p>
+<p>Each part has several submodules as follows,</p>
+<p>Lab1-a : layout export on physical grid</p>
+<p>Lab1-b : layout import on physical grid</p>
+<p>Lab2-a : construct template DB on abstract grid</p>
+<p>Lab2-b : layout export on abstract grid</p>
+<p>Lab2-c : logic family template generation</p>
+<p>Lab2-d : 2:1 MUX generation on abstract grid</p>
+<p>The functions used in the lab modules will be used for layout generation of
+real designs. Please make sure users understand how they work and what their
+inputs/return values are. More complete generator example will be found <a class="reference external" href="generators">here</a></p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Before doing the lab modules, users need to install bag setup for their
+specific technology. Please note that bag/laygo
+does not provide any technology sensitive information to external users without proper
+legal agreements.</p>
+<p>Installation procedure is explained here</p>
+<ol>
+<li><p class="first">After finishing bag setup, clone this repo or make a symbolic link
+in your bag working directory.</p>
+</li>
+<li><p class="first">Copy or make symbolic links of lab scripts from labs/</p>
+</li>
+<li><p class="first">Clone laygo_{technology_name} repo to your bag working directory. The repo contains technology specific
+information and not distributed in public domain.</p>
+</li>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">laygo_config.yaml</span></code> from laygo_{technology_name} to your bag working directory. If you don’t have one, you can create it by yourself. The syntax is as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metal_layers</span><span class="p">:</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">metal0_layer_name</span><span class="p">,</span> <span class="n">metal0_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">metal1_layer_name</span><span class="p">,</span> <span class="n">metal1_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">metal2_layer_name</span><span class="p">,</span> <span class="n">metal2_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">metal3_layer_name</span><span class="p">,</span> <span class="n">metal3_layer_purpose</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="n">pin_layers</span><span class="p">:</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">text_layer_name</span><span class="p">,</span> <span class="n">text_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">pin1_layer_name</span><span class="p">,</span> <span class="n">pin1_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">pin2_layer_name</span><span class="p">,</span> <span class="n">pin2_layer_purpose</span><span class="p">]</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">pin3_layer_name</span><span class="p">,</span> <span class="n">pin3_layer_purpose</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="n">prboundary_layer</span><span class="p">:</span> <span class="p">[</span><span class="n">prboundary_layer</span> <span class="n">name</span><span class="p">,</span> <span class="n">prboundary_layer_purpose</span><span class="p">]</span>
+<span class="n">tech_lib</span><span class="p">:</span> <span class="n">technology_name</span>
+<span class="n">text_layer</span><span class="p">:</span> <span class="p">[</span><span class="n">text_layer_name</span><span class="p">,</span> <span class="n">text_layer_purpose</span><span class="p">]</span>
+<span class="n">physical_resolution</span><span class="p">:</span> <span class="n">physical_grid_resolution</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">cds.lib</span></code> definition of laygo_{technology_name}/{technology_name}_microtemplates_dense
+This library contains primitive templates and grid cells. Example is as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`DEFINE {technology_name}_microtemplates_dense ./laygo_{technology_name}/{technology_name}_microtemplates_dense`
+</pre></div>
+</div>
+</li>
+<li><p class="first">(optional) copy those files from laygo_{technology_name} to bag working dir
+laygo_{technology_name}/{technology_name}_microtemplates_dense_templates.yaml
+laygo_{technology_name}/{technology_name}_microtemplates_dense_grids.yaml
+Those files contain template and grid information. This step is optional
+because user can generate those files in lab2_a</p>
+</li>
+</ol>
+</div>
+<div class="section" id="running-the-lab-bag-flow">
+<h2>Running the Lab - BAG flow<a class="headerlink" href="#running-the-lab-bag-flow" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">Open virtuoso and run bag. You’ll see primitive cells in {technology_name}_microtemplates_dense</p>
+<p><img alt="../_images/readme_templib.png" src="../_images/readme_templib.png" />template library</p>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">nmos4_fast_center_2stack</span></code>. You can see an example primitive template of nmos transistor.</p>
+<p><img alt="../_images/readme_nmos4.png" src="../_images/readme_nmos4.png" />nmos4 template</p>
+<p>The example image is captured from <a class="reference external" href="http://www.eda.ncsu.edu/wiki/FreePDK45:Contents">NCSU-FreePDK45</a> setup.</p>
+</li>
+<li><p class="first">Make an empty library ‘laygo_working’. This is the working library throught the entire lab.
+Laygo does not generate libraries automatically. Users need to create working libraries manually or via bag interface.</p>
+</li>
+<li><p class="first">You are ready to run the lab. Run bag and type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">laygo</span><span class="o">/</span><span class="n">labs</span><span class="o">/</span><span class="n">lab1_a_baselayoutgenerator_export</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>It should create 2 cells in laygo_working. _generate_example_1 should look like this.</p>
+<p><img alt="../_images/readme_lab1.png" src="../_images/readme_lab1.png" />template library</p>
+</li>
+</ol>
+</div>
+<div class="section" id="running-the-lab-gds-flow">
+<h2>Running the Lab - GDS flow<a class="headerlink" href="#running-the-lab-gds-flow" title="Permalink to this headline">¶</a></h2>
+<p>Instead of exporting the design to BAG, laygo can export the output to a gds file.</p>
+<ol>
+<li><p class="first">Prepare the layermap file of given technology and make a symbolic link in the working directory.
+Usually the layermap can be found in the technology library folder.</p>
+</li>
+<li><p class="first">Prepare the gds file of primitive microtemplates and locate it in the working directory.</p>
+</li>
+<li><p class="first">If you don’t have any technology setup, use the default fake technology files in labs.
+Copy them to the working directory</p>
+<p><code class="docutils literal notranslate"><span class="pre">laygo_config.yaml</span></code> - laygo configure file for fake technology</p>
+<p><code class="docutils literal notranslate"><span class="pre">laygo10n_microtemplates_dense_templates.yaml</span></code> - laygo template database for fake tech.</p>
+<p><code class="docutils literal notranslate"><span class="pre">laygo10n_microtemplates_dense_grid.yaml</span></code> - laygo grid database for fake tech.</p>
+<p>If you use fake tech, you can’t run lab2_a because there’s no real gds file for theh fake technology.
+Use the template/grid database for following labs instead of constructing it in lab2_a</p>
+</li>
+<li><p class="first">Make symbolic links of lab files in the working directory.</p>
+</li>
+<li><p class="first">Run lab1_a and open the resulting gds file. You should see this layout.
+Used <a class="reference external" href="http://www.klayout.de/">KLayout</a> for gds display.</p>
+<p><img alt="../_images/laygo_gds.png" src="../_images/laygo_gds.png" />gds</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../example/example.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../tutorial/tutorial_BAG_v2.html" class="btn btn-neutral float-left" title="NAND gate generation and BAG export tutorial (API v2)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Jaeduk Han
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

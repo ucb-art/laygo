@@ -18,6 +18,7 @@ Contents:
    Introduction <introduction/introduction>
    Architecture <architecture/architecture>
    Tutorials <tutorial/tutorial>
+   Practice Labs <lab/lab>
    Examples <example/example>
    Setup <tech/setup>
    API documentation <api/modules>
