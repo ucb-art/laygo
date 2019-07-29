@@ -1,0 +1,31 @@
+#technology layer information for gds export.
+#you may find a similar one for your tech in the cadence techlib directory.
+#format is: layername layerpurpose stream# datatype
+text        drawing 100 0
+prBoundary  drawing 101 0
+M1          drawing 1   0
+M1          pin     1   1
+M2          drawing 2   0
+M2          pin     2   1
+M3          drawing 3   0
+M3          pin     3   1
+M4          drawing 4   0
+M4          pin     4   1
+M5          drawing 5   0
+M5          pin     5   1
+M6          drawing 6   0
+M6          pin     6   1
+M7          drawing 7   0
+M7          pin     7   1
+M8          drawing 8   0
+M8          pin     8   1
+M9          drawing 9   0
+M9          pin     9   1
+VIA1        drawing 11   0
+VIA2        drawing 12   0
+VIA3        drawing 13   0
+VIA4        drawing 14   0
+VIA5        drawing 15   0
+VIA6        drawing 16   0
+VIA7        drawing 17   0
+VIA8        drawing 18   0
