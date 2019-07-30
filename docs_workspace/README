@@ -1,5 +1,9 @@
 
+Initialize:
+	Set up SPHINXBUILD in Makefile to point your local sphinx-build (usually comes with anaconda installations).
 To clean up:
 	make clean
-To publish
+To publish:
 	make publish
+	and commit/push manually
+
