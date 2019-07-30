@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to laygo's documentation!
+LAYGO - LAYout with Gridded Objects
 ===============================================
 
-This page summarizes documentations for laygo_, a python-based layout generation framework.
+This page summarizes documents for laygo_, a python-based IC layout generation framework.
 
 .. _Laygo: https://github.com/ucb-art/laygo
 
