@@ -81,11 +81,11 @@ because user can generate those files in lab2_a
 
 1. Open virtuoso and run bag. You'll see primitive cells in {technology_name}_microtemplates_dense
 
-   ![template library](images/readme_templib.png)
+   ![template library](../../../images/readme_templib.png)
 
 3. Open `nmos4_fast_center_2stack`. You can see an example primitive template of nmos transistor.
 
-   ![nmos4 template](images/readme_nmos4.png)
+   ![nmos4 template](../../../images/readme_nmos4.png)
 
    The example image is captured from [NCSU-FreePDK45](http://www.eda.ncsu.edu/wiki/FreePDK45:Contents) setup.
 
@@ -100,7 +100,7 @@ Laygo does not generate libraries automatically. Users need to create working li
 
    It should create 2 cells in laygo_working. _generate_example_1 should look like this.
 
-   ![template library](images/readme_lab1.png)
+   ![template library](../../../images/readme_lab1.png)
 
 ## Running the Lab - GDS flow
 Instead of exporting the design to BAG, laygo can export the output to a gds file.
@@ -128,4 +128,4 @@ Usually the layermap can be found in the technology library folder.
     Used [KLayout](http://www.klayout.de/) for gds display.
 
 
-    ![gds](images/laygo_gds.png)
+    ![gds](../../../images/laygo_gds.png)
