@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-LAYGO - LAYout with Gridded Objects
+LAYGO - LAYout with Gridded Objects (front page)
 ===============================================
 
 This page summarizes documents for laygo_, a python-based IC layout generation framework.
