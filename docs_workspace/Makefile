@@ -70,7 +70,7 @@ gh:
 	#@echo "Build finished. The HTML pages are in ../../docs/html."
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS_GH) $(BUILDDIR_GH)
 	@echo
-	@echo "Build finished. The HTML pages are in ../../docs/html."
+	@echo "Build finished. The HTML pages are in ../../docs/."
 
 .PHONY: html
 html:
