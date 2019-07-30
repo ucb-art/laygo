@@ -79,13 +79,7 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
     [this document](https://ucb-art.github.io/laygo/tutorial/tutorial_BAG.html)
     for the details of the BAG flow.
 
-5. More examples can be found in [labs](https://github.com/ucb-art/laygo/tree/master/labs), 
-with [additional documents](docs/labs.md).
-
-6. Generators of the real-world circuits (ADC, SERDES, and so on) are being uploaded 
-[here](https://github.com/ucb-art/laygo/tree/master/generators).
-
-## Documentations
+## Documentation
 * A complete API documentation can be found [here](https://ucb-art.github.io/laygo/).
 
 * Check the following papers for the successful IC generation history using laygo:
@@ -97,14 +91,14 @@ in Proc. IEEE CICC, Apr. 2018.
 in Proc. IEEE CICC, Apr. 2019.
 
 * Several bootcamp sessions are held at BWRC and other places to introduce laygo to public. 
-Check [here](images/BAG_bootcamp_laygo.pdf) for slides.
+Check [here](images/BAG_bootcamp_laygo.pdf) to download the bootcamp slides.
 
-## Example Labs
-Various lab modules are provided to help designers understand the Laygo-based layout 
-generation process. Check [this link](docs/labs.md) for details.
+## Labs
+Various lab modules are provided to help designers understand the laygo-based layout 
+generation process. Check [this link](https://ucb-art.github.io/laygo/lab/lab.html) for details.
 
 ## Example Generators
-Example generaters can be found [here](docs/generators.md).
+Example generaters are summarized [here](https://ucb-art.github.io/laygo/example/example.html).
 
 ## License
 This project is licensed under the BSD License - check the
