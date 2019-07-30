@@ -1,9 +1,8 @@
 # Time-interleaved SAR ADC generator
 
-### (Notice: Sep. 4th 2018)
-#### The TISARADC generator has been completely refactored/fixed by Woorham Bae. Please carefully read this document.
+The TISARADC generator has been completely refactored/fixed by Woorham Bae. Please carefully read this document. (Sep. 4. 2018)
 
-This section describes how to generate a time-interleaved SAR ADC
+This section describes the process of generating a time-interleaved SAR ADC
 schematic and layout using BAG and laygo.
 
 ## Overview
