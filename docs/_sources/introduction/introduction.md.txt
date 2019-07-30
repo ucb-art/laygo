@@ -54,8 +54,8 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
 
     Complete sets of these setup files for example technologies can be found here:
 
-        [cds_ff_mpt](git@github.com:ucb-art/BAG2_cds_ff_mpt.git)
-        [NCSU FreePDK45](git@github.com:ucb-art/BAG2_freePDK45.git)
+        cds_ff_mpt: git@github.com:ucb-art/BAG2_cds_ff_mpt.git
+        NCSU FreePDK45: git@github.com:ucb-art/BAG2_freePDK45.git
 
     **For BWRC users,** default setup files for various technologies are
     provided under proper NDAs.
@@ -94,11 +94,13 @@ in Proc. IEEE CICC, Apr. 2019.
 Check [here](images/BAG_bootcamp_laygo.pdf) to download the bootcamp slides.
 
 ## Labs
-Various lab modules are provided to help designers understand the laygo-based layout 
-generation process. Check [this link](https://ucb-art.github.io/laygo/lab/lab.html) for details.
+Various lab modules are stored in [labs/](https://github.com/ucb-art/laygo/tree/master/labs), 
+to provide useful cases to understand the layout generation process. 
+Check [this link](https://ucb-art.github.io/laygo/lab/lab.html) for details.
 
 ## Example Generators
-Example generaters are summarized [here](https://ucb-art.github.io/laygo/example/example.html).
+Example generaters are stored in [generators/](https://github.com/ucb-art/laygo/tree/master/generators),
+with detailed documentations summarized [here](https://ucb-art.github.io/laygo/example/example.html).
 
 ## License
 This project is licensed under the BSD License - check the
