@@ -35,22 +35,24 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
     * **laygo_config.yaml** - contains general technology information.
 
         An example file can be found here  [labs/laygo_config.yaml](https://github.com/ucb-art/laygo/blob/master/labs/laygo_config.yaml)
-    * **(technology_name).layermap** - (optional) layer mapping file only
-    for the GDS flow. Usually the layermap file can be found in your PDK
-    library.
+    * **(technology_name).layermap** - (optional) the layer mapping file 
+    needed for the GDS flow. Usually the layermap file can be found in your 
+    PDK library.
 
-        An example file can be found here [labs/laygo_faketech.layermap](https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech.layermap)
-    * **primitive template and grid database** : laygo stores template
-    and grid information in the YAML format. 
+        An example layermap file can be found here [labs/laygo_faketech.layermap](https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech.layermap)
+    * **primitive template and grid database files** : contains primitive template
+    and grid information in YAML format. 
 
-        Example database files (for laygo_faketech, used in the GDS flow):
+        Example database files can be found here: 
         [labs/laygo_faketech_microtemplates_dense_templates.yaml](https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech_microtemplates_dense_templates.yaml),
         [labs/laygo_faketech_microtemplates_dense_grids.yaml](https://github.com/ucb-art/laygo/blob/master/labs/laygo_faketech_microtemplates_dense_grids.yaml)
 
-        An example script for constructing the yaml database:
+        The primitive template and grid yaml files can be generated from running the 
+        following script with the primitive templates and grids constructed by user
+        (check lab2 for details):        
         [labs/lab2_a_gridlayoutgenerator_constructtemplate.py](https://github.com/ucb-art/laygo/blob/master/labs/lab2_a_gridlayoutgenerator_constructtemplate.py)
 
-    Complete sets of these setup files for generic technologies can be found here:
+    Complete sets of these setup files for example technologies can be found here:
 
         [cds_ff_mpt](git@github.com:ucb-art/BAG2_cds_ff_mpt.git)
         [NCSU FreePDK45](git@github.com:ucb-art/BAG2_freePDK45.git)
@@ -58,7 +60,8 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
     **For BWRC users,** default setup files for various technologies are
     provided under proper NDAs.
 
-4. Now you can run a toy example. Launch ipython and run the GDS tutorial script
+4. Now you are ready to run a toy script and generate a simple nand gate layout. 
+    Launch ipython and run the GDS tutorial script
     [quick_start_GDS.py](https://github.com/ucb-art/laygo/blob/master/quick_start_GDS.py).
     ```
     $ start_bag.sh    (or ipython)
@@ -69,21 +72,21 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
 
     ![qs_nand](images/laygo_quickstart.png)
 
-    [KLayout](http://www.klayout.de/) was used to display the gds. Detailed
-    explanations on the tutorial script can be found
+    [KLayout](http://www.klayout.de/) was used to display the generated gds file. 
+    Detailed explanations on the tutorial script can be found
     [here](https://ucb-art.github.io/laygo/tutorial/tutorial_GDS.html).
     You can also export the layout to the BAG framework. Check
     [this document](https://ucb-art.github.io/laygo/tutorial/tutorial_BAG.html)
     for the details of the BAG flow.
 
 5. More examples can be found in [labs](https://github.com/ucb-art/laygo/tree/master/labs), 
-with [additional documentations](docs/labs.md).
+with [additional documents](docs/labs.md).
 
-6. Generators of real-world circuits (ADC, SERDES, and so on) are being uploaded in 
-[https://ucb-art.github.io/laygo/](https://ucb-art.github.io/laygo/) as well.
+6. Generators of the real-world circuits (ADC, SERDES, and so on) are being uploaded 
+[here](https://github.com/ucb-art/laygo/tree/master/generators).
 
 ## Documentations
-* A complete API documentation can be found here: [https://ucb-art.github.io/laygo/](https://ucb-art.github.io/laygo/).
+* A complete API documentation can be found [here](https://ucb-art.github.io/laygo/).
 
 * Check the following papers for the successful IC generation history using laygo:
 
@@ -102,9 +105,6 @@ generation process. Check [this link](docs/labs.md) for details.
 
 ## Example Generators
 Example generaters can be found [here](docs/generators.md).
-
-## More References
-
 
 ## License
 This project is licensed under the BSD License - check the
