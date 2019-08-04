@@ -4,15 +4,14 @@
 ![laygo](images/laygo_concept.png)
 
 Laygo is an add-on to [BAG2](https://github.com/ucb-art/BAG_framework)
-framework, which helps designers generate physical designs (layouts) of integrated
-circuits (IC) automatically, and boost the design productivity of modern IC 
-designs in advanced CMOS processes.
+framework, which is developed to generate physical designs (layouts) of 
+integrated circuits (IC) automatically.
  
 Laygo nicely abstracts the complex design rules (which take the most efforts to 
 be cleaned up manually) by introducing template and grid concepts; layout objects 
 are abstracted with their size and port information, and are placed on 
 predefined grids to meet design rules by placement, with their routing 
-wires are placed on grids as well. Designers combine these technology-specific 
+wires placed on grids as well. Designers combine these technology-specific 
 templates and grids with technology-independent laygo scripts to produce 
 process-portable and parameterized layouts. The laygo layout generators are 
 written in Python, which provides higher productivity and flexibility to your 
@@ -52,7 +51,7 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
         (check lab2 for details):        
         [labs/lab2_a_gridlayoutgenerator_constructtemplate.py](https://github.com/ucb-art/laygo/blob/master/labs/lab2_a_gridlayoutgenerator_constructtemplate.py)
 
-    Complete sets of these setup files for example technologies can be found here:
+    Complete presets of the setup files for example technologies can be found here:
 
         cds_ff_mpt: git@github.com:ucb-art/BAG2_cds_ff_mpt.git
         NCSU FreePDK45: git@github.com:ucb-art/BAG2_freePDK45.git
