@@ -48,15 +48,14 @@ laygo is currently maintained by Jaeduk Han at Hanyang University.
 
         The primitive template and grid yaml files can be generated from running the 
         following script with the primitive templates and grids constructed by user
-        (check lab2 for details):        
+        (check lab2 for details):   
         [labs/lab2_a_gridlayoutgenerator_constructtemplate.py](https://github.com/ucb-art/laygo/blob/master/labs/lab2_a_gridlayoutgenerator_constructtemplate.py)
 
-    Complete presets of the setup files for example technologies can be found here:
+    Note 1: an example presets of the setup files for a cadence generic pdk 
+    (cds_ff_mpt) is provided for reference. Check 
+    [this repository](https://github.com/ucb-art/laygo_cds_ff_mpt) for details.
 
-        cds_ff_mpt: git@github.com:ucb-art/BAG2_cds_ff_mpt.git
-        NCSU FreePDK45: git@github.com:ucb-art/BAG2_freePDK45.git
-
-    **For BWRC users,** default setup files for various technologies are
+    Note 2: **For BWRC users,** default setup files for various technologies are
     provided under proper NDAs.
 
 4. Now you are ready to run a toy script and generate a simple nand gate layout. 
