@@ -21,7 +21,8 @@ The initial versions of laygo have been developed by
 [Jaeduk Han](https://jdhan.github.io/),  Woorham Bae, Zhongkai Wang, Eric Jan, 
 and researchers at 
 [Berkeley Wireless Research Center](https://bwrc.eecs.berkeley.edu) (BWRC). The 
-laygo is currently maintained by Jaeduk Han at Hanyang University.
+laygo repository is currently being maintained by Prof. Jaeduk Han at Hanyang 
+University.
 
 
 ## Getting Started
