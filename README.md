@@ -1,5 +1,9 @@
 # LAYGO - LAYout with Gridded Objects
 
+* NOTE: Now a new version of LAYGO(LAYGO2) is being developed [here](https://github.com/niftylab/laygo2), and this 
+repository is in maintance mode. We are still going to fix bugs and add features requested by users, but massive 
+changes are not likely to happen.
+
 ## Introduction
 ![laygo](images/laygo_concept.png)
 
@@ -18,7 +22,7 @@ written in Python, which provides higher productivity and flexibility to your
 generators.
 
 The initial versions of laygo have been developed by 
-[Jaeduk Han](https://jdhan.github.io/),  Woorham Bae, Zhongkai Wang, Eric Jan, 
+[Jaeduk Han](https://niftylab.github.io/),  Woorham Bae, Zhongkai Wang, Eric Jan, 
 and researchers at 
 [Berkeley Wireless Research Center](https://bwrc.eecs.berkeley.edu) (BWRC). The 
 laygo is currently maintained by Jaeduk Han at Hanyang University.
