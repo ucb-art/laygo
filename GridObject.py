@@ -375,8 +375,12 @@ class RouteGrid(GridObject):
     """list: layer of xgrid"""
     ylayer = None
     """list: layer of ygrid"""
+    xcolor = None
+    """list: color of xcolor"""
+    ycolor = None
+    """list: color of ycolor"""
 
-    def __init__(self, name, libname, xy, xgrid, ygrid, xwidth, ywidth, xlayer=None, ylayer=None, viamap=None):
+    def __init__(self, name, libname, xy, xgrid, ygrid, xwidth, ywidth, xlayer=None, ylayer=None, xcolor=None, ycolor=None, viamap=None):
         """
         Constructor
         """
@@ -389,6 +393,8 @@ class RouteGrid(GridObject):
         self.ywidth = ywidth
         self.xlayer = xlayer
         self.ylayer = ylayer
+        self.xcolor = xcolor
+        self.ycolor = ycolor
         self.viamap = viamap
 
     def _get_route_width(self, v, _width):
@@ -432,6 +438,28 @@ class RouteGrid(GridObject):
         mod=np.mod(v, len(_layer))
         return _layer[mod]
 
+    def _get_route_color(self, v, _color):
+        """
+        Get metal color
+
+        Parameters
+        ----------
+        v : int
+            index value
+        _color : list
+            color list
+
+        Returns
+        -------
+        [str, str]
+            route color
+        """
+        mod=np.mod(v, len(_color))
+        return _color[mod]
+
+    #def get_xwidth(self): return self.xwidth
+    #def get_ywidth(self): return self.ywidth
+    #def get_viamap(self): return self.viamap
     #def get_xwidth(self): return self.xwidth
     #def get_ywidth(self): return self.ywidth
     #def get_viamap(self): return self.viamap
@@ -484,6 +512,38 @@ class RouteGrid(GridObject):
             route layer information
         """
         return self._get_route_layer(xy[1], self.ylayer)
+
+    def get_route_xcolor_xy(self, xy):
+        """
+        Get route color in xgrid direction (vertical)
+
+        Parameters
+        ----------
+        xy : np.array([int, int])
+            coordinate
+
+        Returns
+        -------
+        [str, str]
+            route color information
+        """
+        return self._get_route_color(xy[0], self.xcolor)
+
+    def get_route_ycolor_xy(self, xy):
+        """
+        Get route color in ygrid direction (horizontal)
+
+        Parameters
+        ----------
+        xy : np.array([int, int])
+            coordinate
+
+        Returns
+        -------
+        [str, str]
+            route color information
+        """
+        return self._get_route_color(xy[1], self.ycolor)
 
     def get_vianame(self, xy):
         """
@@ -540,6 +600,10 @@ class RouteGrid(GridObject):
         export_dict['ywidth'] = np.around(self.ywidth, decimals=self.max_resolution).tolist()
         export_dict['xlayer'] = self.xlayer
         export_dict['ylayer'] = self.ylayer
+        if self.xcolor is not None:
+            export_dict['xcolor'] = self.xcolor
+        if self.ycolor is not None:
+            export_dict['ycolor'] = self.ycolor
         export_dict['viamap'] = dict()
         for vn, v in self.viamap.items():
             export_dict['viamap'][vn]=[]

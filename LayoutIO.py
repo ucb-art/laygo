@@ -262,6 +262,9 @@ def export_BAG(db, libname, cellname, prj, array_delimiter=['[', ']'], via_tech=
             for _xy in xy:
                 if not (_xy[0]==_xy[1]).all(): #xy0 and xy1 should not be the same
                     rect_list.append({'layer': r.layer, 'bbox': _xy.tolist()})
+                    # coloring
+                    if r.color is not None:
+                        rect_list[-1]['color'] = r.color
                     logging.debug('ExportBAG: Rect:' + r.name + ' layer:' + str(r.layer) + ' xy:' + str(_xy.tolist()))
         for p in s['pins'].values():  # pin generation
             if p.xy.ndim == 2:
@@ -430,7 +433,11 @@ def import_BAG(prj, libname, cellname=None, yamlfile="import_BAG_scratch.yaml", 
         db.sel_cell(ydict['cell_name'])
  
         for _r_key, _r in ydict['rects'].items():
-            r = db.add_rect(name=None, xy=np.array(_r['bBox']), layer=_r['layer'].split())
+            if 'color' in _r:  # to support MPT
+                _color = _r['color']
+            else:
+                _color = None
+            r = db.add_rect(name=None, xy=np.array(_r['bBox']), layer=_r['layer'].split(), color = _color)
             logging.debug('ImportGDS: Rect:' + r.name + ' layer:' + str(r.layer) + ' xy:' + str(r.xy.tolist()))
         for _t_key, _t in ydict['labels'].items():
             t = db.add_text(name=None, text=_t['label'], xy=np.array(_t['xy']), layer=_t['layer'].split())

@@ -212,7 +212,7 @@ class LayoutDB(dict):
         self.pcell = cellname
 
     # geometry related functions
-    def add_rect(self, name, xy, layer, netname=None):
+    def add_rect(self, name, xy, layer, netname=None, color=None):
         """
         Add a rect to selected cell
 
@@ -224,6 +224,10 @@ class LayoutDB(dict):
             xy coordinate
         layer : [str, str]
             layer name and purpose
+        netname : str or None, optional
+            net name of the rect
+        color : str or None, optional
+            the color of the rect. For MPT only
 
         Returns
         -------
@@ -232,7 +236,7 @@ class LayoutDB(dict):
         """
         if name == None: name = self.genid(type='rect', pfix='R')
         xy = np.asarray(xy)
-        r = Rect(name=name, res=self.res, xy=xy, layer=layer, netname=netname)
+        r = Rect(name=name, res=self.res, xy=xy, layer=layer, netname=netname, color=color)
         self[self.plib][self.pcell]['rects'][name] = r
         logging.debug('Rect added - Name:' + r.name + ', layer:' + str(layer) + ', xy:' +
                       str(np.round(r.xy, self.res_exp).tolist()[0]))
@@ -430,7 +434,7 @@ class LayoutDB(dict):
                 self.sel_cell(sn)
                 for r in s['rects'].values():
                     #print(r.name,r.xy,r.layer,r.netname)
-                    self.add_rect(r.name,r.xy,r.layer,r.netname)
+                    self.add_rect(r.name,r.xy,r.layer,r.netname, r.color)
                 for i in s['instances'].values():
                     self.add_inst(i.name, i.libname, i.cellname, i.xy, i.shape, i.spacing, i.transform)
                 for t in s['texts'].values():

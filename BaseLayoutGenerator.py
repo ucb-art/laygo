@@ -144,7 +144,7 @@ class BaseLayoutGenerator():
         self.db.sel_cell(cellname)
 
     # geometry related functions
-    def add_rect(self, name, xy, layer, netname=None):
+    def add_rect(self, name, xy, layer, netname=None, color=None):
         """
         Add a rect to selected region.
 
@@ -156,13 +156,17 @@ class BaseLayoutGenerator():
             xy coordinates
         layer : [str, str]
             layer name an purpose
+        netname : str or None, optional.
+            net name of the rect.
+        color : str of None, optional.
+            the color of the rect.
 
         Returns
         -------
         laygo.LayoutObject.Rect
             created Rect object
         """
-        return self.db.add_rect(name, xy, layer, netname)
+        return self.db.add_rect(name, xy, layer, netname, color=color)
 
     def add_pin(self, name, netname, xy, layer):
         """

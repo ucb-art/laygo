@@ -139,10 +139,12 @@ class GridDB(dict):
                             vm_dict[vmn] = np.array(vm)  # convert to np.array
                         if not 'xlayer' in s: s['xlayer'] = []
                         if not 'ylayer' in s: s['ylayer'] = []
+                        if not 'xcolor' in s: s['xcolor'] = None
+                        if not 'ycolor' in s: s['ycolor'] = None
                         self.add_route_grid(name=sn, libname=ln, xy=np.array([s['xy0'], s['xy1']]),
                                             xgrid=np.array(s['xgrid']), ygrid=np.array(s['ygrid']),
                                             xwidth=np.array(s['xwidth']), ywidth=np.array(s['ywidth']),
-                                            xlayer=s['xlayer'], ylayer=s['ylayer'],
+                                            xlayer=s['xlayer'], ylayer=s['ylayer'], xcolor=s['xcolor'], ycolor=s['ycolor'],
                                             viamap=vm_dict)
 
     def merge(self, db):
@@ -165,7 +167,7 @@ class GridDB(dict):
                     self.add_placement_grid(name=sn, libname=ln, xy=s.xy)
                 if s.type == 'route':
                     self.add_route_grid(name=sn, libname=ln, xy=s.xy, xgrid=s.xgrid, ygrid=s.ygrid, xwidth=s.xwidth,
-                                        ywidth=s.ywidth, xlayer=s.xlayer, ylayer=s.ylayer, viamap=s.viamap)
+                                        ywidth=s.ywidth, xlayer=s.xlayer, ylayer=s.ylayer, xcolor=s.xcolor, ycolor=s.ycolor, viamap=s.viamap)
 
     # library and grid related functions
     def add_library(self, name):
@@ -199,7 +201,7 @@ class GridDB(dict):
         return s
 
     def add_route_grid(self, name, libname=None, xy=np.array([0, 0]), xgrid=np.array([]), ygrid=np.array([]),
-                       xwidth=np.array([]), ywidth=np.array([]), xlayer=[], ylayer=[], viamap=None):
+                       xwidth=np.array([]), ywidth=np.array([]), xlayer=[], ylayer=[], xcolor=None, ycolor=None, viamap=None):
         """
         Add a route grid to the specified library.
 
@@ -212,7 +214,7 @@ class GridDB(dict):
         """
         if libname == None: libname = self.plib
         s = RouteGrid(name=name, libname=libname, xy=xy, xgrid=xgrid, ygrid=ygrid, xwidth=xwidth, ywidth=ywidth,
-                      xlayer=xlayer, ylayer=ylayer, viamap=viamap)
+                      xlayer=xlayer, ylayer=ylayer, xcolor=xcolor, ycolor=ycolor, viamap=viamap)
         self[libname][name] = s
         logging.debug('AddRouteGrid: name:' + name + ' xy:' + str(xy.tolist())
                       + ' xgrid:' + str(xgrid.tolist()) + ' xwidth:' + str(xwidth.tolist()) + ' xlayer:' + str(xlayer)
@@ -477,6 +479,60 @@ class GridDB(dict):
             layer parameters of ygrid on xy coordinate
         """
         return self[self.plib][gridname].get_route_ylayer_xy(xy)
+
+    def get_route_color_xy(self, gridname, xy):
+        """
+        return the colors of routing wires passing xy on gridname.
+
+        Parameters
+        ----------
+        gridname : str
+            abstract grid name
+        xy : np.array([int, int])
+            xy coordinate to get the color information
+
+        Returns
+        -------
+        list([[str, str], [str, str]])
+            color parameters on xy coordinate (xcolor, ycolor)
+        """
+        return [self.get_route_xcolor_xy(gridname, xy), self.get_route_ycolor_xy(gridname, xy)]
+
+    def get_route_xcolor_xy(self, gridname, xy):
+        """
+        return the color of vertical routing wires passing xy on gridname.
+
+        Parameters
+        ----------
+        gridname : str
+            abstract grid name
+        xy : np.array([int, int])
+            xy coordinate to get the color information
+
+        Returns
+        -------
+        list([str, str])
+            color parameters of xgrid on xy coordinate
+        """
+        return self[self.plib][gridname].get_route_xcolor_xy(xy)
+
+    def get_route_ycolor_xy(self, gridname, xy):
+        """
+        return the color of horizontal routing wires passing xy on gridname.
+
+        Parameters
+        ----------
+        gridname : str
+            abstract grid name
+        xy : np.array([int, int])
+            xy coordinate to get the color information
+
+        Returns
+        -------
+        list([str, str])
+            color parameters of ygrid on xy coordinate
+        """
+        return self[self.plib][gridname].get_route_ycolor_xy(xy)
 
     # via functions
     def get_vianame(self, gridname, xy):

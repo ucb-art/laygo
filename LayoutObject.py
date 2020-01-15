@@ -77,6 +77,9 @@ class Rect(LayoutObject):
     layer = None
     """[str, str]: Rect layer"""
 
+    color = None
+    """str or None: the color of the rect. Used for MPT only."""
+
     netname = None
     """str: net name"""
 
@@ -135,7 +138,7 @@ class Rect(LayoutObject):
     top_left = None
     top_right = None
 
-    def __init__(self, name, res, xy, layer, netname):
+    def __init__(self, name, res, xy, layer, netname, color=None):
         """
         Constructor
 
@@ -151,9 +154,12 @@ class Rect(LayoutObject):
             layer name and purpose
         netname : str
             net name
+        color : str or None
+            the color of the layer. Used for MPT only.
         """
         self.layer = layer
         self.netname = netname
+        self.color = color
         # crate pointers
         self.pointers['left'] = Pointer(name='left', res=res, xy=[0, 0.5], type='boundary', master=self)
         self.pointers['right'] = Pointer(name='right', res=res, xy=[1, 0.5], type='boundary', master=self)

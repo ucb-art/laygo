@@ -473,7 +473,7 @@ class GridLayoutGenerator(BaseLayoutGenerator):
             return inst
 
     # Route functions
-    def route(self, name=None, layer=None, xy0=np.array([0, 0]), xy1=np.array([0, 0]), gridname0=None, gridname1=None, direction='omni',
+    def route(self, name=None, layer=None,xy0=np.array([0, 0]), xy1=np.array([0, 0]), gridname0=None, gridname1=None, direction='omni',
               refobj0=None, refobj1=None, refobjindex0=np.array([0, 0]), refobjindex1=np.array([0, 0]),
               refinstname0=None, refinstname1=None, refinstindex0=np.array([0, 0]), refinstindex1=np.array([0, 0]),
               refpinname0=None, refpinname1=None, offset0=np.array([0,0]), offset1=None,
@@ -816,7 +816,12 @@ class GridLayoutGenerator(BaseLayoutGenerator):
                     layer = self.grids.get_route_xlayer_xy(gridname0, _xy0)
                 else:
                     layer = self.grids.get_route_ylayer_xy(gridname0, _xy0)
-            return self.add_rect(name, np.vstack((xy0_phy, xy1_phy)), layer, netname)
+            #color handling
+            if int(round(xy0_phy_center[0]/self.res)) == int(round(xy1_phy_center[0]/self.res)):
+                color = self.grids.get_route_xcolor_xy(gridname0, _xy0)
+            else:
+                color = self.grids.get_route_ycolor_xy(gridname0, _xy0)
+            return self.add_rect(name, np.vstack((xy0_phy, xy1_phy)), layer, netname, color=color)
 
     def _route_generate_box_from_abscoord(self, xy0, xy1, gridname0, gridname1=None, direction='omni',
                                           offset0=np.array([0, 0]), offset1=None, transform0='R0', transform1=None,
@@ -1500,6 +1505,8 @@ class GridLayoutGenerator(BaseLayoutGenerator):
                 ygrid=[]
                 ywidth=[]
                 ylayer=[]
+                xcolor=[]
+                ycolor=[]
                 for r in s['rects'].values():
                     if r.layer==layer_boundary: #boundary layer
                         bx1, bx2 = sorted(r.xy[:,0].tolist()) #need to be changed..
@@ -1512,10 +1519,14 @@ class GridLayoutGenerator(BaseLayoutGenerator):
                             ygrid.append(r.cy)
                             ywidth.append(r.height)
                             ylayer.append(r.layer)
+                            if r.color is not None:
+                                ycolor.append(r.color)
                         else: # y-direction
                             xgrid.append(r.cx)
                             xwidth.append(r.width)
                             xlayer.append(r.layer)
+                            if r.color is not None:
+                                xcolor.append(r.color)
                 xg = np.vstack((np.array(xgrid), np.array(xwidth)))
                 yg = np.vstack((np.array(ygrid), np.array(ywidth)))
                 xg = xg.T[xg.T[:, 0].argsort()].T  # sort
@@ -1523,8 +1534,10 @@ class GridLayoutGenerator(BaseLayoutGenerator):
                 xgrid=xg[0,:];ygrid=yg[0,:]
                 xwidth=xg[1,:];ywidth=yg[1,:]
                 #print(sn, str(np.around(xg, decimals=10).tolist()), str(np.around(yg, decimals=10).tolist()))
+                if len(xcolor)==0: xcolor=None  # not MPT 
+                if len(ycolor)==0: xcolor=None  # not MPT 
                 gdb.add_route_grid(name=sn, libname=libname, xy=bnd, xgrid=xgrid, ygrid=ygrid, xwidth=xwidth,
-                                   ywidth=ywidth, xlayer=xlayer, ylayer=ylayer, viamap=None)
+                                   ywidth=ywidth, xlayer=xlayer, ylayer=ylayer, xcolor=xcolor, ycolor=ycolor, viamap=None)
                 #via load
                 viamap=dict()
                 gdb.sel_library(libname)
