@@ -454,6 +454,8 @@ class RouteGrid(GridObject):
         [str, str]
             route color
         """
+        if _color == None:  #no coloring
+            return 0
         mod=np.mod(v, len(_color))
         return _color[mod]
 
